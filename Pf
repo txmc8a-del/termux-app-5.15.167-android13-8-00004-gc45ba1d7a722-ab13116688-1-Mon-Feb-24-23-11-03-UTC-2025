@@ -1,0 +1,4 @@
+curl -X GET -H "appKey:vANDROIDApp_v1002" \
+-H "Authorization:Bearer [YOUR_TOKEN]" \
+--compressed \
+"https://www.pdffiller.com/api_v3/document/793690502"
