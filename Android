@@ -1,0 +1,7 @@
+curl -X GET -H "appKey:vANDROIDApp_v1002" \
+-H "lang:en" \
+-H "device:android" \
+-H "userId:2241181828" \
+-H "Authorization:Bearer [YOUR_TOKEN]" \
+--compressed \
+"https://www.pdffiller.com/api_v3/feed/getList"
