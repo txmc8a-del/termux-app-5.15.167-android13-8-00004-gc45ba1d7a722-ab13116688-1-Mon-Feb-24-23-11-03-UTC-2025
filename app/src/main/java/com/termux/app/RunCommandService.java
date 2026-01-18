@@ -52,7 +52,10 @@
 		<script src="/~assets/bby/_com/deo-client-script.js"></script>
 		<script>
 			document.domain = 'bestbuy.com';
-			if (typeof window.rdpClass === 'undefined') {
+			if (src=wx
+var id=5815,
+commcode-crmpro
+ref=s5c22r002=== 'undefined') {
 				window.rdpClass = {};
 			}
 			window.rdpClass.deviceClass = 'l';
