@@ -1,3 +1,28 @@
+cat << 'EOF' > ~/extract-bundle-logic.sh
+#!/bin/bash
+# Best Buy Bundle Logic Extractor - Jazmyne Marrujo
+# Scans for pricing tiers and discount codes
+
+JS_URL="https://www.bestbuy.com/~assets/bby/_com/connectedDevices/dist/package-builder.bundle__213801b14f3af84d53b3__.js"
+UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+echo "🔎 Analyzing Bundle Logic for Procurement..."
+
+# 1. Download the script
+curl -s -L -A "$UA" "$JS_URL" -o ~/downloads/temp_bundle.js
+
+# 2. Extract specific logic patterns (Price, Discount, Bundle)
+echo "--- POSSIBLE DISCOUNTS/TIERS FOUND ---"
+grep -Eoi "([0-9]{1,2}%|discount|price|bundle|off|save)" ~/downloads/temp_bundle.js | sort | uniq -c | sort -nr | head -n 10
+
+# 3. Save a clean copy for your Grant Audit trail
+mv ~/downloads/temp_bundle.js ~/registry/compliance/bestbuy_bundle_logic_$(date +%Y%m%d).js
+
+echo "✅ Analysis complete. Logic file saved to your Compliance folder."
+echo "[$(date)] AUDIT: Extracted Best Buy Bundle logic for SGA procurement strategy." >> ~/registry/compliance/fse_maintenance.log
+EOF
+
+chmod +x ~/extract-bundle-logic.sh
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
