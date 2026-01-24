@@ -1,4 +1,4 @@
-Termux is a terminal emulator application enhanced with a large set of command line utilities ported to Android OS. The main goal is to bring a Linux command line experience to users of mobile devices with no rooting or other special setup required.
+https://wallet.google.com/wallet?utm_source=wallet&utm_medium=app&utm_campaign=uvc_redirect&p=paymentmethods&id=4611686028776374834Termux is a terminal emulator application enhanced with a large set of command line utilities ported to Android OS. The main goal is to bring a Linux command line experience to users of mobile devices with no rooting or other special setup required.
 
 * Enjoy the Bash and Zsh shells.
 * Edit files with nano and vim.
