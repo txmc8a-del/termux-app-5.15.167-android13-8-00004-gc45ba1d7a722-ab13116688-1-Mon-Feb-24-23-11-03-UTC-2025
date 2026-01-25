@@ -1,9 +1,63 @@
-[Openid-specs-digital-credentials-protocols] Security and Trust document
+[Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
+Kristina Yasuda yasudakristina at gmail.com
+Wed Aug 7 17:48:17 UTC 2024
+Previous message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
+Next message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+Hi All,
+
+Tomorrow's WG call, we will focus on the use of transaction_data mechanism
+in payments and QES (qualified electronic signature) use-cases. We will
+have guests joining us, including Ranjiva and Stefan from VISA and Mark
+from D-Trust.
+
+After our usual business at the beginning of the call (notes, IPR, intros,
+PRs, events, etc.), I was planning something like below:
+- 10min presentation from payments use-case and short QnA
+- 10min presentation from QES use-case and short QnA
+- discussion 20-30min
+
+Thank you!
+Kristina
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.openid.net/pipermail/openid-specs-digital-credentials-protocols/attachments/20240807/665f6f5a/attachment.html>
+Previous message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
+Next message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+More information about the Openid-specs-digital-credentials-protocols mailing list[Openid-specs-digital-credentials-protocols] Security and Trust document
 Jo Spencer jo at sezoo.digital
 Sun Sep 17 10:23:51 UTC 2023
 Previous message (by thread): [Openid-specs-digital-credentials-protocols] Security and Trust document
 Next message (by thread): [Openid-specs-digital-credentials-protocols] DCP WG meeting recording
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ][Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
+Kristina Yasuda yasudakristina at gmail.com
+Wed Aug 7 17:48:17 UTC 2024
+Previous message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
+Next message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
 Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+Hi All,
+
+Tomorrow's WG call, we will focus on the use of transaction_data mechanism
+in payments and QES (qualified electronic signature) use-cases. We will
+have guests joining us, including Ranjiva and Stefan from VISA and Mark
+from D-Trust.
+
+After our usual business at the beginning of the call (notes, IPR, intros,
+PRs, events, etc.), I was planning something like below:
+- 10min presentation from payments use-case and short QnA
+- 10min presentation from QES use-case and short QnA
+- discussion 20-30min
+
+Thank you!
+Kristina
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.openid.net/pipermail/openid-specs-digital-credentials-protocols/attachments/20240807/665f6f5a/attachment.html>
+Previous message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
+Next message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+More information about the Openid-specs-digital-credentials-protocols mailing list
 Hi Tom and Team,
 
 I think you're spot on, Tom. "Guardianship" is a topic that John Phillips
