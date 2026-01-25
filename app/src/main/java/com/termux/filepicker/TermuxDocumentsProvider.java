@@ -1,4 +1,257 @@
-[Openid-specs-digital-credentials-protocols] DCP WG Notes 2023-08-31
+[Openid-specs-digital-credentials-protocols] Security and Trust document
+Jo Spencer jo at sezoo.digital
+Sun Sep 17 10:23:51 UTC 2023
+Previous message (by thread): [Openid-specs-digital-credentials-protocols] Security and Trust document
+Next message (by thread): [Openid-specs-digital-credentials-protocols] DCP WG meeting recording
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+Hi Tom and Team,
+
+I think you're spot on, Tom. "Guardianship" is a topic that John Phillips
+and I [Sezoo, based in Melbourne, Australia] have been working on, within
+the W3C VC-based environment for some time. The W3C VC data model caters to
+the subject and holder being different, very well.
+
+It's been a particular "passion" capability of ours that digital
+interactions can forget (probably because it's typically quite complex for
+2-party digital interactions).  We believe that delegation or guardianship
+is a critical feature of a trusted interaction mechanism (and protocol),
+and has to be standardised. Whilst we focused on guardianship, delegation,
+support or ownership are similar relationship based considerations that
+should also be able to be supported in a consistent model.
+
+Our work and experience on providing verifiable evidence of guardianship
+rights and duties and supported access to online content started in 2019
+when John and I were co-chairs on the Sovrin Guardianship Working Group for
+the development of an Implementation Guide and Requirements document for
+Guardianship using W3C Verifiable Credentials. The results published in
+2021 can be found here:
+
+Implementation Guide:
+https://drive.google.com/file/d/1vBePVx8n3MRDWcePkwVDya9ab4BHEyU_/view?usp=sharing
+Technical Requirements:
+https://drive.google.com/file/d/1M21PznPAd0H6z1t4ODl-jiEoXZjEhwcb/view?usp=sharing
+
+These links and the introduction/explanation can be found here:
+https://sovrin.org/a-deeper-understanding-of-implementing-guardianship/
+
+As a part of these initiatives, a mental model for guardianship was
+developed with collaboration with TNO in NL and published under the
+ESSIFLabs initiative:
+https://essif-lab.github.io/framework/docs/terms/pattern-guardianship/.
+
+More recently, we've supported the update of the Sovrin Whitepaper on
+Guardianship -
+https://sovrin.org/wp-content/uploads/Guardianship-Whitepaper-V2.0.pdf -
+which may be a very good starting document for those that are interested.
+
+We developed a Guardianship addendum for the Good Health Pass Collaborative
+Blueprint <https://www.goodhealthpass.org/blueprint> which considered the
+challenges of supported travel, made more important during the Covid
+pandemic. The realisation during that activity was that guardianship and
+supported mechanisms are often informal and based on social expectations,
+rather than digital credentials. Enabling supported scenarios using digital
+credentials into the whole process of travel was a significant challenge
+and probably more than the GHPC could influence.
+
+John Phillips and I have published a number of further papers and work on
+this topic, all of which are available on our website (
+https://www.sezoo.digital/resources/) and our LinkedIn profiles (
+https://www.linkedin.com/in/11dot2/recent-activity/articles/ and
+https://www.linkedin.com/in/jospencer-1pg/recent-activity/articles/)
+
+It's critical that any interaction protocol supports delegation, support or
+guardianship and clearly articulates the difference between the Holder and
+Subject. Impersonation has to be avoided as this is the antithesis of
+trusted digital interactions. The combined presentation of credentials from
+multiple sources (e.g. a guardianship VC from a government entity and other
+credentials from other service providers) would appear to be central to
+these types of solutions. We too have been concerned that the OIDC4VP
+protocols are deficient in this, but we'd be keen to learn more from those
+who are closer to the details. But we are very keen to promote these
+considerations in solution design activities.
+
+Of course, I'd be happy to talk about this topic in the group (if this can
+be possible in an Australian-friendly timeslot), or directly.
+
+Cheers, Jo
+*Jo Spencer*
+Co-Founder | Digital Trust Evangelist | *Sezoo*
+Partner | Payments | Banking | Architecture | *460degrees*
+
+M: +61 (0) 433 774 729
+E: jo at sezoo.digital
+L: https://www.linkedin.com/in/jospencer-1pg/
+T: https://twitter.com/spencerjed
+
+Sezoo acknowledges the Traditional Owners of the country throughout
+Australia and their continuing connection to land, sea and community. We
+pay our respects to them, their cultures and to Elders past, present and
+emerging.
+
+
+
+On Fri, 15 Sept 2023 at 04:38, Tom Jones via
+Openid-specs-digital-credentials-protocols <
+openid-specs-digital-credentials-protocols at lists.openid.net> wrote:
+
+>
+> All parties communicate with each other using a set of protocols, or just
+> "protocol" in the following. In the case of OpenID4VP, the protocols are
+> OpenID for Verifiable Credential Issuance [@!OpenID.VCI] and OpenID for
+> Verifiable Presentations [@!OpenID.VP], with an optional use of SIOP v2
+> [@!OpenID.SIOPv2].
+> thx ..Tom (mobile)
+>
+> On Thu, Sep 14, 2023, 4:17 AM David Chadwick <d.w.chadwick at truetrust.co.uk>
+> wrote:
+>
+>> Hi Tom
+>>
+>> if you read my proposed text I think it caters for the use cases you are
+>> suggesting. If it does not, can you say why not please
+>>
+>> thanks
+>>
+>> David
+>> On 14/09/2023 05:35, Tom Jones wrote:
+>>
+>> you guys are missing the point - i guess i was not clear.
+>>
+>> The current CBP-ONE app is used at the border of the US to schedule
+>> sessions to acquire asylum. Similarly the child trying to get access to the
+>> US may need creds. These children are the subjects of credential. They do
+>> not hold smartphones which are held by (for example) their father as
+>> guardian. In the US 51 million people do not have smart phones but may need
+>> digital creds for one reason or another. I suspect that in many countries
+>> the numbers are even more dire.
+>>
+>> If the wallet cannot handle the case where the subject is not the holder,
+>> then it should not be considered adequate  to hold government creds because
+>> of the many eligible people \who cannot be accommodated.
+>>
+>> Somehow this spec (and the rest of the VC specs) needs to address the
+>> problem where the holder and the subject are not the same person.
+>>
+>> ..tom
+>>
+>>
+>> On Wed, Sep 13, 2023 at 3:32 AM David Chadwick via
+>> Openid-specs-digital-credentials-protocols <
+>> openid-specs-digital-credentials-protocols at lists.openid.net> wrote:
+>>
+>>>
+>>> On 12/09/2023 20:53, Joseph Heenan via
+>>> Openid-specs-digital-credentials-protocols wrote:
+>>>
+>>> Hi Tom
+>>>
+>>> Focussing on this particular document, is your concern resolved if
+>>> sentences like this:
+>>>
+>>> "Identity of Holder: A Verifier can trust that the party presenting the
+>>> claims in a session with the Verifier is (controlled by) the subject of the
+>>> claims.”
+>>>
+>>> (From
+>>> https://github.com/vcstuff/oid4vc-security-and-trust/blob/main/draft-oid4vc-security-and-trust.md#trust-in-the-issuer-holder-verifier-model
+>>> )
+>>>
+>>> are replaced with something like this:
+>>>
+>>> "Identity of Holder: A Verifier can trust that the party presenting the
+>>> claims in a session with the Verifier is (controlled by) the party that the
+>>> credential was intended to be issued to.”
+>>>
+>>> I don't think the above is precise enough, since the credential could
+>>> have been passed from the first holder to the second holder and then to the
+>>> verifier. Therefore I propose
+>>>
+>>> "Identity of Holder: A Verifier can trust that the party presenting the
+>>> claims in a session with the Verifier is the party who is authorised to
+>>> hold the credential (from the Verifier's perspective).”
+>>>
+>>> The text in parentheses is important for at least the following reasons
+>>>
+>>> a) the credential could be a bearer credential
+>>>
+>>> b) the verifier may be willing to completely ignore who the issuer
+>>> intended the credential to be presented by and therefore will allow anyone
+>>> to present it, e.g. because the verifier gains a benefit from entering into
+>>> a session with the holder.
+>>>
+>>> We have real life examples the above in the physical world.
+>>>
+>>> Kind regards
+>>>
+>>> David
+>>>
+>>>
+>>> ?
+>>>
+>>> Thanks
+>>>
+>>> Joseph
+>>>
+>>> On 12 Sep 2023, at 16:06, Tom Jones via
+>>> Openid-specs-digital-credentials-protocols
+>>> <openid-specs-digital-credentials-protocols at lists.openid.net>
+>>> <openid-specs-digital-credentials-protocols at lists.openid.net> wrote:
+>>>
+>>> One major problem with the OAuth model and this contribution is the
+>>> conflation of the subject and the holder.
+>>> To be inclusive these two roles may be entirely different entities.
+>>> It seems to be that this conflation must be excised if OAuth is to be
+>>> acceptected as the digital credential model to be used for government
+>>> supplied rights and privileges.
+>>>
+>>> ..tom
+>>>
+>>>
+>>> On Mon, Sep 11, 2023 at 8:14 AM Daniel Fett via
+>>> Openid-specs-digital-credentials-protocols <
+>>> openid-specs-digital-credentials-protocols at lists.openid.net> wrote:
+>>>
+>>>> Hi all,
+>>>>
+>>>> I'd like to contribute the "Security and Trust" document to the DCP WG:
+>>>> https://github.com/vcstuff/oid4vc-security-and-trust
+>>>>
+>>>> It has been discussed earlier, but had no official status so far.
+>>>>
+>>>> -Daniel
+>>>> --
+>>>> Openid-specs-digital-credentials-protocols mailing list
+>>>> Openid-specs-digital-credentials-protocols at lists.openid.net
+>>>>
+>>>> https://lists.openid.net/mailman/listinfo/openid-specs-digital-credentials-protocols
+>>>>
+>>> --
+>>> Openid-specs-digital-credentials-protocols mailing list
+>>> Openid-specs-digital-credentials-protocols at lists.openid.net
+>>>
+>>> https://lists.openid.net/mailman/listinfo/openid-specs-digital-credentials-protocols
+>>>
+>>>
+>>>
+>>> --
+>>> Openid-specs-digital-credentials-protocols mailing list
+>>> Openid-specs-digital-credentials-protocols at lists.openid.net
+>>>
+>>> https://lists.openid.net/mailman/listinfo/openid-specs-digital-credentials-protocols
+>>>
+>> --
+> Openid-specs-digital-credentials-protocols mailing list
+> Openid-specs-digital-credentials-protocols at lists.openid.net
+>
+> https://lists.openid.net/mailman/listinfo/openid-specs-digital-credentials-protocols
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.openid.net/pipermail/openid-specs-digital-credentials-protocols/attachments/20230917/121e843d/attachment-0001.html>
+Previous message (by thread): [Openid-specs-digital-credentials-protocols] Security and Trust document
+Next message (by thread): [Openid-specs-digital-credentials-protocols] DCP WG meeting recording
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+More information about the Openid-specs-digital-credentials-protocols mailing list[Openid-specs-digital-credentials-protocols] DCP WG Notes 2023-08-31
 David Luna david.luna at forgerock.com
 Thu Aug 31 19:46:36 UTC 2023
 Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
