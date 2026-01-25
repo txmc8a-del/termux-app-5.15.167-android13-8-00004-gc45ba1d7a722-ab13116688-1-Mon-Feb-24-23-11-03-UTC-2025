@@ -1,4 +1,317 @@
-[Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
+[Openid-specs-digital-credentials-protocols] DCP WG Notes 2023-08-31
+David Luna david.luna at forgerock.com
+Thu Aug 31 19:46:36 UTC 2023
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+*AGENDA*
+Confirm co-chairs
+
+Discuss which drafts are in scope
+
+Settle on a call schedule
+
+Migration to Github
+Possibility of a face-to-face meeting
+
+[Other topics, Introductions, Participant List]
+
+CONFIRM CO-CHAIRS
+
+Torsten Lodderstedt and Kristina Yasunda would be prepared to be the
+co-chairs of the DCP WG. No objections or other suggestions -
+congratulations!
+
+David Luna will take notes
+
+Kristina lots of new people joining (approx 48 attendees on call), going to
+describe how the SIOP WG call worked. Hasn’t been strict queue management
+but may want to enforce raise hands in Zoom. We ask for someone to take
+notes on each call. Notes are circulated to the mailing list after the
+call. Past minutes will be available on the DCP mailing list.
+https://lists.openid.net/pipermail/openid-specs-digital-credentials-protocols/
+
+There’s also a OIDF Slack available -
+https://join.slack.com/t/oidf/shared_invite/zt-20zvlgnt1-Q4dD3wG9QLTluZd0odWn~g
+and the WG’s channel - #wg-dcp
+
+Nat Sakimura How should the Slack be used?
+Joseph Slack should be used to broadcast information about meetings - same
+as other WGs - not for discussions.
+
+DISCUSS WHICH DRAFTS ARE IN SCOPE
+
+Torsten 7 drafts in total
+
+3 core drafts - OID4VP, OID4VCI, SIOPv2 will stay within the current
+Connect WG due to IP for the moment (“as long as it is needed”).
+
+Additional drafts -
+OID4VC High Assurance Interoperability Profile with SD-JWT VC - currently
+in GitHub
+
+OID4VP over BLE
+
+OpenID Connect UserInfo Verifiable Credentials
+
+Security and Trust in OpenID for Verifiable Credentials - currently in
+GitHub
+
+Considering proposing those 4 drafts for adoption by this WG.
+
+Consequences of this is that folks will work across both DCP and Connect WG
+for the moment on these various specs.
+
+Kristina it’s really hard to move due to the overhead of getting everyone
+to sign new agreements to move the core drafts over to DCP WG.
+
+SETTLE ON CALL SCHEDULE
+
+Torsten Keep SIOP slot call slot and use it as both SIOP and DCP WG call.
+Want to be really clear regarding Intellectual Property. These calls will
+be dynamic, and may involve a fair amount of context switching. People
+wanting to attend these calls need to sign the IPR agreement in order to
+contribute - for Connect and DCP WGs at minimum, or otherwise for all
+working groups.
+
+Kristina Joining is important, and while individual contributors are
+welcome joining via your org is better as it helps grow. By joining you get
+voting rights, which are very important.
+
+https://openid.net/foundation/benefits-members/
+
+Torsten Would people be interested in a time slot that’s more friendly for
+other timezones (APAC)?
+
+Paul Templeman yes
+
+Thomas Robin yes
+
+Nat yes
+
+Kaliya Identity Woman people on this call have a bias as those in other
+timezones may not be on this call
+
+Kristina - next week we’ll continue to use the SIOP timeslot (the time
+currently shifts by one hour every two weeks) - next week will be 8AM
+Pacific, 5PM CET. We will put the question on the APAC timezone into the
+mailing list.
+
+Which Zoom URL to use? Ideally we’d use the current Zoom URL and asking
+people to migrate will be painful.
+
+Torsten Changing the name of the existing slot in the calendar is the
+simplest way?
+
+George Fletcher I use the link in the calendar entry. So it’s easier if
+that’s just correct.
+
+Mike Leszcz will the name change on both SIOP meeting instances (this
+current time, and the ‘Atlantic 2’ time) to SIOP / DCP?
+
+Kristina We don’t have clarity yet on when we’ll have the APAC calls, but
+let’s change both the SIOP calls, and on top of that add APAC calls.
+
+Mike Agreed to update the calendar invites.
+
+Anyone can join the mailing list, but you need to sign the IPR Contribution
+agreement so you can write to it).
+
+The list is here
+https://lists.openid.net/mailman/listinfo/openid-specs-digital-credentials-protocols
+
+MIGRATION TO GITHUB
+
+Joseph Heenan presents. There will be new repos under OIDF GitHub. Actions
+will be used, similar to current BitBucket pipelines (e.g. building pages
+and publishing them). Current data from BB (commits, etc.) additionally, OPEN
+issues and comments will be imported. Active contributors will be invited
+to each repo, and the process will end by closing the open issues in BB.
+
+Nat please ensure issues from GH are also sent to the mailing list.
+
+Torsten so we’re GH only from next week?
+
+Kristina yes. Please don’t touch OID4VC issues in BB, they are being moved
+Friday morning UK time, updates to issues during the migration won’t be
+copied, so just hold on. PRs are not being copied over, only issues.
+
+PRs that probably have to be re-opened: 612, (455), 608, 487, 587, 578,
+(360), (434), (515)
+
+and maybe 570, 590
+
+Tom Jones is there a link?
+
+Kristina Not yet - the migration will happen shortly and will be
+communicated then.
+
+Tom it will be on GitHub/openid
+
+Kristina yes in the OpenID Foundation GitHub
+
+Brian Campbell issues will be closed in BB as they get migrated?
+
+Torsten yes, and they will have a link to the new issue on GitHub
+
+Mike Jones may just be a link to the repo, not to the actual issue
+
+POSSIBILITY OF A FACE-TO-FACE MEETING
+
+Torsten Are there folks in favour of a F2F WG meeting on the Monday before
+IIW 0900-1200?
+
+Mike L OIDF is hosting a workshop that afternoon at a Cisco location. We’ll
+need to use Webex for that meeting if we want it to be an active WG call
+https://openid.net/registration-workshop-october-9-2023/ if it’s at the
+same location as the workshop
+
+Torsten how many will people be interested in attending? (10 thumbsup)
+
+Brian I would like to join remote (2 thumbsup)
+
+Gail Hodges OIDF Workshop is 1230-1545 on the same day
+
+Kaliya Open Wallet Foundation (OWF) is having a workshop in the morning of
+the Monday (aimed to avoid the OIDF Workshop) 0900-1200, so there will be a
+collision. Suggests the WG meets after the workshop to avoid collision.
+
+Torsten That’s a problem!
+
+Mike L we have two spaces at Cisco all day - a meeting room (20 ppl) and a
+larger auditorium (75 ppl)
+
+Kristina For now let’s keep it morning WG afternoon workshop
+
+Torsten, Kristina and Kaliya will figure it out and make announcements
+
+OTHER TOPICS
+
+Nander Stabel will core specs be renamed e.g. OID4VCI to OID4DPI?
+
+Mike J we should not change the name, we lose brand equity
+
+Kristina The current name can be inferred as being about W3C Verifiable
+Credentials only
+
+Torsten We don’t need to decide this now. Discuss on the issue.
+https://bitbucket.org/openid/connect/issues/1915/verifiable-credentials-causes-people-to
+
+Kristina Can give an overview of the new drafts that will be shared on the
+mailing list.
+
+SasiKumar Ganesan Introduction to OpenID for Verifiable PResentations over
+BLE. This supports the many use-cases where connectivity is limited or
+prohibitively expensive. Has been implemented in iOS and Android, and the
+code is being contributed to OWF.
+https://openid.bitbucket.io/connect/openid-4-verifiable-presentations-over-ble-1_0.html
+
+INTRODUCTIONS
+
+Juan Caballero introduces themselves from DIF, observing on behalf of DIF
+C&C WG.
+
+Andy Lim introduces themselves from Cisco, interested in implementation
+opportunities within Cisco security products
+
+PARTICIPANT LIST
+
+David Luna
+
+Kristina Yasuda
+
+Torsten Lodderstedt
+
+Gail Hodges
+
+Joseph Heenan
+
+Michael Jones
+
+Mike Leszcz
+
+Amir Sharif
+
+Amit Padmani
+
+Andreas Freitag
+
+Andy Lim
+
+Audrius Ramoska
+
+Brian Campbell
+
+Christian Bormann
+
+Christoph Schneider
+
+Daniel Fett
+
+David Waite
+
+Dima Postnikov
+
+Dmitri Zagidulin
+
+Felix Linker
+
+Gabe
+
+George Fletcher
+
+Jasmin Brakmic
+
+Juan Caballero
+
+Judith Kahrer
+
+Kaliya Identity Woman
+
+Keith Kowal
+
+Kratitva Agrawal
+
+Lucy Yang
+
+Lukasz Jaromin
+
+Matteo Midena
+
+Nander Stabel
+
+Naohiro Fuje
+
+Oliver Terbu
+
+Paul Bastian
+
+Paul Templeman
+
+Pedro Felix
+
+Rajvardhan Deshmuhk
+
+Ramesh Narayanan
+
+Nat Sakimura
+
+SasiKumar Ganesan
+
+Subhais Ojha
+
+Sven Stucki
+
+Thomas Robin
+
+Tom Jones
+
+Viky Manaila
+
+Vishwanath Vaidyanathan
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.openid.net/pipermail/openid-specs-digital-credentials-protocols/attachments/20230831/1f3f5eef/attachment-0001.html>
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+More information about the Openid-specs-digital-credentials-protocols mailing list[Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
 Kristina Yasuda yasudakristina at gmail.com
 Tue Dec 23 14:59:40 UTC 2025
 Previous message (by thread): [Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
