@@ -1,3 +1,1746 @@
+cat <<EOF > ~/IRC_QuickRef.txt
+=========================================
+      IRC QUICK-REF: CONSCRYPT/APEX
+=========================================
+PILLAR PATHS (2026):
+- Conscrypt: /apex/com.android.conscrypt/lib64
+- ART:       /apex/com.android.art/lib64
+- Runtime:   /apex/com.android.runtime/lib64
+- Statsd:    /apex/com.android.os.statsd/lib64
+
+SHIPPING & CONTACTS:
+- Registry Address: [As saved in Registry]
+- Signable Docs: u1+2241181828@pdffiller.com
+- Main Contact: jmarrujo1991@gmail.com
+
+MASTER REGISTRY LIMITS (2026):
+- SGA Limit: $1,690/mo
+- TWP Month: $1,210/mo
+
+CORE SHARED LIBS:
+- system: libc.so, libdl.so, liblog.so
+- art:    libandroidio.so, libicu.so
+=========================================
+EOF
+[com.android.conscrypt]
+additional.namespaces = com_android_adbd,com_android_art,com_android_i18n,com_android_media,com_android_neuralnetworks,com_android_os_statsd,com_android_resolv,com_android_runtime,com_android_tethering,sphal,system,vndk
+namespace.default.isolated = true
+namespace.default.search.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.permitted.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.permitted.paths += /system/${LIB}
+namespace.default.permitted.paths += /system_ext/${LIB}
+namespace.default.asan.search.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.asan.permitted.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.default.asan.permitted.paths += /system/${LIB}
+namespace.default.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.default.asan.permitted.paths += /system_ext/${LIB}
+namespace.default.hwasan.search.paths = /apex/com.android.conscrypt/${LIB}/hwasan
+namespace.default.hwasan.search.paths += /apex/com.android.conscrypt/${LIB}
+namespace.default.hwasan.permitted.paths = /apex/com.android.conscrypt/${LIB}/hwasan
+namespace.default.hwasan.permitted.paths += /apex/com.android.conscrypt/${LIB}
+namespace.default.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.default.hwasan.permitted.paths += /system/${LIB}
+namespace.default.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.default.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.default.links = com_android_art,system
+namespace.default.link.com_android_art.shared_libs = libandroidio.so
+namespace.default.link.system.shared_libs = libc.so:libdl.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_adbd.isolated = true
+namespace.com_android_adbd.search.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.permitted.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.permitted.paths += /system/${LIB}
+namespace.com_android_adbd.permitted.paths += /system_ext/${LIB}
+namespace.com_android_adbd.asan.search.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.asan.permitted.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /system/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_adbd.hwasan.search.paths = /apex/com.android.adbd/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.search.paths += /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.hwasan.permitted.paths = /apex/com.android.adbd/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.permitted.paths += /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_adbd.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_adbd.links = system
+namespace.com_android_adbd.link.system.shared_libs = libadbd_auth.so:libadbd_fs.so:libc.so:libdl.so:liblog.so:libm.so:libselinux.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_art.isolated = true
+namespace.com_android_art.search.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.permitted.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.permitted.paths += /system/${LIB}
+namespace.com_android_art.permitted.paths += /system_ext/${LIB}
+namespace.com_android_art.permitted.paths += /data
+namespace.com_android_art.permitted.paths += /apex/com.android.art/javalib
+namespace.com_android_art.asan.search.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.asan.permitted.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_art.asan.permitted.paths += /system/${LIB}
+namespace.com_android_art.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_art.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_art.asan.permitted.paths += /data/asan/data
+namespace.com_android_art.asan.permitted.paths += /data
+namespace.com_android_art.asan.permitted.paths += /apex/com.android.art/javalib
+namespace.com_android_art.hwasan.search.paths = /apex/com.android.art/${LIB}/hwasan
+namespace.com_android_art.hwasan.search.paths += /apex/com.android.art/${LIB}
+namespace.com_android_art.hwasan.permitted.paths = /apex/com.android.art/${LIB}/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /apex/com.android.art/${LIB}
+namespace.com_android_art.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_art.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_art.hwasan.permitted.paths += /data/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /data
+namespace.com_android_art.hwasan.permitted.paths += /apex/com.android.art/javalib/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /apex/com.android.art/javalib
+namespace.com_android_art.links = system,com_android_adbd,com_android_i18n,com_android_os_statsd
+namespace.com_android_art.link.system.shared_libs = heapprofd_client_api.so:libartpalette-system.so:libbinder_ndk.so:libc.so:libdl.so:libdl_android.so:liblog.so:libm.so:libselinux.so:libz.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_art.link.com_android_adbd.shared_libs = libadbconnection_client.so
+namespace.com_android_art.link.com_android_i18n.shared_libs = libicu.so:libicu_jni.so
+namespace.com_android_art.link.com_android_os_statsd.shared_libs = libstatspull.so:libstatssocket.so
+namespace.com_android_i18n.isolated = true
+namespace.com_android_i18n.search.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.permitted.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.permitted.paths += /system/${LIB}
+namespace.com_android_i18n.permitted.paths += /system_ext/${LIB}
+namespace.com_android_i18n.asan.search.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.asan.permitted.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /system/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_i18n.hwasan.search.paths = /apex/com.android.i18n/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.search.paths += /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.hwasan.permitted.paths = /apex/com.android.i18n/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.permitted.paths += /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_i18n.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_i18n.links = system,com_android_art
+namespace.com_android_i18n.link.system.shared_libs = libc.so:libdl.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_i18n.link.com_android_art.shared_libs = libnativehelper.so
+namespace.com_android_media.isolated = true
+namespace.com_android_media.visible = true
+namespace.com_android_media.search.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.permitted.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.permitted.paths += /system/${LIB}
+namespace.com_android_media.permitted.paths += /system_ext/${LIB}
+namespace.com_android_media.asan.search.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.asan.permitted.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_media.asan.permitted.paths += /system/${LIB}
+namespace.com_android_media.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_media.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_media.hwasan.search.paths = /apex/com.android.media/${LIB}/hwasan
+namespace.com_android_media.hwasan.search.paths += /apex/com.android.media/${LIB}
+namespace.com_android_media.hwasan.permitted.paths = /apex/com.android.media/${LIB}/hwasan
+namespace.com_android_media.hwasan.permitted.paths += /apex/com.android.media/${LIB}
+namespace.com_android_media.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_media.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_media.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_media.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_media.links = system,com_android_os_statsd
+namespace.com_android_media.link.system.shared_libs = libandroid.so:libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libmediametrics.so:libmediandk.so:libnativewindow.so:libvndksupport.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_media.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.com_android_neuralnetworks.isolated = true
+namespace.com_android_neuralnetworks.search.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.permitted.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.permitted.paths += /system/${LIB}
+namespace.com_android_neuralnetworks.permitted.paths += /system_ext/${LIB}
+namespace.com_android_neuralnetworks.asan.search.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /system/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_neuralnetworks.hwasan.search.paths = /apex/com.android.neuralnetworks/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.search.paths += /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.hwasan.permitted.paths = /apex/com.android.neuralnetworks/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_neuralnetworks.links = system,com_android_os_statsd
+namespace.com_android_neuralnetworks.link.system.shared_libs = libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libnativewindow.so:libneuralnetworks_packageinfo.so:libvndksupport.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_neuralnetworks.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.com_android_os_statsd.isolated = true
+namespace.com_android_os_statsd.search.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.permitted.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.permitted.paths += /system/${LIB}
+namespace.com_android_os_statsd.permitted.paths += /system_ext/${LIB}
+namespace.com_android_os_statsd.asan.search.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /system/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_os_statsd.hwasan.search.paths = /apex/com.android.os.statsd/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.search.paths += /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.hwasan.permitted.paths = /apex/com.android.os.statsd/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.permitted.paths += /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_os_statsd.links = system
+namespace.com_android_os_statsd.link.system.shared_libs = libbinder_ndk.so:libc.so:libdl.so:libincident.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_resolv.isolated = true
+namespace.com_android_resolv.search.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.permitted.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.permitted.paths += /system/${LIB}
+namespace.com_android_resolv.permitted.paths += /system_ext/${LIB}
+namespace.com_android_resolv.asan.search.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.asan.permitted.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /system/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_resolv.hwasan.search.paths = /apex/com.android.resolv/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.search.paths += /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.hwasan.permitted.paths = /apex/com.android.resolv/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.permitted.paths += /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_resolv.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_resolv.links = system,com_android_tethering,com_android_os_statsd
+namespace.com_android_resolv.link.system.shared_libs = libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_resolv.link.com_android_tethering.shared_libs = libcom.android.tethering.dns_helper.so
+namespace.com_android_resolv.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.com_android_runtime.isolated = true
+namespace.com_android_runtime.visible = true
+namespace.com_android_runtime.search.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.permitted.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.permitted.paths += /system/${LIB}
+namespace.com_android_runtime.permitted.paths += /system_ext/${LIB}
+namespace.com_android_runtime.asan.search.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.asan.permitted.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /system/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_runtime.hwasan.search.paths = /apex/com.android.runtime/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.search.paths += /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.hwasan.permitted.paths = /apex/com.android.runtime/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.permitted.paths += /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_runtime.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_runtime.links = com_android_art,system
+namespace.com_android_runtime.link.com_android_art.shared_libs = libdexfile.so
+namespace.com_android_runtime.link.system.shared_libs = liblog.so:libc.so:libdl.so:libdl_android.so:libm.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_tethering.isolated = true
+namespace.com_android_tethering.search.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.permitted.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.permitted.paths += /system/${LIB}
+namespace.com_android_tethering.permitted.paths += /system_ext/${LIB}
+namespace.com_android_tethering.asan.search.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.asan.permitted.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /system/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_tethering.hwasan.search.paths = /apex/com.android.tethering/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.search.paths += /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.hwasan.permitted.paths = /apex/com.android.tethering/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.permitted.paths += /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_tethering.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_tethering.links = system,com_android_art,com_android_os_statsd
+namespace.com_android_tethering.link.system.shared_libs = libandroid.so:libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libmediandk.so:libvndksupport.so:libz.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_tethering.link.com_android_art.shared_libs = libnativehelper.so
+namespace.com_android_tethering.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.sphal.isolated = true
+namespace.sphal.visible = true
+namespace.sphal.search.paths = /odm/${LIB}
+namespace.sphal.search.paths += /vendor/${LIB}
+namespace.sphal.search.paths += /vendor/${LIB}/egl
+namespace.sphal.search.paths += /vendor/${LIB}/hw
+namespace.sphal.permitted.paths = /odm/${LIB}
+namespace.sphal.permitted.paths += /vendor/${LIB}
+namespace.sphal.permitted.paths += /system/vendor/${LIB}
+namespace.sphal.asan.search.paths = /data/asan/odm/${LIB}
+namespace.sphal.asan.search.paths += /odm/${LIB}
+namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}
+namespace.sphal.asan.search.paths += /vendor/${LIB}
+namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}/egl
+namespace.sphal.asan.search.paths += /vendor/${LIB}/egl
+namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}/hw
+namespace.sphal.asan.search.paths += /vendor/${LIB}/hw
+namespace.sphal.asan.permitted.paths = /data/asan/odm/${LIB}
+namespace.sphal.asan.permitted.paths += /odm/${LIB}
+namespace.sphal.asan.permitted.paths += /data/asan/vendor/${LIB}
+namespace.sphal.asan.permitted.paths += /vendor/${LIB}
+namespace.sphal.asan.permitted.paths += /data/asan/system/vendor/${LIB}
+namespace.sphal.asan.permitted.paths += /system/vendor/${LIB}
+namespace.sphal.hwasan.search.paths = /odm/${LIB}/hwasan
+namespace.sphal.hwasan.search.paths += /odm/${LIB}
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/hwasan
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/egl/hwasan
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/egl
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/hw/hwasan
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/hw
+namespace.sphal.hwasan.permitted.paths = /odm/${LIB}/hwasan
+namespace.sphal.hwasan.permitted.paths += /odm/${LIB}
+namespace.sphal.hwasan.permitted.paths += /vendor/${LIB}/hwasan
+namespace.sphal.hwasan.permitted.paths += /vendor/${LIB}
+namespace.sphal.hwasan.permitted.paths += /system/vendor/${LIB}/hwasan
+namespace.sphal.hwasan.permitted.paths += /system/vendor/${LIB}
+namespace.sphal.links = system,vndk,com_android_neuralnetworks
+namespace.sphal.link.system.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so:libdl_android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.sphal.link.vndk.shared_libs = android.hardware.common-V2-ndk.so:android.hardware.common.fmq-V1-ndk.so:android.hardware.graphics.allocator-V1-ndk.so:android.hardware.graphics.common-V3-ndk.so:android.hardware.graphics.common@1.0.so:android.hardware.graphics.common@1.1.so:android.hardware.graphics.common@1.2.so:android.hardware.graphics.composer3-V1-ndk.so:android.hardware.graphics.mapper@2.0.so:android.hardware.graphics.mapper@2.1.so:android.hardware.graphics.mapper@3.0.so:android.hardware.graphics.mapper@4.0.so:android.hardware.renderscript@1.0.so:android.hidl.memory.token@1.0.so:android.hidl.memory@1.0-impl.so:android.hidl.memory@1.0.so:android.hidl.safe_union@1.0.so:libRSCpuRef.so:libRSDriver.so:libRS_internal.so:libbase.so:libbcinfo.so:libc++.so:libcutils.so:libdmabufheap.so:libgralloctypes.so:libhardware.so:libhidlbase.so:libhidlmemory.so:libion.so:libjsoncpp.so:liblzma.so:libprocessgroup.so:libunwindstack.so:libutils.so:libutilscallstack.so:libz.so
+namespace.sphal.link.com_android_neuralnetworks.shared_libs = libneuralnetworks.so
+namespace.system.isolated = true
+namespace.system.visible = true
+namespace.system.search.paths = /system/${LIB}
+namespace.system.search.paths += /system_ext/${LIB}
+namespace.system.permitted.paths = /system/${LIB}/drm
+namespace.system.permitted.paths += /system/${LIB}/extractors
+namespace.system.permitted.paths += /system/${LIB}/hw
+namespace.system.permitted.paths += /system_ext/${LIB}
+namespace.system.permitted.paths += /system/framework
+namespace.system.permitted.paths += /system/app
+namespace.system.permitted.paths += /system/priv-app
+namespace.system.permitted.paths += /system_ext/framework
+namespace.system.permitted.paths += /system_ext/app
+namespace.system.permitted.paths += /system_ext/priv-app
+namespace.system.permitted.paths += /vendor/framework
+namespace.system.permitted.paths += /vendor/app
+namespace.system.permitted.paths += /vendor/priv-app
+namespace.system.permitted.paths += /system/vendor/framework
+namespace.system.permitted.paths += /system/vendor/app
+namespace.system.permitted.paths += /system/vendor/priv-app
+namespace.system.permitted.paths += /odm/framework
+namespace.system.permitted.paths += /odm/app
+namespace.system.permitted.paths += /odm/priv-app
+namespace.system.permitted.paths += /oem/app
+namespace.system.permitted.paths += /product/framework
+namespace.system.permitted.paths += /product/app
+namespace.system.permitted.paths += /product/priv-app
+namespace.system.permitted.paths += /data
+namespace.system.permitted.paths += /mnt/expand
+namespace.system.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
+namespace.system.permitted.paths += /system/${LIB}/bootstrap
+namespace.system.asan.search.paths = /data/asan/system/${LIB}
+namespace.system.asan.search.paths += /system/${LIB}
+namespace.system.asan.search.paths += /data/asan/system_ext/${LIB}
+namespace.system.asan.search.paths += /system_ext/${LIB}
+namespace.system.asan.permitted.paths = /data/asan/system/${LIB}/drm
+namespace.system.asan.permitted.paths += /system/${LIB}/drm
+namespace.system.asan.permitted.paths += /data/asan/system/${LIB}/extractors
+namespace.system.asan.permitted.paths += /system/${LIB}/extractors
+namespace.system.asan.permitted.paths += /data/asan/system/${LIB}/hw
+namespace.system.asan.permitted.paths += /system/${LIB}/hw
+namespace.system.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.system.asan.permitted.paths += /system_ext/${LIB}
+namespace.system.asan.permitted.paths += /data/asan/system/framework
+namespace.system.asan.permitted.paths += /system/framework
+namespace.system.asan.permitted.paths += /data/asan/system/app
+namespace.system.asan.permitted.paths += /system/app
+namespace.system.asan.permitted.paths += /data/asan/system/priv-app
+namespace.system.asan.permitted.paths += /system/priv-app
+namespace.system.asan.permitted.paths += /data/asan/system_ext/framework
+namespace.system.asan.permitted.paths += /system_ext/framework
+namespace.system.asan.permitted.paths += /data/asan/system_ext/app
+namespace.system.asan.permitted.paths += /system_ext/app
+namespace.system.asan.permitted.paths += /data/asan/system_ext/priv-app
+namespace.system.asan.permitted.paths += /system_ext/priv-app
+namespace.system.asan.permitted.paths += /data/asan/vendor/framework
+namespace.system.asan.permitted.paths += /vendor/framework
+namespace.system.asan.permitted.paths += /data/asan/vendor/app
+namespace.system.asan.permitted.paths += /vendor/app
+namespace.system.asan.permitted.paths += /data/asan/vendor/priv-app
+namespace.system.asan.permitted.paths += /vendor/priv-app
+namespace.system.asan.permitted.paths += /data/asan/system/vendor/framework
+namespace.system.asan.permitted.paths += /system/vendor/framework
+namespace.system.asan.permitted.paths += /data/asan/system/vendor/app
+namespace.system.asan.permitted.paths += /system/vendor/app
+namespace.system.asan.permitted.paths += /data/asan/system/vendor/priv-app
+namespace.system.asan.permitted.paths += /system/vendor/priv-app
+namespace.system.asan.permitted.paths += /data/asan/odm/framework
+namespace.system.asan.permitted.paths += /odm/framework
+namespace.system.asan.permitted.paths += /data/asan/odm/app
+namespace.system.asan.permitted.paths += /odm/app
+namespace.system.asan.permitted.paths += /data/asan/odm/priv-app
+namespace.system.asan.permitted.paths += /odm/priv-app
+namespace.system.asan.permitted.paths += /data/asan/oem/app
+namespace.system.asan.permitted.paths += /oem/app
+namespace.system.asan.permitted.paths += /data/asan/product/framework
+namespace.system.asan.permitted.paths += /product/framework
+namespace.system.asan.permitted.paths += /data/asan/product/app
+namespace.system.asan.permitted.paths += /product/app
+namespace.system.asan.permitted.paths += /data/asan/product/priv-app
+namespace.system.asan.permitted.paths += /product/priv-app
+namespace.system.asan.permitted.paths += /data/asan/data
+namespace.system.asan.permitted.paths += /data
+namespace.system.asan.permitted.paths += /data/asan/mnt/expand
+namespace.system.asan.permitted.paths += /mnt/expand
+namespace.system.asan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
+namespace.system.asan.permitted.paths += /data/asan/system/${LIB}/bootstrap
+namespace.system.asan.permitted.paths += /system/${LIB}/bootstrap
+namespace.system.hwasan.search.paths = /system/${LIB}/hwasan
+namespace.system.hwasan.search.paths += /system/${LIB}
+namespace.system.hwasan.search.paths += /system_ext/${LIB}/hwasan
+namespace.system.hwasan.search.paths += /system_ext/${LIB}
+namespace.system.hwasan.permitted.paths = /system/${LIB}/drm/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/drm
+namespace.system.hwasan.permitted.paths += /system/${LIB}/extractors/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/extractors
+namespace.system.hwasan.permitted.paths += /system/${LIB}/hw/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/hw
+namespace.system.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.system.hwasan.permitted.paths += /system/framework/hwasan
+namespace.system.hwasan.permitted.paths += /system/framework
+namespace.system.hwasan.permitted.paths += /system/app/hwasan
+namespace.system.hwasan.permitted.paths += /system/app
+namespace.system.hwasan.permitted.paths += /system/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /system/priv-app
+namespace.system.hwasan.permitted.paths += /system_ext/framework/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/framework
+namespace.system.hwasan.permitted.paths += /system_ext/app/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/app
+namespace.system.hwasan.permitted.paths += /system_ext/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/priv-app
+namespace.system.hwasan.permitted.paths += /vendor/framework/hwasan
+namespace.system.hwasan.permitted.paths += /vendor/framework
+namespace.system.hwasan.permitted.paths += /vendor/app/hwasan
+namespace.system.hwasan.permitted.paths += /vendor/app
+namespace.system.hwasan.permitted.paths += /vendor/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /vendor/priv-app
+namespace.system.hwasan.permitted.paths += /system/vendor/framework/hwasan
+namespace.system.hwasan.permitted.paths += /system/vendor/framework
+namespace.system.hwasan.permitted.paths += /system/vendor/app/hwasan
+namespace.system.hwasan.permitted.paths += /system/vendor/app
+namespace.system.hwasan.permitted.paths += /system/vendor/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /system/vendor/priv-app
+namespace.system.hwasan.permitted.paths += /odm/framework/hwasan
+namespace.system.hwasan.permitted.paths += /odm/framework
+namespace.system.hwasan.permitted.paths += /odm/app/hwasan
+namespace.system.hwasan.permitted.paths += /odm/app
+namespace.system.hwasan.permitted.paths += /odm/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /odm/priv-app
+namespace.system.hwasan.permitted.paths += /oem/app/hwasan
+namespace.system.hwasan.permitted.paths += /oem/app
+namespace.system.hwasan.permitted.paths += /product/framework/hwasan
+namespace.system.hwasan.permitted.paths += /product/framework
+namespace.system.hwasan.permitted.paths += /product/app/hwasan
+namespace.system.hwasan.permitted.paths += /product/app
+namespace.system.hwasan.permitted.paths += /product/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /product/priv-app
+namespace.system.hwasan.permitted.paths += /data/hwasan
+namespace.system.hwasan.permitted.paths += /data
+namespace.system.hwasan.permitted.paths += /mnt/expand/hwasan
+namespace.system.hwasan.permitted.paths += /mnt/expand
+namespace.system.hwasan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic/hwasan
+namespace.system.hwasan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
+namespace.system.hwasan.permitted.paths += /system/${LIB}/bootstrap/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/bootstrap
+namespace.system.links = com_android_adbd,com_android_i18n,system,com_android_tethering,com_android_art,com_android_resolv,com_android_neuralnetworks,com_android_os_statsd
+namespace.system.link.com_android_adbd.shared_libs = libadb_pairing_auth.so:libadb_pairing_connection.so:libadb_pairing_server.so
+namespace.system.link.com_android_i18n.shared_libs = libandroidicu.so:libicu.so:libicui18n.so:libicuuc.so
+namespace.system.link.system.shared_libs = libbinder_rpc_unstable.so
+namespace.system.link.com_android_tethering.shared_libs = libcom.android.tethering.connectivity_native.so:libnetd_updatable.so
+namespace.system.link.com_android_art.shared_libs = libdexfile.so:libjdwp.so:libnativebridge.so:libnativehelper.so:libnativeloader.so:libsigchain.so
+namespace.system.link.com_android_resolv.shared_libs = libnetd_resolv.so
+namespace.system.link.com_android_neuralnetworks.shared_libs = libneuralnetworks.so
+namespace.system.link.com_android_os_statsd.shared_libs = libstatspull.so:libstatssocket.so
+namespace.vndk.isolated = true
+namespace.vndk.visible = true
+namespace.vndk.search.paths = /odm/${LIB}/vndk-sp
+namespace.vndk.search.paths += /vendor/${LIB}/vndk-sp
+namespace.vndk.search.paths += /apex/com.android.vndk.v33/${LIB}
+namespace.vndk.search.paths += /odm/${LIB}
+namespace.vndk.search.paths += /vendor/${LIB}
+namespace.vndk.permitted.paths = /odm/${LIB}/hw
+namespace.vndk.permitted.paths += /odm/${LIB}/egl
+namespace.vndk.permitted.paths += /vendor/${LIB}/hw
+namespace.vndk.permitted.paths += /vendor/${LIB}/egl
+namespace.vndk.permitted.paths += /system/vendor/${LIB}/hw
+namespace.vndk.permitted.paths += /system/vendor/${LIB}/egl
+namespace.vndk.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw
+namespace.vndk.asan.search.paths = /data/asan/odm/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /odm/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /data/asan/vendor/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /vendor/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /apex/com.android.vndk.v33/${LIB}
+namespace.vndk.asan.search.paths += /data/asan/odm/${LIB}
+namespace.vndk.asan.search.paths += /odm/${LIB}
+namespace.vndk.asan.search.paths += /data/asan/vendor/${LIB}
+namespace.vndk.asan.search.paths += /vendor/${LIB}
+namespace.vndk.asan.permitted.paths = /data/asan/odm/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /odm/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /data/asan/odm/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /odm/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /data/asan/vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /data/asan/vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /data/asan/system/vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /system/vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /data/asan/system/vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /system/vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw
+namespace.vndk.hwasan.search.paths = /odm/${LIB}/vndk-sp/hwasan
+namespace.vndk.hwasan.search.paths += /odm/${LIB}/vndk-sp
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}/vndk-sp/hwasan
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}/vndk-sp
+namespace.vndk.hwasan.search.paths += /apex/com.android.vndk.v33/${LIB}/hwasan
+namespace.vndk.hwasan.search.paths += /apex/com.android.vndk.v33/${LIB}
+namespace.vndk.hwasan.search.paths += /odm/${LIB}/hwasan
+namespace.vndk.hwasan.search.paths += /odm/${LIB}
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}/hwasan
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}
+namespace.vndk.hwasan.permitted.paths = /odm/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /odm/${LIB}/hw
+namespace.vndk.hwasan.permitted.paths += /odm/${LIB}/egl/hwasan
+namespace.vndk.hwasan.permitted.paths += /odm/${LIB}/egl
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/hw
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/egl/hwasan
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/egl
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/hw
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/egl/hwasan
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/egl
+namespace.vndk.hwasan.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw
+namespace.vndk.links = system,com_android_neuralnetworks
+namespace.vndk.link.system.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so:libdl_android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.vndk.link.com_android_neuralnetworks.shared_libs = libneuralnetworks.so# See options at https://github.com/coogie/oscailte
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: https://www.home-assistant.io
+title: Home Assistant
+subtitle: Open source home automation that puts local control and privacy first.
+author: Home Assistant
+simple_search: https://www.google.com/search
+description: >-
+  Open source home automation that puts local control and privacy first.
+  Powered by a worldwide community of tinkerers and DIY enthusiasts.
+  Perfect to run on a Raspberry Pi or a local server.
+
+# Default date format is "ordinal" (resulting in "July 22nd 2007")
+# You can customize the format as defined in
+# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# Additionally, %o will give you the ordinal representation of the day
+date_format: "ordinal"
+
+# RSS / Email (optional) subscription links (change if using something like Feedburner)
+subscribe_rss: /atom.xml
+subscribe_email:
+# RSS feeds can list your email address if you like
+email:
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+permalink: /blog/:year/:month/:day/:title/
+source: source
+destination: public/
+plugins_dir: plugins
+code_dir: downloads/code
+category_dir: blog/categories
+
+markdown: CommonMark
+timezone: UTC
+liquid:
+  error_mode: strict
+
+commonmark:
+  options: ["SMART", "FOOTNOTES", "UNSAFE"]
+  extensions: ["strikethrough", "autolink", "table"]
+
+highlighter: none
+
+plugins:
+  - jekyll-toc
+
+paginate: 10 # Posts per page on the blog index
+paginate_path: "blog/posts/:num" # Directory base for pagination URLs eg. /posts/2/
+recent_posts: 5 # Posts in the sidebar Recent Posts section
+excerpt_link: "Read on &rarr;" # "Continue reading" link text at the bottom of excerpted articles
+excerpt_separator: "<!--more-->"
+
+titlecase: true # Converts page and post titles to titlecase
+
+# Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+# post_asides:
+# page_asides:
+
+collections:
+  integrations:
+    output: true
+  docs:
+    output: true
+  addons:
+    output: true
+  faq:
+    output: true
+  dashboards:
+    output: true
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+#Search
+algolia:
+  api_key: "ba6f7e6d97b3d3d2f778978c742a47c6"
+
+# Twitter
+twitter_user: balloob
+twitter_tweet_button: true
+
+# Google Analytics
+# google_analytics_tracking_id: UA-57927901-1
+
+# Facebook Like
+facebook_like: true
+
+social:
+  visible: false
+  facebook:
+    app_id: 338291289691179
+
+  twitter:
+    account: home_assistant
+
+  mastodon:
+    account: "https://fosstodon.org/@homeassistant"
+
+# Home Assistant release details
+current_major_version: 2026
+current_minor_version: 1
+current_patch_version: 0
+date_released: 2026-01-07
+
+# Either # or the anchor link to latest release notes in the blog post.
+# Must be prefixed with a # and have double quotes around it.
+# Major release:
+patch_version_notes: ""
+# Minor release (Example #release-0431---april-25):
+
+# Set Front matter defaults
+defaults:
+  # Defaults for all pages
+  - scope:
+      path: ""
+    values:
+      layout: page
+      comments: false
+      footer: true
+      sharing: true
+      sidebar: true
+      featured: false
+  # Defaults for blogs posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      footer: true
+      sharing: true
+      sidebar: true
+      toc: true
+  # Enable table of contents for integrations and installations
+  #
+  # To set toc as a default value, we need to set the scope with an empty path
+  # and the collection as type
+  # https://github.com/toshimaru/jekyll-toc/issues/116#issuecomment-644205770
+  #
+  - scope:
+      path: ""
+      type: dashboards
+    values:
+      toc: true
+  - scope:
+      path: ""
+      type: integrations
+    values:
+      toc: true
+  - scope:
+      path: ""
+      type: docs
+    values:
+      toc: true
+  - scope:
+      path: "installation/*"
+    values:
+      toc: true
+  - scope:
+      path: "common-tasks/*"
+    values:
+      toc: true
+  - scope:
+      path: "getting-started/*"
+    values:
+      toc: true
+  - scope:
+      path: "more-info/*"
+    values:
+      toc: true
+  - scope:
+      path: "voice_control/*"
+    values:
+      toc: true
+  - scope:
+      path: "hassio/*"
+    values:
+      toc: true
+  # Remove some resources from sitemap
+  - scope:
+      path: "google*.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "static/fonts/**/*.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "static/mdi-demo.html"
+    values:
+      sitemap: false
+
+  - scope:
+      path: "blueprints/**/*.yaml"
+    values:
+      render_with_liquid: false
+      layout: none
+
+# Support for files Jekyll will normally exclude
+include:
+  - "_headers"
+  - "_redirects"
+  - ".well-known"
+
+# Table of contents
+# https://github.com/toshimaru/jekyll-toc
+toc:
+  min_level: 2 # default: 1
+  max_level: 3 # default: 6
+
+# Configuration for installation pages
+installation:
+  container: "ghcr.io/home-assistant/home-assistant"
+  versions:
+    python: "3.13"
+  types:
+    odroid:
+      board: ODROID
+      installation_media: "eMMC module or SD card"
+      variants:
+        - name: "ODROID-N2"
+          key: "odroid-n2"
+        - name: "ODROID-N2+"
+          key: "odroid-n2"
+        - name: "ODROID-C2"
+          key: "odroid-c2"
+        - name: "ODROID-C4"
+          key: "odroid-c4"
+        - name: "ODROID-M1"
+          key: "odroid-m1"
+        - name: "ODROID-M1S"
+          key: "odroid-m1s"
+
+    raspberrypi:
+      board: Raspberry Pi
+      installation_media: "SD card"
+      variants:
+        - name: "Raspberry Pi 5"
+          key: "rpi5-64"
+        - name: "Raspberry Pi 4"
+          key: "rpi4-64"
+
+    generic-x86-64:
+      board: Generic x86-64
+      installation_media: "storage device"
+      variants:
+        - name: Anonymous(JJosephineMarrujo)
+          key: 4dd14de5f18791b3594256a9ead6bfddafa0434f11e0d39c3b551dda53db2fff
+include ':app', ':termux-shared', ':terminal-emulator', ':terminal-view'[com.android.conscrypt]
+additional.namespaces = com_android_adbd,com_android_art,com_android_i18n,com_android_media,com_android_neuralnetworks,com_android_os_statsd,com_android_resolv,com_android_runtime,com_android_tethering,sphal,system,vndk
+namespace.default.isolated = true
+namespace.default.search.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.permitted.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.permitted.paths += /system/${LIB}
+namespace.default.permitted.paths += /system_ext/${LIB}
+namespace.default.asan.search.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.asan.permitted.paths = /apex/com.android.conscrypt/${LIB}
+namespace.default.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.default.asan.permitted.paths += /system/${LIB}
+namespace.default.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.default.asan.permitted.paths += /system_ext/${LIB}
+namespace.default.hwasan.search.paths = /apex/com.android.conscrypt/${LIB}/hwasan
+namespace.default.hwasan.search.paths += /apex/com.android.conscrypt/${LIB}
+namespace.default.hwasan.permitted.paths = /apex/com.android.conscrypt/${LIB}/hwasan
+namespace.default.hwasan.permitted.paths += /apex/com.android.conscrypt/${LIB}
+namespace.default.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.default.hwasan.permitted.paths += /system/${LIB}
+namespace.default.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.default.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.default.links = com_android_art,system
+namespace.default.link.com_android_art.shared_libs = libandroidio.so
+namespace.default.link.system.shared_libs = libc.so:libdl.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_adbd.isolated = true
+namespace.com_android_adbd.search.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.permitted.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.permitted.paths += /system/${LIB}
+namespace.com_android_adbd.permitted.paths += /system_ext/${LIB}
+namespace.com_android_adbd.asan.search.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.asan.permitted.paths = /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /system/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_adbd.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_adbd.hwasan.search.paths = /apex/com.android.adbd/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.search.paths += /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.hwasan.permitted.paths = /apex/com.android.adbd/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.permitted.paths += /apex/com.android.adbd/${LIB}
+namespace.com_android_adbd.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_adbd.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_adbd.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_adbd.links = system
+namespace.com_android_adbd.link.system.shared_libs = libadbd_auth.so:libadbd_fs.so:libc.so:libdl.so:liblog.so:libm.so:libselinux.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_art.isolated = true
+namespace.com_android_art.search.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.permitted.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.permitted.paths += /system/${LIB}
+namespace.com_android_art.permitted.paths += /system_ext/${LIB}
+namespace.com_android_art.permitted.paths += /data
+namespace.com_android_art.permitted.paths += /apex/com.android.art/javalib
+namespace.com_android_art.asan.search.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.asan.permitted.paths = /apex/com.android.art/${LIB}
+namespace.com_android_art.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_art.asan.permitted.paths += /system/${LIB}
+namespace.com_android_art.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_art.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_art.asan.permitted.paths += /data/asan/data
+namespace.com_android_art.asan.permitted.paths += /data
+namespace.com_android_art.asan.permitted.paths += /apex/com.android.art/javalib
+namespace.com_android_art.hwasan.search.paths = /apex/com.android.art/${LIB}/hwasan
+namespace.com_android_art.hwasan.search.paths += /apex/com.android.art/${LIB}
+namespace.com_android_art.hwasan.permitted.paths = /apex/com.android.art/${LIB}/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /apex/com.android.art/${LIB}
+namespace.com_android_art.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_art.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_art.hwasan.permitted.paths += /data/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /data
+namespace.com_android_art.hwasan.permitted.paths += /apex/com.android.art/javalib/hwasan
+namespace.com_android_art.hwasan.permitted.paths += /apex/com.android.art/javalib
+namespace.com_android_art.links = system,com_android_adbd,com_android_i18n,com_android_os_statsd
+namespace.com_android_art.link.system.shared_libs = heapprofd_client_api.so:libartpalette-system.so:libbinder_ndk.so:libc.so:libdl.so:libdl_android.so:liblog.so:libm.so:libselinux.so:libz.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_art.link.com_android_adbd.shared_libs = libadbconnection_client.so
+namespace.com_android_art.link.com_android_i18n.shared_libs = libicu.so:libicu_jni.so
+namespace.com_android_art.link.com_android_os_statsd.shared_libs = libstatspull.so:libstatssocket.so
+namespace.com_android_i18n.isolated = true
+namespace.com_android_i18n.search.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.permitted.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.permitted.paths += /system/${LIB}
+namespace.com_android_i18n.permitted.paths += /system_ext/${LIB}
+namespace.com_android_i18n.asan.search.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.asan.permitted.paths = /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /system/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_i18n.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_i18n.hwasan.search.paths = /apex/com.android.i18n/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.search.paths += /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.hwasan.permitted.paths = /apex/com.android.i18n/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.permitted.paths += /apex/com.android.i18n/${LIB}
+namespace.com_android_i18n.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_i18n.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_i18n.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_i18n.links = system,com_android_art
+namespace.com_android_i18n.link.system.shared_libs = libc.so:libdl.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_i18n.link.com_android_art.shared_libs = libnativehelper.so
+namespace.com_android_media.isolated = true
+namespace.com_android_media.visible = true
+namespace.com_android_media.search.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.permitted.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.permitted.paths += /system/${LIB}
+namespace.com_android_media.permitted.paths += /system_ext/${LIB}
+namespace.com_android_media.asan.search.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.asan.permitted.paths = /apex/com.android.media/${LIB}
+namespace.com_android_media.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_media.asan.permitted.paths += /system/${LIB}
+namespace.com_android_media.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_media.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_media.hwasan.search.paths = /apex/com.android.media/${LIB}/hwasan
+namespace.com_android_media.hwasan.search.paths += /apex/com.android.media/${LIB}
+namespace.com_android_media.hwasan.permitted.paths = /apex/com.android.media/${LIB}/hwasan
+namespace.com_android_media.hwasan.permitted.paths += /apex/com.android.media/${LIB}
+namespace.com_android_media.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_media.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_media.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_media.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_media.links = system,com_android_os_statsd
+namespace.com_android_media.link.system.shared_libs = libandroid.so:libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libmediametrics.so:libmediandk.so:libnativewindow.so:libvndksupport.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_media.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.com_android_neuralnetworks.isolated = true
+namespace.com_android_neuralnetworks.search.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.permitted.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.permitted.paths += /system/${LIB}
+namespace.com_android_neuralnetworks.permitted.paths += /system_ext/${LIB}
+namespace.com_android_neuralnetworks.asan.search.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths = /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /system/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_neuralnetworks.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_neuralnetworks.hwasan.search.paths = /apex/com.android.neuralnetworks/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.search.paths += /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.hwasan.permitted.paths = /apex/com.android.neuralnetworks/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /apex/com.android.neuralnetworks/${LIB}
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_neuralnetworks.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_neuralnetworks.links = system,com_android_os_statsd
+namespace.com_android_neuralnetworks.link.system.shared_libs = libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libnativewindow.so:libneuralnetworks_packageinfo.so:libvndksupport.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_neuralnetworks.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.com_android_os_statsd.isolated = true
+namespace.com_android_os_statsd.search.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.permitted.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.permitted.paths += /system/${LIB}
+namespace.com_android_os_statsd.permitted.paths += /system_ext/${LIB}
+namespace.com_android_os_statsd.asan.search.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths = /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /system/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_os_statsd.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_os_statsd.hwasan.search.paths = /apex/com.android.os.statsd/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.search.paths += /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.hwasan.permitted.paths = /apex/com.android.os.statsd/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.permitted.paths += /apex/com.android.os.statsd/${LIB}
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_os_statsd.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_os_statsd.links = system
+namespace.com_android_os_statsd.link.system.shared_libs = libbinder_ndk.so:libc.so:libdl.so:libincident.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_resolv.isolated = true
+namespace.com_android_resolv.search.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.permitted.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.permitted.paths += /system/${LIB}
+namespace.com_android_resolv.permitted.paths += /system_ext/${LIB}
+namespace.com_android_resolv.asan.search.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.asan.permitted.paths = /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /system/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_resolv.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_resolv.hwasan.search.paths = /apex/com.android.resolv/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.search.paths += /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.hwasan.permitted.paths = /apex/com.android.resolv/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.permitted.paths += /apex/com.android.resolv/${LIB}
+namespace.com_android_resolv.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_resolv.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_resolv.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_resolv.links = system,com_android_tethering,com_android_os_statsd
+namespace.com_android_resolv.link.system.shared_libs = libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_resolv.link.com_android_tethering.shared_libs = libcom.android.tethering.dns_helper.so
+namespace.com_android_resolv.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.com_android_runtime.isolated = true
+namespace.com_android_runtime.visible = true
+namespace.com_android_runtime.search.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.permitted.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.permitted.paths += /system/${LIB}
+namespace.com_android_runtime.permitted.paths += /system_ext/${LIB}
+namespace.com_android_runtime.asan.search.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.asan.permitted.paths = /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /system/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_runtime.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_runtime.hwasan.search.paths = /apex/com.android.runtime/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.search.paths += /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.hwasan.permitted.paths = /apex/com.android.runtime/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.permitted.paths += /apex/com.android.runtime/${LIB}
+namespace.com_android_runtime.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_runtime.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_runtime.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_runtime.links = com_android_art,system
+namespace.com_android_runtime.link.com_android_art.shared_libs = libdexfile.so
+namespace.com_android_runtime.link.system.shared_libs = liblog.so:libc.so:libdl.so:libdl_android.so:libm.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_tethering.isolated = true
+namespace.com_android_tethering.search.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.permitted.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.permitted.paths += /system/${LIB}
+namespace.com_android_tethering.permitted.paths += /system_ext/${LIB}
+namespace.com_android_tethering.asan.search.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.asan.permitted.paths = /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /data/asan/system/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /system/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.com_android_tethering.asan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_tethering.hwasan.search.paths = /apex/com.android.tethering/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.search.paths += /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.hwasan.permitted.paths = /apex/com.android.tethering/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.permitted.paths += /apex/com.android.tethering/${LIB}
+namespace.com_android_tethering.hwasan.permitted.paths += /system/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.permitted.paths += /system/${LIB}
+namespace.com_android_tethering.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.com_android_tethering.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.com_android_tethering.links = system,com_android_art,com_android_os_statsd
+namespace.com_android_tethering.link.system.shared_libs = libandroid.so:libbinder_ndk.so:libc.so:libdl.so:liblog.so:libm.so:libmediandk.so:libvndksupport.so:libz.so:libdl_android.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.com_android_tethering.link.com_android_art.shared_libs = libnativehelper.so
+namespace.com_android_tethering.link.com_android_os_statsd.shared_libs = libstatssocket.so
+namespace.sphal.isolated = true
+namespace.sphal.visible = true
+namespace.sphal.search.paths = /odm/${LIB}
+namespace.sphal.search.paths += /vendor/${LIB}
+namespace.sphal.search.paths += /vendor/${LIB}/egl
+namespace.sphal.search.paths += /vendor/${LIB}/hw
+namespace.sphal.permitted.paths = /odm/${LIB}
+namespace.sphal.permitted.paths += /vendor/${LIB}
+namespace.sphal.permitted.paths += /system/vendor/${LIB}
+namespace.sphal.asan.search.paths = /data/asan/odm/${LIB}
+namespace.sphal.asan.search.paths += /odm/${LIB}
+namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}
+namespace.sphal.asan.search.paths += /vendor/${LIB}
+namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}/egl
+namespace.sphal.asan.search.paths += /vendor/${LIB}/egl
+namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}/hw
+namespace.sphal.asan.search.paths += /vendor/${LIB}/hw
+namespace.sphal.asan.permitted.paths = /data/asan/odm/${LIB}
+namespace.sphal.asan.permitted.paths += /odm/${LIB}
+namespace.sphal.asan.permitted.paths += /data/asan/vendor/${LIB}
+namespace.sphal.asan.permitted.paths += /vendor/${LIB}
+namespace.sphal.asan.permitted.paths += /data/asan/system/vendor/${LIB}
+namespace.sphal.asan.permitted.paths += /system/vendor/${LIB}
+namespace.sphal.hwasan.search.paths = /odm/${LIB}/hwasan
+namespace.sphal.hwasan.search.paths += /odm/${LIB}
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/hwasan
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/egl/hwasan
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/egl
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/hw/hwasan
+namespace.sphal.hwasan.search.paths += /vendor/${LIB}/hw
+namespace.sphal.hwasan.permitted.paths = /odm/${LIB}/hwasan
+namespace.sphal.hwasan.permitted.paths += /odm/${LIB}
+namespace.sphal.hwasan.permitted.paths += /vendor/${LIB}/hwasan
+namespace.sphal.hwasan.permitted.paths += /vendor/${LIB}
+namespace.sphal.hwasan.permitted.paths += /system/vendor/${LIB}/hwasan
+namespace.sphal.hwasan.permitted.paths += /system/vendor/${LIB}
+namespace.sphal.links = system,vndk,com_android_neuralnetworks
+namespace.sphal.link.system.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so:libdl_android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.sphal.link.vndk.shared_libs = android.hardware.common-V2-ndk.so:android.hardware.common.fmq-V1-ndk.so:android.hardware.graphics.allocator-V1-ndk.so:android.hardware.graphics.common-V3-ndk.so:android.hardware.graphics.common@1.0.so:android.hardware.graphics.common@1.1.so:android.hardware.graphics.common@1.2.so:android.hardware.graphics.composer3-V1-ndk.so:android.hardware.graphics.mapper@2.0.so:android.hardware.graphics.mapper@2.1.so:android.hardware.graphics.mapper@3.0.so:android.hardware.graphics.mapper@4.0.so:android.hardware.renderscript@1.0.so:android.hidl.memory.token@1.0.so:android.hidl.memory@1.0-impl.so:android.hidl.memory@1.0.so:android.hidl.safe_union@1.0.so:libRSCpuRef.so:libRSDriver.so:libRS_internal.so:libbase.so:libbcinfo.so:libc++.so:libcutils.so:libdmabufheap.so:libgralloctypes.so:libhardware.so:libhidlbase.so:libhidlmemory.so:libion.so:libjsoncpp.so:liblzma.so:libprocessgroup.so:libunwindstack.so:libutils.so:libutilscallstack.so:libz.so
+namespace.sphal.link.com_android_neuralnetworks.shared_libs = libneuralnetworks.so
+namespace.system.isolated = true
+namespace.system.visible = true
+namespace.system.search.paths = /system/${LIB}
+namespace.system.search.paths += /system_ext/${LIB}
+namespace.system.permitted.paths = /system/${LIB}/drm
+namespace.system.permitted.paths += /system/${LIB}/extractors
+namespace.system.permitted.paths += /system/${LIB}/hw
+namespace.system.permitted.paths += /system_ext/${LIB}
+namespace.system.permitted.paths += /system/framework
+namespace.system.permitted.paths += /system/app
+namespace.system.permitted.paths += /system/priv-app
+namespace.system.permitted.paths += /system_ext/framework
+namespace.system.permitted.paths += /system_ext/app
+namespace.system.permitted.paths += /system_ext/priv-app
+namespace.system.permitted.paths += /vendor/framework
+namespace.system.permitted.paths += /vendor/app
+namespace.system.permitted.paths += /vendor/priv-app
+namespace.system.permitted.paths += /system/vendor/framework
+namespace.system.permitted.paths += /system/vendor/app
+namespace.system.permitted.paths += /system/vendor/priv-app
+namespace.system.permitted.paths += /odm/framework
+namespace.system.permitted.paths += /odm/app
+namespace.system.permitted.paths += /odm/priv-app
+namespace.system.permitted.paths += /oem/app
+namespace.system.permitted.paths += /product/framework
+namespace.system.permitted.paths += /product/app
+namespace.system.permitted.paths += /product/priv-app
+namespace.system.permitted.paths += /data
+namespace.system.permitted.paths += /mnt/expand
+namespace.system.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
+namespace.system.permitted.paths += /system/${LIB}/bootstrap
+namespace.system.asan.search.paths = /data/asan/system/${LIB}
+namespace.system.asan.search.paths += /system/${LIB}
+namespace.system.asan.search.paths += /data/asan/system_ext/${LIB}
+namespace.system.asan.search.paths += /system_ext/${LIB}
+namespace.system.asan.permitted.paths = /data/asan/system/${LIB}/drm
+namespace.system.asan.permitted.paths += /system/${LIB}/drm
+namespace.system.asan.permitted.paths += /data/asan/system/${LIB}/extractors
+namespace.system.asan.permitted.paths += /system/${LIB}/extractors
+namespace.system.asan.permitted.paths += /data/asan/system/${LIB}/hw
+namespace.system.asan.permitted.paths += /system/${LIB}/hw
+namespace.system.asan.permitted.paths += /data/asan/system_ext/${LIB}
+namespace.system.asan.permitted.paths += /system_ext/${LIB}
+namespace.system.asan.permitted.paths += /data/asan/system/framework
+namespace.system.asan.permitted.paths += /system/framework
+namespace.system.asan.permitted.paths += /data/asan/system/app
+namespace.system.asan.permitted.paths += /system/app
+namespace.system.asan.permitted.paths += /data/asan/system/priv-app
+namespace.system.asan.permitted.paths += /system/priv-app
+namespace.system.asan.permitted.paths += /data/asan/system_ext/framework
+namespace.system.asan.permitted.paths += /system_ext/framework
+namespace.system.asan.permitted.paths += /data/asan/system_ext/app
+namespace.system.asan.permitted.paths += /system_ext/app
+namespace.system.asan.permitted.paths += /data/asan/system_ext/priv-app
+namespace.system.asan.permitted.paths += /system_ext/priv-app
+namespace.system.asan.permitted.paths += /data/asan/vendor/framework
+namespace.system.asan.permitted.paths += /vendor/framework
+namespace.system.asan.permitted.paths += /data/asan/vendor/app
+namespace.system.asan.permitted.paths += /vendor/app
+namespace.system.asan.permitted.paths += /data/asan/vendor/priv-app
+namespace.system.asan.permitted.paths += /vendor/priv-app
+namespace.system.asan.permitted.paths += /data/asan/system/vendor/framework
+namespace.system.asan.permitted.paths += /system/vendor/framework
+namespace.system.asan.permitted.paths += /data/asan/system/vendor/app
+namespace.system.asan.permitted.paths += /system/vendor/app
+namespace.system.asan.permitted.paths += /data/asan/system/vendor/priv-app
+namespace.system.asan.permitted.paths += /system/vendor/priv-app
+namespace.system.asan.permitted.paths += /data/asan/odm/framework
+namespace.system.asan.permitted.paths += /odm/framework
+namespace.system.asan.permitted.paths += /data/asan/odm/app
+namespace.system.asan.permitted.paths += /odm/app
+namespace.system.asan.permitted.paths += /data/asan/odm/priv-app
+namespace.system.asan.permitted.paths += /odm/priv-app
+namespace.system.asan.permitted.paths += /data/asan/oem/app
+namespace.system.asan.permitted.paths += /oem/app
+namespace.system.asan.permitted.paths += /data/asan/product/framework
+namespace.system.asan.permitted.paths += /product/framework
+namespace.system.asan.permitted.paths += /data/asan/product/app
+namespace.system.asan.permitted.paths += /product/app
+namespace.system.asan.permitted.paths += /data/asan/product/priv-app
+namespace.system.asan.permitted.paths += /product/priv-app
+namespace.system.asan.permitted.paths += /data/asan/data
+namespace.system.asan.permitted.paths += /data
+namespace.system.asan.permitted.paths += /data/asan/mnt/expand
+namespace.system.asan.permitted.paths += /mnt/expand
+namespace.system.asan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
+namespace.system.asan.permitted.paths += /data/asan/system/${LIB}/bootstrap
+namespace.system.asan.permitted.paths += /system/${LIB}/bootstrap
+namespace.system.hwasan.search.paths = /system/${LIB}/hwasan
+namespace.system.hwasan.search.paths += /system/${LIB}
+namespace.system.hwasan.search.paths += /system_ext/${LIB}/hwasan
+namespace.system.hwasan.search.paths += /system_ext/${LIB}
+namespace.system.hwasan.permitted.paths = /system/${LIB}/drm/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/drm
+namespace.system.hwasan.permitted.paths += /system/${LIB}/extractors/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/extractors
+namespace.system.hwasan.permitted.paths += /system/${LIB}/hw/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/hw
+namespace.system.hwasan.permitted.paths += /system_ext/${LIB}/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/${LIB}
+namespace.system.hwasan.permitted.paths += /system/framework/hwasan
+namespace.system.hwasan.permitted.paths += /system/framework
+namespace.system.hwasan.permitted.paths += /system/app/hwasan
+namespace.system.hwasan.permitted.paths += /system/app
+namespace.system.hwasan.permitted.paths += /system/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /system/priv-app
+namespace.system.hwasan.permitted.paths += /system_ext/framework/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/framework
+namespace.system.hwasan.permitted.paths += /system_ext/app/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/app
+namespace.system.hwasan.permitted.paths += /system_ext/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /system_ext/priv-app
+namespace.system.hwasan.permitted.paths += /vendor/framework/hwasan
+namespace.system.hwasan.permitted.paths += /vendor/framework
+namespace.system.hwasan.permitted.paths += /vendor/app/hwasan
+namespace.system.hwasan.permitted.paths += /vendor/app
+namespace.system.hwasan.permitted.paths += /vendor/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /vendor/priv-app
+namespace.system.hwasan.permitted.paths += /system/vendor/framework/hwasan
+namespace.system.hwasan.permitted.paths += /system/vendor/framework
+namespace.system.hwasan.permitted.paths += /system/vendor/app/hwasan
+namespace.system.hwasan.permitted.paths += /system/vendor/app
+namespace.system.hwasan.permitted.paths += /system/vendor/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /system/vendor/priv-app
+namespace.system.hwasan.permitted.paths += /odm/framework/hwasan
+namespace.system.hwasan.permitted.paths += /odm/framework
+namespace.system.hwasan.permitted.paths += /odm/app/hwasan
+namespace.system.hwasan.permitted.paths += /odm/app
+namespace.system.hwasan.permitted.paths += /odm/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /odm/priv-app
+namespace.system.hwasan.permitted.paths += /oem/app/hwasan
+namespace.system.hwasan.permitted.paths += /oem/app
+namespace.system.hwasan.permitted.paths += /product/framework/hwasan
+namespace.system.hwasan.permitted.paths += /product/framework
+namespace.system.hwasan.permitted.paths += /product/app/hwasan
+namespace.system.hwasan.permitted.paths += /product/app
+namespace.system.hwasan.permitted.paths += /product/priv-app/hwasan
+namespace.system.hwasan.permitted.paths += /product/priv-app
+namespace.system.hwasan.permitted.paths += /data/hwasan
+namespace.system.hwasan.permitted.paths += /data
+namespace.system.hwasan.permitted.paths += /mnt/expand/hwasan
+namespace.system.hwasan.permitted.paths += /mnt/expand
+namespace.system.hwasan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic/hwasan
+namespace.system.hwasan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
+namespace.system.hwasan.permitted.paths += /system/${LIB}/bootstrap/hwasan
+namespace.system.hwasan.permitted.paths += /system/${LIB}/bootstrap
+namespace.system.links = com_android_adbd,com_android_i18n,system,com_android_tethering,com_android_art,com_android_resolv,com_android_neuralnetworks,com_android_os_statsd
+namespace.system.link.com_android_adbd.shared_libs = libadb_pairing_auth.so:libadb_pairing_connection.so:libadb_pairing_server.so
+namespace.system.link.com_android_i18n.shared_libs = libandroidicu.so:libicu.so:libicui18n.so:libicuuc.so
+namespace.system.link.system.shared_libs = libbinder_rpc_unstable.so
+namespace.system.link.com_android_tethering.shared_libs = libcom.android.tethering.connectivity_native.so:libnetd_updatable.so
+namespace.system.link.com_android_art.shared_libs = libdexfile.so:libjdwp.so:libnativebridge.so:libnativehelper.so:libnativeloader.so:libsigchain.so
+namespace.system.link.com_android_resolv.shared_libs = libnetd_resolv.so
+namespace.system.link.com_android_neuralnetworks.shared_libs = libneuralnetworks.so
+namespace.system.link.com_android_os_statsd.shared_libs = libstatspull.so:libstatssocket.so
+namespace.vndk.isolated = true
+namespace.vndk.visible = true
+namespace.vndk.search.paths = /odm/${LIB}/vndk-sp
+namespace.vndk.search.paths += /vendor/${LIB}/vndk-sp
+namespace.vndk.search.paths += /apex/com.android.vndk.v33/${LIB}
+namespace.vndk.search.paths += /odm/${LIB}
+namespace.vndk.search.paths += /vendor/${LIB}
+namespace.vndk.permitted.paths = /odm/${LIB}/hw
+namespace.vndk.permitted.paths += /odm/${LIB}/egl
+namespace.vndk.permitted.paths += /vendor/${LIB}/hw
+namespace.vndk.permitted.paths += /vendor/${LIB}/egl
+namespace.vndk.permitted.paths += /system/vendor/${LIB}/hw
+namespace.vndk.permitted.paths += /system/vendor/${LIB}/egl
+namespace.vndk.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw
+namespace.vndk.asan.search.paths = /data/asan/odm/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /odm/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /data/asan/vendor/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /vendor/${LIB}/vndk-sp
+namespace.vndk.asan.search.paths += /apex/com.android.vndk.v33/${LIB}
+namespace.vndk.asan.search.paths += /data/asan/odm/${LIB}
+namespace.vndk.asan.search.paths += /odm/${LIB}
+namespace.vndk.asan.search.paths += /data/asan/vendor/${LIB}
+namespace.vndk.asan.search.paths += /vendor/${LIB}
+namespace.vndk.asan.permitted.paths = /data/asan/odm/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /odm/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /data/asan/odm/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /odm/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /data/asan/vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /data/asan/vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /data/asan/system/vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /system/vendor/${LIB}/hw
+namespace.vndk.asan.permitted.paths += /data/asan/system/vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /system/vendor/${LIB}/egl
+namespace.vndk.asan.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw
+namespace.vndk.hwasan.search.paths = /odm/${LIB}/vndk-sp/hwasan
+namespace.vndk.hwasan.search.paths += /odm/${LIB}/vndk-sp
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}/vndk-sp/hwasan
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}/vndk-sp
+namespace.vndk.hwasan.search.paths += /apex/com.android.vndk.v33/${LIB}/hwasan
+namespace.vndk.hwasan.search.paths += /apex/com.android.vndk.v33/${LIB}
+namespace.vndk.hwasan.search.paths += /odm/${LIB}/hwasan
+namespace.vndk.hwasan.search.paths += /odm/${LIB}
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}/hwasan
+namespace.vndk.hwasan.search.paths += /vendor/${LIB}
+namespace.vndk.hwasan.permitted.paths = /odm/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /odm/${LIB}/hw
+namespace.vndk.hwasan.permitted.paths += /odm/${LIB}/egl/hwasan
+namespace.vndk.hwasan.permitted.paths += /odm/${LIB}/egl
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/hw
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/egl/hwasan
+namespace.vndk.hwasan.permitted.paths += /vendor/${LIB}/egl
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/hw
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/egl/hwasan
+namespace.vndk.hwasan.permitted.paths += /system/vendor/${LIB}/egl
+namespace.vndk.hwasan.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw/hwasan
+namespace.vndk.hwasan.permitted.paths += /apex/com.android.vndk.v33/${LIB}/hw
+namespace.vndk.links = system,com_android_neuralnetworks
+namespace.vndk.link.system.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so:libdl_android.so:libclang_rt.ubsan_standalone-aarch64-android.so:libclang_rt.ubsan_standalone-arm-android.so
+namespace.vndk.link.com_android_neuralnetworks.shared_libs = libneuralnetworks.so# See options at https://github.com/coogie/oscailte
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: https://www.home-assistant.io
+title: Home Assistant
+subtitle: Open source home automation that puts local control and privacy first.
+author: Home Assistant
+simple_search: https://www.google.com/search
+description: >-
+  Open source home automation that puts local control and privacy first.
+  Powered by a worldwide community of tinkerers and DIY enthusiasts.
+  Perfect to run on a Raspberry Pi or a local server.
+
+# Default date format is "ordinal" (resulting in "July 22nd 2007")
+# You can customize the format as defined in
+# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# Additionally, %o will give you the ordinal representation of the day
+date_format: "ordinal"
+
+# RSS / Email (optional) subscription links (change if using something like Feedburner)
+subscribe_rss: /atom.xml
+subscribe_email:
+# RSS feeds can list your email address if you like
+email:
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+permalink: /blog/:year/:month/:day/:title/
+source: source
+destination: public/
+plugins_dir: plugins
+code_dir: downloads/code
+category_dir: blog/categories
+
+markdown: CommonMark
+timezone: UTC
+liquid:
+  error_mode: strict
+
+commonmark:
+  options: ["SMART", "FOOTNOTES", "UNSAFE"]
+  extensions: ["strikethrough", "autolink", "table"]
+
+highlighter: none
+
+plugins:
+  - jekyll-toc
+
+paginate: 10 # Posts per page on the blog index
+paginate_path: "blog/posts/:num" # Directory base for pagination URLs eg. /posts/2/
+recent_posts: 5 # Posts in the sidebar Recent Posts section
+excerpt_link: "Read on &rarr;" # "Continue reading" link text at the bottom of excerpted articles
+excerpt_separator: "<!--more-->"
+
+titlecase: true # Converts page and post titles to titlecase
+
+# Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+# post_asides:
+# page_asides:
+
+collections:
+  integrations:
+    output: true
+  docs:
+    output: true
+  addons:
+    output: true
+  faq:
+    output: true
+  dashboards:
+    output: true
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+#Search
+algolia:
+  api_key: "ba6f7e6d97b3d3d2f778978c742a47c6"
+
+# Twitter
+twitter_user: balloob
+twitter_tweet_button: true
+
+# Google Analytics
+# google_analytics_tracking_id: UA-57927901-1
+
+# Facebook Like
+facebook_like: true
+
+social:
+  visible: false
+  facebook:
+    app_id: 338291289691179
+
+  twitter:
+    account: home_assistant
+
+  mastodon:
+    account: "https://fosstodon.org/@homeassistant"
+
+# Home Assistant release details
+current_major_version: 2026
+current_minor_version: 1
+current_patch_version: 0
+date_released: 2026-01-07
+
+# Either # or the anchor link to latest release notes in the blog post.
+# Must be prefixed with a # and have double quotes around it.
+# Major release:
+patch_version_notes: ""
+# Minor release (Example #release-0431---april-25):
+
+# Set Front matter defaults
+defaults:
+  # Defaults for all pages
+  - scope:
+      path: ""
+    values:
+      layout: page
+      comments: false
+      footer: true
+      sharing: true
+      sidebar: true
+      featured: false
+  # Defaults for blogs posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      footer: true
+      sharing: true
+      sidebar: true
+      toc: true
+  # Enable table of contents for integrations and installations
+  #
+  # To set toc as a default value, we need to set the scope with an empty path
+  # and the collection as type
+  # https://github.com/toshimaru/jekyll-toc/issues/116#issuecomment-644205770
+  #
+  - scope:
+      path: ""
+      type: dashboards
+    values:
+      toc: true
+  - scope:
+      path: ""
+      type: integrations
+    values:
+      toc: true
+  - scope:
+      path: ""
+      type: docs
+    values:
+      toc: true
+  - scope:
+      path: "installation/*"
+    values:
+      toc: true
+  - scope:
+      path: "common-tasks/*"
+    values:
+      toc: true
+  - scope:
+      path: "getting-started/*"
+    values:
+      toc: true
+  - scope:
+      path: "more-info/*"
+    values:
+      toc: true
+  - scope:
+      path: "voice_control/*"
+    values:
+      toc: true
+  - scope:
+      path: "hassio/*"
+    values:
+      toc: true
+  # Remove some resources from sitemap
+  - scope:
+      path: "google*.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "static/fonts/**/*.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "static/mdi-demo.html"
+    values:
+      sitemap: false
+
+  - scope:
+      path: "blueprints/**/*.yaml"
+    values:
+      render_with_liquid: false
+      layout: none
+
+# Support for files Jekyll will normally exclude
+include:
+  - "_headers"
+  - "_redirects"
+  - ".well-known"
+
+# Table of contents
+# https://github.com/toshimaru/jekyll-toc
+toc:
+  min_level: 2 # default: 1
+  max_level: 3 # default: 6
+
+# Configuration for installation pages
+installation:
+  container: "ghcr.io/home-assistant/home-assistant"
+  versions:
+    python: "3.13"
+  types:
+    odroid:
+      board: ODROID
+      installation_media: "eMMC module or SD card"
+      variants:
+        - name: "ODROID-N2"
+          key: "odroid-n2"
+        - name: "ODROID-N2+"
+          key: "odroid-n2"
+        - name: "ODROID-C2"
+          key: "odroid-c2"
+        - name: "ODROID-C4"
+          key: "odroid-c4"
+        - name: "ODROID-M1"
+          key: "odroid-m1"
+        - name: "ODROID-M1S"
+          key: "odroid-m1s"
+
+    raspberrypi:
+      board: Raspberry Pi
+      installation_media: "SD card"
+      variants:
+        - name: "Raspberry Pi 5"
+          key: "rpi5-64"
+        - name: "Raspberry Pi 4"
+          key: "rpi4-64"
+
+    generic-x86-64:
+      board: Generic x86-64
+      installation_media: "storage device"
+      variants:
+        - name: Anonymous(JJosephineMarrujo)
+          key: 4dd14de5f18791b3594256a9ead6bfddafa0434f11e0d39c3b551dda53db2fff
+include ':app', ':termux-shared', ':terminal-emulator', ':terminal-view'https://wallet.google.com/wallet?utm_source=wallet&utm_medium=app&utm_campaign=uvc_redirect&p=paymentmethods&id=4611686028776374834Termux is a terminal emulator application enhanced with a large set of command line utilities ported to Android OS. The main goal is to bring a Linux command line experience to users of mobile devices with no rooting or other special setup required.
+
+* Enjoy the Bash and Zsh shells.
+* Edit files with nano and vim.
+* Access servers over SSH.
+* Compile C/C++ code with clang.
+* Use the Python console as a pocket calculator.
+* Check out projects with Git and Subversion.
+* Run text-based games with frotz.
+
+At first start a small base system is being configured. The GNU Bash, Coreutils, Findutils and other core utilities are available out-of-box. Additionally, we provide more than 1000 other packages installable by using the 'pkg' utility which currently is a frontend for the 'apt' package manager. All provided software has been patched and compiled with Android NDK to provide max compatibility with Android OS.
+
+To learn more about application usage tips and tricks, long-press anywhere on the terminal and select the Help menu option to access Termux Wiki. This resource is also accessible directly in a web browser: https://wiki.termux.com/wiki/Main_Page.
+ 
+https://accounts.google.com/v3/signin/accountchooser?as=1i1bRdandttQLAAx0f6zCbcOmRIGprlsYRjlvxrg4Fg&client_id=369075948042-gku8boqssoqo5bdnkpg2s43mscgsk68i.apps.googleusercontent.com&display=popup&gis_params=ChdodHRwczovL3d3dy5iZXN0YnV5LmNvbRINZ2lzX3RyYW5zZm9ybRgHKisxaTFiUmRhbmR0dFFMQUF4MGY2ekNiY09tUklHcHJsc1lSamx2eHJnNEZnMkgzNjkwNzU5NDgwNDItZ2t1OGJvcXNzb3FvNWJkbmtwZzJzNDNtc2Nnc2s2OGkuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb204AUJAMGEyNmE3OGZhZmE1OThlOTc3M2VlNGI5NWFjZDQwN2MzOThmOTA4M2M4ZjFiM2Y0ZGUyOGFmYWU4YzhkZTcxNw&gsiwebsdk=gis_attributes&origin=https%3A%2F%2Fwww.bestbuy.com&prompt=select_account&redirect_uri=gis_transform&response_mode=form_post&response_type=id_token&scope=openid+email+profile&dsh=1i1bRdandttQLAAx0f6zCbcOmRIGprlsYRjlvxrg4Fg&o2v=1&service=lso&flowName=GeneralOAuthFlow&opparams=%253Fgis_params%253DChdodHRwczovL3d3dy5iZXN0YnV5LmNvbRINZ2lzX3RyYW5zZm9ybRgHKisxaTFiUmRhbmR0dFFMQUF4MGY2ekNiY09tUklHcHJsc1lSamx2eHJnNEZnMkgzNjkwNzU5NDgwNDItZ2t1OGJvcXNzb3FvNWJkbmtwZzJzNDNtc2Nnc2s2OGkuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb204AUJAMGEyNmE3OGZhZmE1OThlOTc3M2VlNGI5NWFjZDQwN2MzOThmOTA4M2M4ZjFiM2Y0ZGUyOGFmYWU4YzhkZTcxNw%2526response_mode%253Dform_post&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAPGKeGlFogeVd9uDIDY2d0ioajDObl-6eE_MfomZVr-oT1AbcYkTNp6QyIDtzLhRIWe_-KiAEjSp44UMDSxQ3-sJUKac0QwWxiZgeCtE2gKHYzxfpOqr-XWXQ7DWVyKiy64UTj1cmAm-aqPaDlzO0sU3Sf9DKIPsQ3CSJNSLGDFqHVXtVvguZIb_Ki0h2_Q69RZD-hWRFLWLP4GToez_CcdfnyrsWof2zc4j32kDqBFdZ44vuRIvs38ns9uL6JvYpDZA3W5OSOdh6tyeOAv_i9j37FxopudEG9WQhVa6LLVESN_OXPbVNt7pALMbTcbhAUsWQT4zKvUeCgf1A4s9vqc00MEG50R-XnDJp_woLVdy-fy6q9sAU6sMcS7wgwaAYi8SFAtcD0aAvsehEJzuGtIcO8s2L0d_7BO4uK3uqW6uc9YZrUad4lx5wg2oicgWGT2aebE3Hexdq4n2fQRVItMboBJOGixaMRQ_mlpoWH-MSXJcUo%26flowName%3DGeneralOAuthFlow%26as%3D1i1bRdandttQLAAx0f6zCbcOmRIGprlsYRjlvxrg4Fg%26client_id%3D369075948042-gku8boqssoqo5bdnkpg2s43mscgsk68i.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fwww.bestbuy.comhttps://www.bestbuy.com/identity/signin?token=tid%3A708f6ec1-f4c8-11f0-a58a-0ac5f4eaa081<!DOCTYPE HTML>
+<!--  FE Version: 28.0.37,
+      BE Version: 28.0.19,
+      environmentProperty: prod.   -->
+
+<html lang="en">
+  <head>
+    <title>Activated Devices</title>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+      <meta name="viewport" content="width=1024" />
+
+    <script type="text/javascript">
+      window.track = {"app_sysDate":"01/18/2026","app_sysTime":"2026-01-18T23:16+0000","app_FEVer":null,"app_BEVer":null,"app_ver":"28.0.19","app_version":null,"app_fe_ver":"28.0.37","app_visaCheckoutDomain":null,"app_XMAP_APPLEPAY":false,"app_LOSFandFPerc":null,"app_forceFetchPolyfill":true,"device_deviceClass":"l","device_kiosk":null,"device_pixelRatio":null,"device_touchEnabled"chrome version 14.3.0.7499.192,"env_css":"http://www.bestbuy.com/~assets/bby/_com","env_cssSSL":"https://www.bestbuy.com/~assets/bby/_com","env_js":"http://www.bestbuy.com/~assets/bby/_com","env_jsSSL":"https://www.bestbuy.com/~assets/bby/_com","env_img":"http://www.bestbuy.com/~assets/bby/_com","env_imgSSL":"https://www.bestbuy.com/~assets/bby/_com","env_legacyImg":"http://images.bestbuy.com","env_legacyImgSSL":"https://images.bestbuy.com","env_misc":"http://misc.bbystatic.com","env_miscSSL":"https://misc-ssl.bbystatic.com","env_pisces":"http://pisces.bbystatic.com","env_piscesSSL":"https://pisces.bbystatic.com","env_piscesUrl":null,"env_falcor":null,"env_assets":null,"env_appServer":"https://www.bestbuy.com","env_appServerSSL":"https://www.bestbuy.com","page_pageType":"connectedDevices","page_isSsl":true,"page_language":"en","page_hierarchy":[{"categoryName":"Upgrade Eligible","categoryId":"pcat21204"}],"page_templateName":"MCID","user_partyId":null,"user_rzTier":"None","user_profileId":null,"user_recognized":"Guest","user_numItemsInCart":0,"catId":"UPGRADE_FLOW","uberCatName":"Cell Phones","parentCatName":"Upgrade","catName":"Upgrade Eligible","d_category":"Upgrade Eligible","imperror":"","language":"en","mobilePackage":"14.3.0.7499.192","page":"Upgrade Eligible","pageType":"connectedDevices","persistentCart":"0","recognized":"Anonymous","searchRank":"1: 1: false: Best Match: 15 per page","searchRankSKU":"1755302","searchTermRelevancy":"","secChannel":"1","section":"Upgrade Eligible","sid":"3bfaba3d-382f-4383-9cdf-c0894df536fc","sysDate":"01/18/2026","templateName":"MCID","delayTrack":"true"}
+      window.env_jsPath = "https://www.bestbuy.com/~assets/bby/_com/"
+      window.track.pageType = window.track.page_pageType
+      window.track.env_falcor = "/api/tcfb"
+      window.metaLayer = window._metaLayer = window.track
+      window.scenarioData = {"cellPhoneCategoryUrl":"http://www.bestbuy.com/site/mobile-cell-phones/mobile-phones-with-plans/pcmcat209400050001.c?id=pcmcat209400050001","apiPathRoot":"/wireless","tokenName":"X-ACTDVC-TOKEN","tokenValue":"49bb1762-e69c-4f53-a19e-047ede5eef1c,AF43254245","findStoreUrl":"http://www.bestbuy.com/site/olspage.jsp?id=cat12090&type=page","mode":"IN_FLOW","genericErrorMessage":"Please try again we had an issue, but it should be fixed now.","productSummariesEndpoint":"/api/1.0/product/summaries","carouselPricesEndpoint":"/api/1.0/carousel/prices","enableMobileRenewalsInUc":false,"encryptData":false,"enableSuspendResume":true,"adRedirect":false,"viewSimilarProducts":true}
+      window.activatedPackageInit = {}
+      window.deviceFinanceEligibilityData = {}
+      window.givebackInit = {}
+      window.carrierAccountInit = {}
+      window.sigpadInit = {}
+      window.staticInit = {"urls":{"env_piscesSSL":"https://pisces.bbystatic.com/image2","otpTermsConditionsUrl":"https://www.bestbuy.com/site/help-topics/text-message-terms-and-conditions/pcmcat173200050005.c?id=pcmcat173200050005","otpPrivacyPolicyUrl":"https://www.bestbuy.com/site/help-topics/privacy-policy/pcmcat204400050062.c?id=pcmcat204400050062"},"images":{"bbyGiftCardSmall":"/BestBuy_US/Gallery/bby-gift-card-small-71584.png","findMyIphoneInstructions1":"/BestBuy_US/Gallery/find-my-iphone-instructions-1-128248-71576.png","mbbmLogoTwoLines":"/BestBuy_US/Gallery/mbbm-logo-2-lines-retina-71588.png","findMyIphoneInstructions2":"/BestBuy_US/Gallery/find-my-iphone-instructions-2-128249-71577.png","findMyIphoneInstructions3":"/BestBuy_US/Gallery/find-my-iphone-instructions-3-128250-71578.png","cellPhoneIcon":"/BestBuy_US/Gallery/cellPhoneIcon-71590.png","findMyIphoneInstructions4":"/BestBuy_US/Gallery/find-my-iphone-instructions-4-128251-71579.png","infoTriangle":"/BestBuy_US/Gallery/infoTriangle-71587.png","mbbmLogo":"/BestBuy_US/Gallery/mbbm-logo-retina-71589.png","bbyRewardPointsSmall":"/BestBuy_US/Gallery/bby-reward-points-small-71585.png"},"addToCartUrl":"/add-to-cart"}
+      window.uriInit = {"warrantyLink":"/attachments/{skuId}/warranty","productDetailsUrl":"https://www.bestbuy.com/product/motorola-razr-2024-256gb-unlocked-koala-gray/J39QWY65K6","getDevices":"/devices/get?product=true&pricing=true","cartRedirectionUrl":"https://www.bestbuy.com/cart","militaryAddress":"http://www.bestbuy.com/site/help-topics/shipping-to-a-military-address/pcmcat204400050018.c?id=pcmcat204400050018","internationalAddress":"http://www.bestbuy.com/site/help-topics/international-orders/pcmcat204400050019.c?id=pcmcat204400050019"}
+      window.featureFlagInit = {"enableFELogging":true,"feLoggingPercentage":"10"}
+      window.linesInit = {}
+      window.pageInit = {"mode":"IN_FLOW","apiPathRoot":"/wireless","renderPath":"/render"}
+      window.carrierInit = {}
+      window.optInInit = {}
+      window.isActivatedView = false
+      window.schedulerInit = {}
+      window.chatInit = {"provider":"ecc","queue":"Recon","messageToAgent":"I need help with buying and activating a mobile phone.","skipPreChatForm":true,"isNative":false,"lv":true,"sv":true}
+      window.tradeInStaticInit = {}
+      window.tradeInInit = {}
+      window.portInit = {}
+      window.mobileQueueInit = {"queueAppointmentUrl":"/wireless/mobile-queue/notify","lv":true,"sv":true,"carriers":[{"id":"ATT","name":"AT&T"},{"id":"VEZ","name":"Verizon"},{"id":"SPR","name":"Sprint"}],"content":{"textNotificationMessage":"Text me a notification at the above phone number when you'll be calling me back. Must be a cell phone. Message and data rates may apply. [Terms and Privacy Policy apply](https://www.bestbuy.com/site/help-topics/text-message-terms-and-conditions/pcmcat173200050005.c?id=pcmcat173200050005)","operatingHoursMessage":"**Mobile Experts are available from 11 a.m. to 9 p.m. CDT.** If you request a call outside these hours, a Mobile Expert will call you as soon as possible when they return."}}
+      window.activatedDevicesImgPath = "https://www.bestbuy.com/~assets/bby/_com/"
+      window.environment = "prod"
+    </script>
+
+      
+                            
+                         
+               
+                
+                    
+                
+                
+		<script src="/~assets/bby/_com/deo-client-script.js"></script>
+		<script>
+			document.domain = 'bestbuy.com';
+			if (typeof window.rdpClass === 'undefined') {
+				window.rdpClass = {};
+			}
+			window.rdpClass.deviceClass = 'l';
+			if (typeof window._metaLayer === 'undefined') {
+				window._metaLayer = {};
+			}
+			window._metaLayer.device_deviceClass = 'l';
+			window._metaLayer.user_rzTier = "undefined";
+			window._metaLayer.env_falcor = '/api/tcfb';
+			window._metaLayer.env_assets = "\u002F~assets\u002Fbby\u002F_com";
+			window._metaLayer.env_piscesUrl = "https:\u002F\u002Fpisces.bbystatic.com";
+			window._metaLayer.env_pisces = "https:\u002F\u002Fpisces.bbystatic.com";
+		</script>
+		<script src="https://nexus.ensighten.com/bestbuy/privacy_init/Bootstrap.js"></script>
+		
+		<script src="https://www.bestbuy.com/~assets/bby/_js/ext/bbydyn/dyn_digital_gvp.js" defer></script>
+		<link rel="stylesheet" href="/~assets/bby/_com/brix-styles/1.79.0/brix-styles-brix-web.css" media="all">
+		
+		<script>
+		(function() {
+			const scriptMap = {}
+			const moduleMap = {}
+			const importMap = {}
+
+			window.loadScript = function(url, {
+				type = 'import',
+				fallbackUrl,
+				resolveValue,
+				scriptAttributes
+			}) {
+				let map = scriptMap;
+				let attributes = { defer: true };
+
+				if (type !== 'script') {
+					if ('noModule' in HTMLScriptElement.prototype) {
+						map = type === 'import' ? importMap : moduleMap;
+						attributes = { type: 'module' };
+					} else if (fallbackUrl) {
+						url = fallbackUrl;
+					} else {
+						return Promise.reject(new Error('type not supported and fallback not given'))
+					}
+				}
+
+				let promise;
+
+				if (url in map) {
+					promise = map[url];
+				} else {
+					promise = new Promise(resolve => {
+						const script = document.createElement('script');
+
+						if (scriptAttributes) {
+							Object.assign(attributes, scriptAttributes);
+						}
+
+						Object.keys(attributes).forEach((key, _) => {
+							if (attributes[key] === false) {
+								script.removeAttribute(key);
+							} else {
+								script.setAttribute(key, attributes[key] === true ? '' : attributes[key].toString());
+							}
+						})
+
+						script.onload = () => resolve(undefined);
+						script.src = url;
+
+						document.head.appendChild(script);
+					});
+
+					map[url] = promise;
+				}
+
+				if (resolveValue) {
+					return promise.then(() => resolveValue)
+				}
+
+				return promise;
+			}
+		})();
+		</script><script>function getCookie(name) { const value = `; ${document.cookie}`;const parts = value.split(`; ${name}=`);if (parts.length > 1) return parts.pop().split(';').shift();}; window._enablePlatformMetrics=getCookie('enablePlatformMetrics') === 'true';window.platformMetrics = { enableCollection: window._enablePlatformMetrics, moduleFederationLoadCalls: [], shareScopeApps: [] };</script><script>function _setUpConfigService () {window.configService = getConfigService({"services":{"embeddedComponentRenderer":{"dedupeScriptTags":true,"dedupeLinkTags":false},"stips":{"forceCarouselsOffPLP":true,"disableHeaderTrays":{"enabled":false}},"optimizely":{"placebos":[{"experimentKey":"ABT1229_PDP","pageTypeRegex":"browse,pdp","evar":"abTest66"}]},"falcor":{"client":{"enableBatching":true,"maxQuerySize":8800}},"identityRecaptcha":{"enabled":false},"platformContainer":{"remoteFederatedModules":{"container2022":{"scope":"DO_NOT_USE_TEMPORARY_PLATFORM_SCOPE"},"@bestbuy/bby-debug":{"scriptLocation":"/~assets/bby/_com/shop/@bestbuy/bby-debug/dist/client/bby-debug-federation-remote-entry-1.0.1.js","steward":"a1616516-obo-PDP","varName":"__BBY_DEBUG_CONTAINER_1.0.1__"},"@bestbuy/viewed-saved-flyout":{"scriptLocation":"/~assets/bby/_com/shop/viewed-saved-flyout/dist/client/viewed-saved-flyout-federation-remote-entry-24.12.18.js","varName":"__PATHFINDER_COMPASS_CONTAINER_24.12.18__","steward":"pathfinder-compass"},"@bestbuy/visitor-optimization":{"scriptLocation":"/~assets/bby/_com/shop/visitor-optimization/dist/client/visitor-optimization-federation-remote-entry-24.48.13.js","varName":"__PATHFINDER_COMPASS_CONTAINER_24.48.13__","steward":"pathfinder-compass"},"@shop/widget-fragments":{"scriptLocation":"/~assets/bby/_com/widget-view/widget-fragments-remote-entry-25.22.19.js","varName":"__DISCOVER_WIDGET_FRAGMENTS_25.22.19__","steward":"Shop-Discover"},"@shop/widget-forge":{"scriptLocation":"/~assets/bby/_com/widget-view/widget-forge-remote-entry-25.22.19.js","varName":"__DISCOVER_WIDGET_FORGE_25.22.19__","steward":"Shop-Discover"},"autocomplete-listener-l":{"scriptLocation":"/~assets/bby/_com/suggest/suggest-view-react/dist/client/suggest-view-react-remote-entry-l-24.46.3.js","varName":"__SUGGEST_VIEW_REACT_CONTAINER_L_24.46.3__","steward":"DTT-Search-Suggest"},"autocomplete-listener-s":{"scriptLocation":"/~assets/bby/_com/suggest/suggest-view-react/dist/client/suggest-view-react-remote-entry-s-24.46.3.js","varName":"__SUGGEST_VIEW_REACT_CONTAINER_S_24.46.3__","steward":"DTT-Search-Suggest"},"@bestbuy/trade-in":{"scriptLocation":"/~assets/bby/_com/trade-in-experience/trade-in/module/trade-in-federation-remote-entry-25.6.2.js","varName":"__TRADE_IN_CONTAINER_25.6.2__","steward":"TradeInExperience"},"@bestbuy/activated-promos":{"scriptLocation":"/~assets/bby/_com/promos/activated-promos-federated-1.1.1.js","varName":"__ACTIVATED_CONTAINER_1.1.1__","steward":"Activations_Leads"},"@cdi/create-account":{"scriptLocation":"/~assets/bby/_com/sc-react-sign-on/dist/federated-create-account/cdi-create-account-remote-entry-2.0.421.js","varName":"__CREATE_ACCOUNT_2.0.421__","steward":"Customer-Domain-Identity"},"@cdi/incentivize-customer":{"scriptLocation":"/~assets/bby/_com/sc-react-sign-on/dist/federated-incentivize-customer/cdi-incentivize-customer-remote-entry-2.0.421.js","varName":"__INCENTIVIZE_CUSTOMER_2.0.421__","steward":"Customer-Domain-Identity"},"@cuam/customer-search-legacy-support":{"scriptLocation":"/~assets/bby/_com/customer-domain/customer-search-legacy-support/dist/client/cuam-customer-search-legacy-support-federation-remote-entry-25.15.0.js","varName":"__CUAM_CUSTOMER_SEARCH_LEGACY_SUPPORT_CONTAINER_25.15.0__","steward":"Customer-Domain_Customer-Account-Management"}}}},"components":{"shop":{"viewed-saved-flyout":{"disableRecentlyViewedBadges":false,"enableAddToCart":true,"enableAddToCartButtonRules":true,"enableCombos":true,"enableSaveForLater":true,"enablePriceBlock":true,"enableSeeMoreLikeThis":true,"enableUgcStats":true,"priceChangeNotificationEnabled":true,"recommendationsBaseURL":"https://context.test.bestbuy.com","shoppingHistorySuppressedCategories":["pcmcat1625079176607","pcmcat1625079372032","pcmcat1625079577315"],"useNewRecentlyViewedFlyout":false,"useNewSavedItemsFlyout":false,"useHeartIcon":true,"enableHeartIcon":true},"visitor-optimization":{"enableInterruptionsManager":false,"excludedPages":["/checkout","/thank-you","/checkout/r/thank-you"]}},"sc-location":{"clientConfig":{"enableEGPPreferredStore":false,"enableSetEGPPreferredStore":false,"enableScLocationLogging":true}}}});}</script><script>function _setUpEventManager () {var EventManager = window.EventManager.default; window.EventManager = EventManager;}</script><script src="/~assets/bby/_com/lodash-v4/4.17.21/dist/lodash.min.js"></script><script>window._v4 = _;</script><script src="/~assets/bby/_com/lodash/3.6.0/dist/lodash.min.js"></script><script src="/~assets/bby/_com/legacy-browser-support-fdfa0503b3885deec2276ef2f389bb6f.min.js" nomodule></script><script src="/~assets/bby/_com/cacheable-gvp-11be6403c8a50adefb4a68bdb5bdf1ba.min.js"></script><script src="/~assets/bby/_com/gvp-62f0bd639eb38fc2bb2756eb289f94bc.min.js"></script><script src="/~assets/bby/_com/legacy-80e96c542168b4a82a78e485b2a038a2.min.js"></script><script src="/~assets/bby/_com/staging-fad56d9ad0f78ba1e7124a8ba5213507.min.js"></script><script src="/~assets/bby/_com/bestbuy/lib-mf-assets/2.2.1/dist/main.js" ></script><script src="/~assets/bby/_com/federation/platformContainerOrchestrationProxy.11.11.1.js" ></script><script>loadScript("/~assets/bby/_com/federation/platformContainer.11.11.1.js", {"type":"script"});</script>
+
+		<script src="/~assets/bby/_com/brix/7.11.35/js/brix.js"></script>
+		<script src="/~assets/bby/_com/brix/7.11.35/js/brixRemoteEntry.js"></script>
+	<!-- start simple component <csi:text><csi:vars>$(csi.instances.shop.global-metadata.v1.id)</csi:vars></csi:text> - shop-global-metadata v1 --><link rel="icon" href="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/favicon-32-72227.png" sizes="32x32">
+<meta name="application-name" content="BestBuy.com">
+<meta name="theme-color" content="#0046be">
+<meta name="msapplication-tooltip" content="BestBuy - Let's talk about what's possible.">
+<meta name="msapplication-config" content=/~assets/bby/_com/shop/global-metadata/dist/client/IEconfig.xml>
+<meta name="google-adsense-account" content="sites-9330121161145271">
+<link rel="apple-touch-icon-precomposed" href="https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/Favicon-152-72229.png"><!-- end simple component <csi:text><csi:vars>$(csi.instances.shop.global-metadata.v1.id)</csi:vars></csi:text> - shop-global-metadata v1 -->
+
+  </head>
+  <body>
+
+      
+                            
+                         <div id="shop-header-92186981" class="_none" data-version="1.1.22"><link rel="stylesheet" href="/~assets/bby/_com/shop/header/dist/client/client-3a1085d19feb78f3b5a8fbc4d566466c.css" /><div class="shop-header"><!--$--><p class="sw-banner" style="background-color:#0046be"><span><span class="sw-banner-heading v-fw-medium" style="color:#fff200;font-weight:500">Winter Sale</span><span class="sw-banner-body" style="color:#ffffff;font-weight:400">Ends 1/19. Limited quantities. No rainchecks.</span><a class="sw-banner-link" rel="noopener noreferrer" target="_blank"></a><a class="sw-banner-link" href="/sale-event" rel="noopener noreferrer" style="color:#fff200" target="_self">Shop now</a></span></p><!--/$--><div class="header-hamburger"><a class="visibility-hidden visibility-hidden-focusable" href="#headerskip" title="Skip to content">Skip to content</a><a class="visibility-hidden visibility-hidden-focusable" href="#autocomplete-search-bar" title="Go to Product Search">Go to Product Search</a><a class="visibility-hidden visibility-hidden-focusable" href="#footer" title="Go to Footer">Go to Footer</a><!--$--><div><div id="evoc-talk-to-us-54456030" class="_none" data-version="0.25.61"><link rel="stylesheet" href="/~assets/bby/_com/evoc/talk-to-us/dist/client/3818-f8a2f130f510dc5af61fc0131006bece.css" /><div class="evoc-talk-to-us"></div><script defer src="/~assets/bby/_com/evoc/talk-to-us/dist/client/evoc-talk_to_us-v1-0_25_61_remote_entry.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"evoc","componentId":"talk-to-us","contractVersion":"v1","componentVersion":"0.25.61"}, "evoc-talk-to-us-54456030", "{\"app\":{\"enableCustomerFeedbackTool\":true,\"instanceId\":\"evoc-talk-to-us-54456030\",\"feedbackContent\":{\"views\":{\"launch\":{\"name\":\"assistive-header-survey\",\"type\":\"button\",\"className\":[\"c-button-link\",\"visibility-hidden\",\"visibility-hidden-focusable\"],\"buttonStyle\":\"link\",\"testId\":\"survey-button\",\"onClick\":{\"interaction\":\"open-survey\"},\"children\":[{\"type\":\"string\",\"value\":\"Accessibility Survey\"}],\"autofocus\":true,\"deviceClass\":[\"SV\",\"LV\"]},\"survey\":{\"name\":\"survey-container\",\"type\":\"div\",\"className\":[\"appContainer\"],\"children\":[{\"type\":\"div\",\"className\":[\"header\"],\"deviceClass\":[\"LV\",\"SV\"],\"children\":[{\"type\":\"div\",\"testId\":\"description\",\"className\":[\"description\"],\"ariaLabel\":\"header\",\"children\":[{\"type\":\"div\",\"deviceClass\":[\"LV\"],\"className\":[\"logo-container-l\"],\"children\":[{\"type\":\"BestBuyLogo\"}]},{\"type\":\"div\",\"deviceClass\":[\"SV\"],\"className\":[\"logo-container-s\"],\"children\":[{\"type\":\"BestBuyLogo\"}]},{\"type\":\"div\",\"children\":[{\"type\":\"string\",\"value\":\"Best Buy is dedicated to accessibility, diversity and inclusion. We'd really appreciate your feedback on how we're doing.\"}]}]}]},{\"type\":\"Rating\",\"label\":\"How would you rate your experience using the Best Buy site with assistive technology?\",\"testId\":\"rating\",\"onChange\":{\"interaction\":\"on-rating-change\"},\"property\":{\"name\":\"rating\"}},{\"type\":\"CommentTextArea\",\"testId\":\"comment-text-area\",\"title\":\"What else would you us to know about your experience with bestbuy.com?\",\"text\":\"To protect your privacy, please do not enter any personal or account information. Get help for many common issues from Customer Service.\",\"onChange\":{\"interaction\":\"on-comment-change\"}},{\"type\":\"LinkedText\",\"testId\":\"supportLinkText\",\"prefix\":\"We can’t respond directly to comments submitted here. Need help? Visit \",\"text\":\"Best Buy Support\",\"url\":\"https:\\u002F\\u002Fwww.bestbuy.com\\u002Fsite\\u002Felectronics\\u002Fcustomer-service\\u002Fpcmcat87800050001.c?id=pcmcat87800050001\"},{\"type\":\"div\",\"className\":[\"submitFeedbackContainer\"],\"deviceClass\":[\"LV\"],\"children\":[{\"type\":\"button\",\"deviceClass\":[\"LV\"],\"className\":[\"submitFeedbackButton\",\"submitFeedbackButtonLarge\"],\"buttonStyle\":\"secondary\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Send Feedback\"}],\"onClick\":{\"interaction\":\"on-submit\"}},{\"type\":\"button\",\"deviceClass\":[\"LV\"],\"className\":[\"submitFeedbackButton\",\"closeFeedbackButtonLarge\"],\"buttonStyle\":\"outline\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Cancel\"}],\"onClick\":{\"interaction\":\"on-close\"}}]},{\"type\":\"div\",\"className\":[\"submitFeedbackContainerSmall\"],\"deviceClass\":[\"SV\"],\"children\":[{\"type\":\"button\",\"deviceClass\":[\"SV\"],\"className\":[\"submitFeedbackButton\"],\"buttonStyle\":\"secondary\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Send Feedback\"}],\"onClick\":{\"interaction\":\"on-submit\"}},{\"type\":\"button\",\"deviceClass\":[\"SV\"],\"className\":[\"submitFeedbackButton\"],\"buttonStyle\":\"outline\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Cancel\"}],\"onClick\":{\"interaction\":\"on-close\"}}]}]},\"thankYou\":{}},\"description\":\"We'd like to hear from you.\",\"rateExperienceLabel\":\"How are we doing?\",\"commentTitle\":\"Tell us more.\",\"commentText\":\"To protect your privacy, please do not enter any personal or account information. Get help for many common issues from Customer Service.\",\"thankyouPageContent\":\"Thank you for the feedback\",\"noThankyouPageContent\":\" \",\"bbyLogoUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\\u002Fimage2\\u002Fvector\\u002FBestBuy_US\\u002FGallery\\u002Fbestbuy_logo_inverse-217374.svg\",\"bbyLogoAltText\":\"Bestbuy.com\"},\"evocFeedbackWeb\":{\"hostname\":\"\",\"submitFeedbackPathTemplate\":\"\\u002Fevoc\\u002Ffeedback\\u002Fsubmit\",\"internalHostname\":\"https:\\u002F\\u002Fevoc-feedback-int-evoc.west-int.aws.containers.bestbuy.com\",\"surveyPathTemplate\":\"\\u002Fapi\\u002Fsurvey\",\"publicSurveyPathTemplate\":\"\\u002Fevoc\\u002Ffeedback\\u002Fapi\\u002Fsurvey\"},\"surveyId\":\"assistive_header_survey\",\"deviceClass\":\"l\",\"description\":\"Give feedback about our website\",\"displayName\":\"How was your experience?\",\"isBot\":false,\"serverVersion\":\"1.0.242\",\"exclusionConfig\":{\"exclusionMap\":{\"all\":[\"^\\u002F$\",\"^\\u002Fsite\\u002Fsearchpage.*\",\"^\\u002Fidentity\\u002F.*\",\"^\\u002Fcart\\u002F?.*\",\"^\\u002Fcheckout\\u002F.*\",\"^\\u002Fwireless\\u002F.*\"],\"lv\":[],\"sv\":[]},\"exclusionHost\":\"www.bestbuy.com\"},\"experimentByKeyEnabled\":{\"lv\":false,\"sv\":false,\"app\":false},\"isModalOpen\":false,\"linkedText\":{\"prefixText\":\"We can’t respond directly to comments submitted here. Need help? Visit \",\"linkText\":\"Best Buy Support\",\"linkTextUrl\":\"https:\\u002F\\u002Fwww.bestbuy.com\\u002Fsite\\u002Felectronics\\u002Fcustomer-service\\u002Fpcmcat87800050001.c?id=pcmcat87800050001\"}},\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"}}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"evoc-talk-to-us-54456030","parentInstanceId":"shop-header-92186981"}))</script></div><!--/$--><div id="&lt;csi:text&gt;&lt;csi:vars&gt;$(csi.instances.shop.header.v1.id)&lt;/csi:vars&gt;&lt;/csi:text&gt;-hiddenCsiTagData"><div><span class="hidden" id="firstName"></span><span class="hidden" id="businessName"><span> </span></span></div></div><header><div data-exp-key="exp0283"></div><div class="universal-nav-container" style="background-color:#013196"><nav class="bottom-nav"><div class="universal-nav-wrapper"><a class="universal-nav-link" href="https://yardbird.com/" rel="noopener noreferrer" target="_blank">Yardbird</a><a class="universal-nav-link" href="https://www.bestbuy.com/site/electronics/outlet-refurbished-clearance/pcmcat142300050026.c?id=pcmcat142300050026" rel="noopener noreferrer" target="_self">Best Buy Outlet</a><a class="universal-nav-link" href="https://www.bestbuy.com/site/electronics/bestbuy-business/pcmcat230900050001.c?id=pcmcat230900050001" rel="noopener noreferrer" target="_self">Best Buy Business</a></div></nav></div><div class="top-fluid-container   "><div class="top-nav top-nav-with-full-spanning-search"><!--$--><div class="dnm-LogoLV"><a href="https://www.bestbuy.com" title="BestBuy.com"><svg aria-label="BestBuy.com" class="block" height="40" role="img" width="68" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 92"><path d="M127.6 66.66h31.33v25.09h-31.34l-7.8-7.34V74.06l7.81-7.4z" fill="#fff200"></path><path d="M126.03 79.19c0 .86-.69 1.55-1.55 1.55-.86 0-1.55-.69-1.55-1.55 0-.86.69-1.55 1.55-1.55.85 0 1.55.7 1.55 1.55z" fill="#1d252c"></path><path d="M127.2 57.76c0-1.17.94-2.12 2.12-2.12 1.2 0 2.12.94 2.12 2.11 0 1.19-.93 2.11-2.12 2.11-1.17 0-2.12-.9-2.12-2.1zm3.96-.01c0-1.07-.78-1.85-1.84-1.85-1.05 0-1.83.79-1.83 1.86 0 1.08.81 1.84 1.83 1.84 1.04 0 1.84-.77 1.84-1.85zm-2.55-1.13h.71c.48 0 .79.21.79.64v.01c0 .33-.21.51-.51.57l.64.97h-.35l-.61-.92h-.33v.92h-.33l-.01-2.19zm.72 1.03c.31 0 .46-.12.46-.37v-.01c0-.28-.16-.37-.46-.37h-.38v.75h.38zM30.21 19.81l.61-.22c5.92-3.18 6.93-11.05 1.16-15.36-2.58-2.06-6.09-3.09-10.55-3.09H2.1v39.61h20.47c5.25 0 16.12-.98 16.12-11.33-.01-7.91-8.29-9.54-8.48-9.61zM14.9 10.42h4.72c1.74-.04 3.23 1.18 3.21 2.9.02 1.73-1.48 2.94-3.21 2.9H14.9v-5.8zm8.82 20.12c-.74.7-1.67 1.04-2.78 1.04H14.9v-7.11h6.03c3.28-.18 5.27 3.8 2.79 6.07zM40.39 63.65l.61-.22c5.92-3.18 6.93-11.05 1.16-15.36-2.58-2.06-6.1-3.09-10.55-3.09h-19.3v39.61h20.43c5.25 0 16.12-.98 16.12-11.33 0-7.91-8.28-9.53-8.47-9.61zm-15.27-9.39h4.68c1.74-.04 3.23 1.18 3.22 2.9.01 1.73-1.48 2.94-3.22 2.9h-4.68v-5.8zm8.78 20.13c-.74.7-1.67 1.04-2.78 1.04h-6v-7.11h6c3.27-.18 5.26 3.8 2.78 6.07zM71.48 31.13H52.33v-6.21h15.63v-9.06H52.33v-5.08h19.19V1.13h-32v39.61h31.96v-9.61zM104.23 1.13v9.64h10.47v29.97h12.73V10.77h10.47V1.13h-33.67z" fill="#fff"></path><path d="M89.75 30.5c-2.8 2.33-8.08-.25-10.16-2.38l-7.56 7.18.48.48c6.71 6.62 20.86 8.59 27.98 2.21 5.84-4.61 6.03-14.52-.04-18.59-2.29-1.46-5.4-2.86-7.97-3.52-1.31-.3-2.64-.73-3.53-1.25-2.85-1.53-.43-4.43 2.13-4.16 2.59 0 4.17 1.16 4.99 2l7.58-7.2-.14-.16C97.4-.99 84.27-1.92 77.89 3.77c-2.9 2.51-4.35 5.47-4.35 8.85-.16 8.34 7.15 11.23 13.83 13.19 1.42.6 3.28.97 3.44 2.47-.01.87-.36 1.61-1.06 2.22zM71.52 68.52c-.19 6.29-9.33 6.29-9.52 0V44.99H49.18v22.93c-.03 9.76 8.2 17.54 17.92 17.12 9.46 0 17.12-7.66 17.12-17.12V45h-12.7v23.52zM106.13 58.47 97.73 45H84.89l14.83 25.47v14.14h12.81V70.46L127.36 45h-12.84l-8.39 13.47z" fill="#fff"></path></svg></a></div><!--/$--><!--$--><div class="dnm-HamburgerMenu"><nav aria-label="Main" class="hamburger-menu"><button class="c-button-unstyled hamburger-menu-button" type="button" aria-controls="flyout-container" aria-expanded="false" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24" aria-hidden="true" role="img" class="open-hamburger-icon" fill="white" height="32" width="32"><path d="M19.25 7.5H4.75c-.41 0-.75-.34-.75-.75S4.34 6 4.75 6h14.5c.41 0 .75.34.75.75s-.34.75-.75.75m0 5.25H4.75c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h14.5c.41 0 .75.34.75.75s-.34.75-.75.75m0 5.25H4.75c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h14.5c.41 0 .75.34.75.75s-.34.75-.75.75"></path></svg>Menu</button></nav></div><!--/$--><!--$--><!--$--><div class="dnm-AutocompleteComponent"><div data-version="1.3.121" style="display:none" aria-hidden="true"></div><div tabindex="1" class="sugg-autocomplete-container sugg-lv"><div class=""><div class="sugg-search-bar-listener sugg-lv-search-bar" id="autocomplete-search-bar-container"><div class="sugg-search-bar-container-adjust"><textarea aria-label="Search" class="sugg-search-bar-input-adjust" placeholder="Search Best Buy" id="autocomplete-search-bar"></textarea><div id="autocomplete-icon-container" class="sugg-autocomplete-icon-container"><div id="autocomplete-clear-container" hidden="" class="sugg-clear-search-container"><button id="autocomplete-clear-button" aria-label="Clear" aria-busy="false" style="min-width:auto;min-height:auto" class="relative border-xs justify-center items-center self-start flex flex-row bg-comp-surface-transparent border-transparent p-0 w-300 h-300 border-none rounded-md cursor-pointer sugg-clear-search-button"><div tabindex="-1" style="pointer-events:none" class="m-0 w-icon-md h-icon-md"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24" aria-hidden="true" role="img" class="fill-default" height="24px" width="24px"><path d="M4.75 20c-.19 0-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l14.5-14.5c.29-.29.77-.29 1.06 0s.29.77 0 1.06l-14.5 14.5c-.15.15-.34.22-.53.22"></path><path d="M19.25 20c-.19 0-.38-.07-.53-.22L4.22 5.28c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l14.5 14.5c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22"></path></svg></div></button></div><div class="sugg-magnifier-container"><button id="autocomplete-search-button" aria-label="Search-Button" aria-busy="false" style="min-width:auto;min-height:auto" class="relative border-xs justify-center items-center self-start flex flex-row bg-comp-surface-transparent border-transparent p-0 w-300 h-300 border-none rounded-md cursor-pointer sugg-magnifier"><div tabindex="-1" style="pointer-events:none" class="m-0 w-icon-md h-icon-md"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24" aria-hidden="true" role="img" class="fill-default" height="24px" width="24px"><path d="M10 18.5c-4.69 0-8.5-3.81-8.5-8.5S5.31 1.5 10 1.5s8.5 3.81 8.5 8.5-3.81 8.5-8.5 8.5M10 3c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7"></path><path d="M21.25 22c-.18 0-.36-.07-.51-.2l-6-5.5a.746.746 0 0 1-.05-1.06c.28-.3.76-.33 1.06-.05l6 5.5c.31.28.33.75.05 1.06a.71.71 0 0 1-.55.25"></path></svg></div></button></div></div></div></div></div></div></div><!--/$--><!--/$--><!--$--><div class="dnm-CartIcon cart-icon"><div><div id="shop-cart-icon-98934938" class="_none" data-version="1.1.1"><link rel="stylesheet" href="/~assets/bby/_com/shop/cart-icon/dist/client/client-4ab61c5eb353609f3fb6286010f151e6.css" /><div class="shop-cart-icon"><!--$!--><template></template><!--/$--></div><script defer src="/~assets/bby/_com/shop/cart-icon/dist/client/client-8b215437dbe7e108f374451a2d1171b2.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"cart-icon","contractVersion":"v1","componentVersion":"1.1.1"}, "shop-cart-icon-98934938", "{\"app\":{\"cartCount\":0,\"deviceClass\":\"l\",\"enableCountFromCSI\":true,\"instanceId\":\"shop-cart-icon-98934938\"},\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"}}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"shop-cart-icon-98934938","parentInstanceId":"shop-header-92186981"}))</script></div><div><div id="pricing-price-change-notification-48378104" class="_none" data-version="1.2545.5"><div class="pricing-price-change-notification"><div class="appContainer" style="position:relative"></div></div><script type="module" src="https://assets.bbystatic.com/pricing/price-change-notification/dist/client/client-36270aefbfb9ef357fa4302b841dbd4c.mjs"></script><script nomodule defer src="https://assets.bbystatic.com/pricing/price-change-notification/dist/client/client-183e15c9bd50c867af40b77b58e5b77c.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"pricing","componentId":"price-change-notification","contractVersion":"v1","componentVersion":"1.2545.5"}, "pricing-price-change-notification-48378104", "{\"app\":{\"instanceId\":\"pricing-price-change-notification-48378104\",\"abTests\":{},\"config\":{\"interruptionDuration\":7000,\"ignoreClickAway\":false,\"fetchPacman\":true,\"pacmanTtlms\":10800000,\"fetched\":true,\"fbiState\":\"on\",\"fbiSvThrottle\":false,\"browseOffsetSelector\":\"button[data-lid*=hdr_shistory]\",\"browseOffsetX\":16,\"browseOffsetY\":10,\"disableExpirationTimer\":true,\"expirationDateThreshold\":336,\"disableBFF\":true},\"isModalOpen\":false},\"metaLayer\":{\"env_assets\":\"https:\\u002F\\u002Fassets.bbystatic.com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"}}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"pricing-price-change-notification-48378104","parentInstanceId":"shop-header-92186981"}))</script></div></div><!--/$--></div></div><div class="bottom-fluid-container  "><nav aria-label="utility" class="bottom-nav"><!--$--><div class="bottom-nav-left-wrapper"><ul class="bottom-nav-left lv"><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/top-deals" tabindex="0">Top Deals</a></li><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/site/misc/deal-of-the-day/pcmcat248000050016.c?id=pcmcat248000050016" tabindex="0">Deal of the Day</a></li><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/discover" tabindex="0">Discover</a></li><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/site/electronics/best-buy-membership/pcmcat1679668833285.c?id=pcmcat1679668833285" tabindex="0">My Best Buy Memberships</a></li><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/site/misc/financing-rewards/pcmcat102500050032.c?id=pcmcat102500050032" tabindex="0">Credit Cards</a></li><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/site/electronics/gift-cards/cat09000.c?id=cat09000" tabindex="0">Gift Cards</a></li><li aria-hidden="false"><a aria-hidden="false" class="bottom-left-links " href="/site/electronics/gift-ideas/abcat0010000.c?id=abcat0010000" tabindex="0">Gift Ideas</a></li></ul><div></div></div><!--/$--><ul class="bottom-nav-right"><li class="bottom-nav-menu-item"><!--$--><div><div id="shop-account-menu-785497" class="_none" data-version="2.13.9"><div class="shop-account-menu"><!--$--><!--/$--></div><script defer src="https://assets.bbystatic.com/shop/account-menu/dist/client/client-274784fed3482e3ee60e1235e5aafd9d.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"account-menu","contractVersion":"v1","componentVersion":"2.13.9"}, "shop-account-menu-785497", "{\"app\":{\"userName\":\"\",\"disableSignInToast\":false,\"isRecognized\":false,\"deviceClass\":\"l\",\"businessName\":\" \",\"enableAccountMenuButton\":true,\"isDegraded\":false,\"signInToastWaitTime\":20000,\"signInToastPagePermissions\":{\"allowOnGhp\":true,\"allowOnPdp\":true,\"allowOnPlp\":true},\"enableUPAAccountHome\":false,\"metaLayer\":{\"env_assets\":\"https:\\u002F\\u002Fassets.bbystatic.com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"},\"activePlanType\":\"\",\"enableCDNFromAccountMenu\":true,\"enableCreditCardDashboard\":true,\"enableGuestFreeShippingonAccountMenu\":true,\"payManageUrl\":\"\\u002Fidentity\\u002Fsso\\u002Fsignin?contextId=sso-visa&processIndicator=dashboard&source=fT4TCYlhM%2FBHt4GYEIyTpUXh8eOIYXDjvQ8brdIq%2BgjFKp0ZC2Aq%2BH81O%2Futk9NoztIKhuI3FqmuRt1rZid1%2Bw%3D%3D\",\"enableLifeTimeSavings\":true,\"enableMemberTermSavings\":true,\"enableSmbPersonalization\":true,\"membershipType\":\"NULL\",\"totalSavings\":\"\",\"memberSince\":\"\",\"automaticTakeover\":true,\"disableEntryPoint\":false,\"enableMemberOnboarding\":true,\"enableMemberOnboardingLV\":true,\"toastContext\":\"account-toast\",\"toastRedirectSource\":\"pEGrXleBQ%2BTUIvn6pE892hZ9KAMb8EH6QQFWKTIDQAnl%2FXigyQTvqsU8LOkdPk8ifRUjP8SZihr522K4rYAiRw%3D%3D\",\"instanceId\":\"shop-account-menu-785497\"},\"disableSignInToast\":false,\"enableAccountMenuButton\":false,\"businessName\":\"\",\"userName\":\"\",\"placement\":\"\",\"isRecognized\":false,\"deviceClass\":\"\"}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"shop-account-menu-785497","parentInstanceId":"shop-header-92186981"}))</script></div><!--/$--></li><li class="bottom-nav-menu-item"><!--$--><a href="https://www.bestbuy.com/site/customer/lists/manage/recently-viewed">Recently Viewed</a><!--/$--></li><li class="bottom-nav-menu-item"><!--$--><div class="flyout-button-wrapper" id="order-status-flyout-button"><a aria-disabled="false" class="c-button-unstyled plButton orderStatus-button d-flex justify-content-center align-items-center" href="/profile/ss/orderlookup" role="button" tabindex="0"><span class="v-p-right-xxs">Order Status</span></a></div><!--/$--></li><li class="bottom-nav-menu-item"><!--$--><a href="https://www.bestbuy.com/site/customer/lists/manage/saveditems">Saved Items</a><!--/$--></li></ul></nav><!--$--><!--$--><!--$--><div data-version="visitor-optimization-web-version-25.34.36"></div><!--/$--><!--/$--><!--/$--></div></header><div><div id="shop-interruptions-manager-20370910" class="_none" data-version="25.7.52"><div class="shop-interruptions-manager"></div><script type="module" src="/~assets/bby/_com/shop/interruptions-manager/dist/client/client-76feb6d31a7ba79ffe7e4b516cfdec4f.mjs"></script><script nomodule defer src="/~assets/bby/_com/shop/interruptions-manager/dist/client/client-087cb23ce4b3bdf3eab346a85810ef05.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"interruptions-manager","contractVersion":"v1","componentVersion":"25.7.52"}, "shop-interruptions-manager-20370910", "{\"app\":{\"businessRules\":{\"batchDuration\":1000,\"denylist\":{\"paid-member-failed-auth-critical\":[{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The failed auth notification is not allowed on the account home\",\"url\":\"\\u002Fsite\\u002Fcustomer\\u002Fmyaccount\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The failed auth notification is not allowed on the membership dashboard\",\"url\":\"\\u002Fservices\\u002Fmembership\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The failed auth notification is not allowed on the support page\",\"url\":\"\\u002Fsupport\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The failed auth notification is not allowed on the contact-us page\",\"url\":\"\\u002Fcontact-us\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The failed auth notification is not allowed on the cart page\",\"url\":\"\\u002Fcart\"}],\"add-account-recovery-phone\":[{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The account recovery phone notification is not allowed on the account home\",\"url\":\"\\u002Fsite\\u002Fcustomer\\u002Fmyaccount\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The account recovery phone notification is not allowed on the membership dashboard\",\"url\":\"\\u002Fservices\\u002Fmembership\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The account recovery phone notification is not allowed on the support page\",\"url\":\"\\u002Fsupport\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The account recovery phone notification is not allowed on the contact-us page\",\"url\":\"\\u002Fcontact-us\"},{\"deviceClass\":\"s, l\",\"placement\":\"header\",\"reason\":\"The account recovery phone notification is not allowed on the cart page\",\"url\":\"\\u002Fcart\"}],\"price-change-notification\":[{\"deviceClass\":\"s,l\",\"placement\":\"top\",\"reason\":\"PCN notification is not allowed on cart\",\"url\":\"\\u002Fcart\"},{\"deviceClass\":\"l\",\"placement\":\"top\",\"reason\":\"PCN notification is not allowed on bestbuy.com\",\"url\":\"\\u002Fsite\\u002Fcustomer\\u002Fmyaccount\"}]},\"priorities\":{\"visitor-optimization-modal\":1626,\"invalid-store-notification\":1550,\"last-item-viewed-toast-notification\":1000,\"paid-member-failed-auth-critical\":1650,\"member-onboarding-modal\":1625,\"add-account-recovery-phone\":1600,\"open-order-toast-notification\":1100,\"price-change-notification\":1500,\"sign-in-toast-notification\":1050,\"total-tech-sale-toast-notification\":1575,\"custom-card-message-notification\":1525}},\"hasBusinessRulesError\":false}}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"shop-interruptions-manager-20370910","parentInstanceId":"shop-header-92186981"}))</script></div><!--$--><div><div id="shop-stips-8201589" class="_none" data-version="1.1.1"><div class="shop-stips"><div class="stips-component"></div></div><script defer src="/~assets/bby/_com/shop/stips/dist/client/client-cf72d3143ea14f88aaf2b3c41eef92f0.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"stips","contractVersion":"v1","componentVersion":"1.1.1"}, "shop-stips-8201589", "{\"placement\":\"header\"}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"shop-stips-8201589","parentInstanceId":"shop-header-92186981"}))</script></div><!--/$--><div><div id="cret-appgrowth-smartbanner-70243202" class="_none" data-version="2.1.4"><div class="cret-appgrowth-smartbanner"><div class="appgrowth-smartbanner-wrapper" data-testid="application-wrapper"></div></div><script type="module" src="/~assets/bby/_com/cret/appgrowth-smartbanner/dist/client/client-bbac2791d005063a35d5b15b77681395.mjs"></script><script nomodule defer src="/~assets/bby/_com/cret/appgrowth-smartbanner/dist/client/client-9440f6b08a71acf4774f73661edef718.js"></script><script>(function () { const state = "{\"instanceId\":\"cret-appgrowth-smartbanner-70243202\",\"name\":\"appgrowth-smartbanner\",\"isSmallView\":false,\"nativeAppPageRequest\":\" \",\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\"},\"version\":\"2.5.21\",\"smartBannerEnabled\":true,\"smartBannerConfig\":{\"pageTypes\":[\"pdp\",\"browse,pdp\",\"list\",\"browse,list,category\",\"browse,list,search,results\",\"browse,home\",\"profile,account,home\",\"profile,myBB,history\",\"checkout,thankYou\",\"checkout\",\"profile,myAccount,orderDetails\",\"profile,myAccount,myBB,history,purchaseDetails\",\"cart*\",\"cc-dashboard\",\"managed-content\",\"exclusive-access\"],\"largeViewPageTypes\":[\"cc-dashboard\",\"profile,account,home\",\"profile,myAccount,orderDetails\"],\"suppressGuestTYP\":false,\"urlPaths\":[\"member-exclusive-deals\",\"checkout\\u002Fr\\u002Fthank-you\",\"site\\u002Felectronics\\u002Ftop-deals\",\"site\\u002Fmisc\\u002Fdeal-of-the-day\",\"site\\u002Felectronics\\u002Foutlet-refurbished-clearance\",\"site\\u002Foutlet-refurbished-clearance\\u002Fclearance-electronics\",\"site\\u002Ftop-deals\",\"site\\u002Fhome-appliances\\u002Fmajor-appliances-sale-event\",\"site\\u002Fclp\\u002Fsale-page\",\"site\\u002Fpromo\\u002Fbf-direct-mail\",\"services\\u002Ftriage\\u002Fhome\",\"services\\u002Ftriage\\u002Fthank-you\"],\"validShareSources\":[\"PDP\",\"SHOP_WITH_VIDEO\",\"STORE_SIGNAGE\",\"ctv\"],\"exp0399Test\":\"deo\",\"exp0439Test\":\"deo\",\"exp0447Test\":\"deo\",\"orderDetailsMatchDuration\":600,\"memberPicksExpireDate\":\"03\\u002F30\",\"reengagementDelayDays\":14,\"planPaidMemberType\":\"NULL\",\"isSmallView\":false},\"effectivePlanPaidMemberType\":\"NULL\"}"; window.getInitializer ? getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"cret","componentId":"appgrowth-smartbanner","contractVersion":"v1","componentVersion":"2.1.4"}, "cret-appgrowth-smartbanner-70243202", state, "en-US")) : initializer.initializeComponent({"creatorNamespace":"cret","componentId":"appgrowth-smartbanner","contractVersion":"v1","componentVersion":"2.1.4"}, "cret-appgrowth-smartbanner-70243202", state, "en-US"); })();</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"cret-appgrowth-smartbanner-70243202","parentInstanceId":"shop-header-92186981"}))</script></div></div><div class="visibility-hidden" id="headerskip" tabindex="-1">Main Content</div><script>window.exp0283='A';</script></div><script defer src="/~assets/bby/_com/shop/header/dist/client/client-ce6f4fd1b397402a522574147b6f3ead.js"></script><script type="application/json" id="shop-header-92186981-json">{"app":{"deviceClass":"l","effectivePlanPaidMemberType":"NULL","enableStickyLV":true,"excludedUrls":["\u002Fsite\u002Felectronics\u002Fblack-friday\u002Fpcmcat225600050002.c?id=pcmcat225600050002","\u002Fsite\u002Fmisc\u002Fcyber-monday\u002Fpcmcat309500050010.c?id=pcmcat309500050010","\u002Fsite\u002Fclp\u002Fsale-page\u002Fpcmcat185700050011.c?id=pcmcat185700050011","\u002Ftop-deals","\u002Fsite\u002Fmisc\u002Fdeal-of-the-day\u002Fpcmcat248000050016.c?id=pcmcat248000050016","\u002Fsite\u002Felectronics\u002Fbest-buy-membership\u002Fpcmcat1679668833285.c?id=pcmcat1679668833285","\u002Fsite\u002Felectronics\u002Foutlet-refurbished-clearance\u002Fpcmcat142300050026.c?id=pcmcat142300050026","\u002Fsite\u002Fmisc\u002Ffinancing-rewards\u002Fpcmcat102500050032.c?id=pcmcat102500050032","\u002Fsite\u002Felectronics\u002Fgift-cards\u002Fcat09000.c?id=cat09000","\u002Fsite\u002Fmisc\u002Fyes-best-buy-sells-that\u002Fpcmcat1621542998180.c?id=pcmcat1621542998180","\u002Fsite\u002Fcustomer\u002Fmyaccount","\u002Fsite\u002Felectronics\u002Fgift-ideas\u002Fabcat0010000.c?id=abcat0010000","\u002Fservices\u002Ftriage\u002Fshopping","\u002Fsite\u002Felectronics\u002Fbestbuy-business\u002Fpcmcat230900050001.c?id=pcmcat230900050001","\u002Fsite\u002Fcustomer\u002Flists\u002Fmanage\u002Frecently-viewed","\u002Fprofile\u002Fss\u002Forderlookup","\u002Fsite\u002Fcustomer\u002Flists\u002Fmanage\u002Fsaveditems","\u002Fsupport","\u002Fservices\u002Ftriage\u002Fhome","\u002Fservices\u002Fremotesupport","\u002Fdossier\u002Fservice\u002Fappointmentmanager","\u002Ftrade-in","\u002Fservices\u002Frepairtracker","\u002Fsite\u002Fbest-buy-brands\u002Fsupport\u002Fpcmcat1693515381920.c?id=pcmcat1693515381920","\u002Fdiscover","\u002Fsite\u002Fmisc\u002Fback-to-school\u002Fpcmcat334100050000.c?id=pcmcat334100050000"],"exp0283":"A","instanceId":"shop-header-92186981","isBot":false,"isEmployee":false,"isRecognized":"false","nativeAppPageRequest":" ","navFalcorRoute":"shop.scds.v2.page.byView.tenants[\"bbypres\"].pages[\"globalnavigationv5sv\"].view[\"large\"].header","piscesUrl":"https:\u002F\u002Fpisces.bbystatic.com","queryType":"","renderSEO":false,"stipsHeaderContext":[{"content":"\u003Cdiv class=\"sr-only\"\u003ESTIPS Default Data\u003C\u002Fdiv\u003E","javascriptCondition":false,"rules":{"allowedUrls":["http:\u002F\u002Flocalhost:8080\u002Fpreview"],"blockedUrls":["example.com\u002Fblock2"]},"script":"() =\u003E console.log('STIPS Default')","validUntil":"2026-01-15"}],"storeId":"","theme":"default","utilityNavigation":[{"iconName":"Store","id":"store","text":"My Store","trackLabel":"My Store","url":"\u002Fsite\u002Fstore-locator","visible":true},{"candidateLinks":{"Chromebook":{"text":"Chromebooks","url":"\u002Fsite\u002Fall-laptops\u002Fchromebooks\u002Fpcmcat244900050010.c?id=pcmcat244900050010"},"Digital SLR Camera":{"text":"DSLR Cameras","url":"\u002Fsite\u002Fdigital-cameras\u002Fdigital-slr-cameras\u002Fabcat0401005.c?id=abcat0401005"},"Drone":{"text":"Drones","url":"\u002Fsite\u002Faerial-drones-accessories\u002Fdrones-with-cameras\u002Fpcmcat369900050002.c?id=pcmcat369900050002"},"Google Pixel":{"text":"Google Pixel","url":"\u002Fsite\u002Fsearchpage.jsp?_dyncharset=UTF-8&browsedCategory=pcmcat1625163553254&id=pcat17071&iht=n&ks=960&list=y&qp=brand_facet%3DBrand~Google&sc=Global&sp=-displaydate%20skuidsaas&st=pcmcat1625163553254_categoryid%24abcat0800000&type=page&usc=All%20Categories"},"Headphones":{"text":"Headphones","url":"\u002Fsite\u002Fheadphones\u002Fall-headphones\u002Fpcmcat144700050004.c?id=pcmcat144700050004"},"Laptop Computer":{"text":"Laptops","url":"\u002Fsite\u002Fall-laptops\u002Fpc-laptops\u002Fpcmcat247400050000.c?id=pcmcat247400050000"},"MacBook":{"text":"MacBooks","url":"\u002Fsite\u002Fall-laptops\u002Fmacbooks\u002Fpcmcat247400050001.c?id=pcmcat247400050001"},"Mirrorless Camera":{"text":"Mirrorless Cameras","url":"\u002Fsite\u002Fdigital-cameras\u002Fmirrorless-cameras\u002Fpcmcat214000050005.c?id=pcmcat214000050005"},"Point and Shoot Camera":{"text":"Point & Shoot Cameras","url":"\u002Fsite\u002Fdigital-cameras\u002Fpoint-shoot-cameras\u002Fabcat0401001.c?id=abcat0401001"},"Samsung Galaxy Tab S7 FE":{"text":"Tablets","url":"\u002Fsite\u002Fsamsung-computers-tablets\u002Fsamsung-galaxy-tablets\u002Fpcmcat374700050012.c?id=pcmcat374700050012"},"Surface":{"text":"Surface Laptops","url":"\u002Fsite\u002Fmicrosoft-surface\u002Fmicrosoft-surface-laptops\u002Fpcmcat1492808872042.c?id=pcmcat1492808872042"},"Television":{"text":"TVs","url":"\u002Fsite\u002Ftvs\u002Fall-flat-screen-tvs\u002Fabcat0101001.c?id=abcat0101001"},"Video Game Console":{"text":"Video Games","url":"\u002Fsite\u002Felectronics\u002Fvideo-games\u002Fabcat0700000.c?id=abcat0700000"},"iPad":{"text":"iPads","url":"\u002Fsite\u002Fipad\u002Fapple-ipad\u002Fpcmcat1490110513760.c?id=pcmcat1490110513760"},"iPhone":{"text":"iPhone","url":"\u002Fsite\u002Fmobile-cell-phones\u002Fiphone\u002Fpcmcat305200050000.c?id=pcmcat305200050000"}},"id":"recentPdp","visible":true},{"excludedUrls":["\u002Fsite\u002Felectronics\u002Fblack-friday\u002Fpcmcat225600050002.c?id=pcmcat225600050002","\u002Fsite\u002Fmisc\u002Fcyber-monday\u002Fpcmcat309500050010.c?id=pcmcat309500050010","\u002Fsite\u002Fclp\u002Fsale-page\u002Fpcmcat185700050011.c?id=pcmcat185700050011","\u002Ftop-deals","\u002Fsite\u002Fmisc\u002Fdeal-of-the-day\u002Fpcmcat248000050016.c?id=pcmcat248000050016","\u002Fsite\u002Felectronics\u002Fbest-buy-membership\u002Fpcmcat1679668833285.c?id=pcmcat1679668833285","\u002Fsite\u002Felectronics\u002Foutlet-refurbished-clearance\u002Fpcmcat142300050026.c?id=pcmcat142300050026","\u002Fsite\u002Fmisc\u002Ffinancing-rewards\u002Fpcmcat102500050032.c?id=pcmcat102500050032","\u002Fsite\u002Felectronics\u002Fgift-cards\u002Fcat09000.c?id=cat09000","\u002Fsite\u002Fmisc\u002Fyes-best-buy-sells-that\u002Fpcmcat1621542998180.c?id=pcmcat1621542998180","\u002Fsite\u002Fcustomer\u002Fmyaccount","\u002Fsite\u002Felectronics\u002Fgift-ideas\u002Fabcat0010000.c?id=abcat0010000","\u002Fservices\u002Ftriage\u002Fshopping","\u002Fsite\u002Felectronics\u002Fbestbuy-business\u002Fpcmcat230900050001.c?id=pcmcat230900050001","\u002Fsite\u002Fcustomer\u002Flists\u002Fmanage\u002Frecently-viewed","\u002Fprofile\u002Fss\u002Forderlookup","\u002Fsite\u002Fcustomer\u002Flists\u002Fmanage\u002Fsaveditems","\u002Fsupport","\u002Fservices\u002Ftriage\u002Fhome","\u002Fservices\u002Fremotesupport","\u002Fdossier\u002Fservice\u002Fappointmentmanager","\u002Ftrade-in","\u002Fservices\u002Frepairtracker","\u002Fsite\u002Fbest-buy-brands\u002Fsupport\u002Fpcmcat1693515381920.c?id=pcmcat1693515381920","\u002Fdiscover","\u002Fsite\u002Fmisc\u002Fback-to-school\u002Fpcmcat334100050000.c?id=pcmcat334100050000"],"id":"recentPlp","visible":true},{"iconName":"Store","id":"outlet","text":"Outlet","trackLabel":"outlet","url":"\u002Fsite\u002Felectronics\u002Foutlet-refurbished-clearance\u002Fpcmcat142300050026.c?id=pcmcat142300050026","visible":true},{"iconName":"FeaturedDeals","id":"top-deals","text":"Top Deals","trackLabel":"Top Deals","url":"\u002Ftop-deals","visible":true},{"iconName":"FeaturedDeals","id":"discover","text":"Discover","trackLabel":"Discover","url":"\u002Fdiscover","visible":true},{"iconName":"FeaturedDeals","id":"deal-of-the-day","text":"Deal of the Day","trackLabel":"Deal of the Day","url":"\u002Fsite\u002Fmisc\u002Fdeal-of-the-day\u002Fpcmcat248000050016.c?id=pcmcat248000050016","visible":true},{"iconName":"myBBY","id":"membership","text":"My Best Buy","trackLabel":"My Best Buy","url":"\u002Fsite\u002Felectronics\u002Fbest-buy-membership\u002Fpcmcat1679668833285.c?id=pcmcat1679668833285","visible":true},{"iconName":"CreditCard","id":"credit-card","text":"Credit Card","trackLabel":"Credit Card","url":"\u002Fsite\u002Fmisc\u002Ffinancing-rewards\u002Fpcmcat102500050032.c?id=pcmcat102500050032","visible":true},{"iconName":"GiftCard","id":"gift-card","text":"Gift Cards","trackLabel":"Gift Cards","url":"\u002Fsite\u002Felectronics\u002Fgift-cards\u002Fcat09000.c?id=cat09000","visible":true},{"iconName":"Gift","id":"gift-ideas","text":"Gift Ideas","trackLabel":"Gift Ideas","url":"\u002Fsite\u002Felectronics\u002Fgift-ideas\u002Fabcat0010000.c?id=abcat0010000","visible":true},{"iconName":"Tag","id":"best-buy-for-business","text":"Best Buy Business","trackLabel":"Best Buy Business","url":"\u002Fsite\u002Felectronics\u002Fbestbuy-business\u002Fpcmcat230900050001.c?id=pcmcat230900050001","visible":true}],"headerData":{"globalNavigation":[{"_meta":{},"bold":true,"childNodes":[],"displayName":"Deals","styleId":"topFour-dealsMenu","isFlyMenu":true},{"_meta":{},"bold":true,"childNodes":[],"displayName":"Support & Services","styleId":"topFour-servicesMenu","isFlyMenu":true},{"_meta":{},"bold":true,"childNodes":[],"displayName":"Brands","styleId":"topFour-shopByBrand","isFlyMenu":true},{"_meta":{"omitFromLarge":false,"omitFromNative":false,"omitFromSmall":false},"bold":true,"childNodes":[],"displayName":"Discover","link":{"lid":"ubr_ftr"},"isFlyMenu":true},{"_meta":{"omitFromLarge":false,"omitFromMedium":false,"omitFromNative":false},"childNodes":[],"styleId":"separator"},{"_meta":{},"bold":true,"childNodes":[],"displayName":"Shop by Department","styleId":"shopAllCategories","isFlyMenu":true}],"utilityNavigation":[{"_meta":{"omitFromLarge":false,"omitFromMedium":false},"childNodes":[],"displayName":"Top Deals","link":{"lid":"hdr_td","url":"\u002Ftop-deals"}},{"_meta":{"omitFromSmall":false},"childNodes":[],"displayName":"Deal of the Day","link":{"lid":"hdr_dotd","nodeId":"pcmcat248000050016","url":"\u002Fsite\u002Fmisc\u002Fdeal-of-the-day\u002Fpcmcat248000050016.c?id=pcmcat248000050016"}},{"_meta":{"omitFromLarge":false,"omitFromMedium":false,"omitFromSmall":false},"childNodes":[],"displayName":"Discover","link":{"lid":"ubr_discover","url":"\u002Fdiscover"}},{"_meta":{"omitFromLarge":false,"omitFromMedium":false,"omitFromNative":false},"childNodes":[],"displayName":"My Best Buy Memberships","link":{"lid":"hdr_my_best_buy_memberships","nodeId":"pcmcat1679668833285","url":"\u002Fsite\u002Felectronics\u002Fbest-buy-membership\u002Fpcmcat1679668833285.c?id=pcmcat1679668833285"}},{"_meta":{"omitFromLarge":false,"omitFromMedium":false,"omitFromNative":false},"childNodes":[],"displayName":"Credit Cards","link":{"lid":"hdr_crd","url":"\u002Fsite\u002Fmisc\u002Ffinancing-rewards\u002Fpcmcat102500050032.c?id=pcmcat102500050032"}},{"_meta":{"omitFromLarge":false,"omitFromMedium":false,"omitFromNative":false},"childNodes":[],"displayName":"Gift Cards","link":{"lid":"hdr_gift_cards","nodeId":"cat09000","url":"\u002Fsite\u002Felectronics\u002Fgift-cards\u002Fcat09000.c?id=cat09000"}},{"_meta":{"omitFromLarge":false,"omitFromMedium":false,"omitFromNative":false},"childNodes":[],"displayName":"Gift Ideas","link":{"lid":"hdr_gift_ideas","nodeId":"abcat0010000","url":"\u002Fsite\u002Felectronics\u002Fgift-ideas\u002Fabcat0010000.c?id=abcat0010000"}}]},"isUnGvp":false},"bannerConfigs":{"bannerBlacklistedStores":[],"bannerBlacklistGHP":true,"bannerBlacklistPages":["cat00000","pcmcat1651770167686","pcmcat225600050002","pcmcat309500050010","pcmcat185700050011","pcmcat1563300667320","pcmcat1753385615918"],"bannerDisplayForAllLocations":true,"bannerLV":true,"bannerPositionAbove":true,"bannerSSREnabled":false,"bannerSSRExternalHidden":false,"bannerSV":true},"banners":[{"bannerId":"default","content":{"bannerBackgroundColor":"#0046be","bannerBodyText":{"color":"#ffffff","dataTrack":"r","fontSize":0,"fontWeight":400,"text":"Ends 1\u002F19. Limited quantities. No rainchecks.","url":""},"bannerHeaderText":{"color":"#fff200","fontSize":0,"fontWeight":500,"text":"Winter Sale"},"bannerLinksLV":{"dataTrack":"","primaryTextLink":{"dataTrack":"Winter-Sale-Ends-1-19-banner LV","linkColor":"#fff200","openInSameTab":true,"text":"Shop now","url":"\u002Fsale-event"}},"bannerLinksSV":{"dataTrack":"","primaryTextLink":{"dataTrack":"Winter-Sale-Ends-1-19-banner SV","linkColor":"#fff200","openInSameTab":true,"text":"Shop now","url":"\u002Fsale-event"}}},"stores":{},"type":"default"}],"isBannerHidden":false,"isSmallView":false,"liveConfig":{"accountMenuToastWaitTime":20000,"bannerBlacklistedStores":[],"bannerBlacklistGHP":true,"bannerBlacklistPages":["cat00000","pcmcat1651770167686","pcmcat225600050002","pcmcat309500050010","pcmcat185700050011","pcmcat1563300667320","pcmcat1753385615918"],"bannerDisplayForAllLocations":true,"bannerLV":true,"bannerPositionAbove":true,"bannerSSREnabled":false,"bannerSV":true,"degradeAccountMenu":false,"degradeOrderStatus":false,"disableDeferredHydration":true,"disableHeaderSTIPS":false,"disableHeaderSTIPSV2":true,"disableInterruptionsManager":false,"disableRecentlyViewedBadges":true,"disableShoppingHistoryFlyout":false,"disableSmartBanner":false,"disableUpaAssistiveHeaderSurvey":false,"egpEndpoint":"https:\u002F\u002Fbifrostgw.west.us.bestbuy.com\u002Fgateway\u002Fgraphql","enableAddToCartButtonRules":true,"enableCartIconV2ForUnGVP":true,"enableClientOnlyStoreSelector":true,"enableCombos":true,"enableEGPCallForHeader":true,"enableEXP0283":"A","enableFailedAuthToast":true,"enableFreeShippingToastAbTest":false,"enableOpenOrderToast":false,"enablePersistentStickyNav":true,"enablePersonalizationMenu":false,"enablePersonalizedLinks":true,"enableSavedItemsContainer":true,"enableSaveForLater":true,"enableScrollLockForAllFlyouts":true,"enableSearchBarPersonalization":false,"enableSignInToast":true,"enableStickyLVGlobally":true,"enableStickyOverrides":true,"enableStickySV":true,"enableStickySVABTest":false,"enableStickySVAlways":false,"enableStoreSelector":true,"enableSuggestViewFederatedImport":true,"enableSVUtilityNav":true,"enableTotalTechSaleToast":false,"enableUnGVPAccountMenu":false,"enableUnverifiedPhoneToast":true,"enableUPAInterruptionsManager":false,"enableUPAStickyHeaderSelectorLV":true,"enableUPAWelcomeBackToast":false,"enableUtilityNavImpressionAnalytics":true,"enableVisitorOptimization":true,"exp0283Variation":"A","flyoutIconMenuSmallViewEnabled":false,"forceSavedItemsContainer":true,"freeShippingToastPermissions":{"allowOnGhp":true,"allowOnPdp":true,"allowOnPlp":true},"getLatestOpenOrderEndpointPath":"\u002Fglobalnav\u002Fget-latest-open-order","giftIdeasButtonEnabled":false,"giftIdeasButtonLinkUrl":"\u002Fsite\u002Felectronics\u002Fgift-ideas\u002Fabcat0010000.c?id=abcat0010000","giftIdeasButtonText":"Gift Ideas","headerNode":"globalnavigationv5sv","isUpaAutocompleteOn":true,"messagingTile":{"enabled":true},"mpAllEnabled":true,"mpEmployeesEnabled":false,"mpEnabled":true,"mpUTInclusionList":"","mpUTInclusionListEnabled":false,"previewHostName":"disabled","priceChangeNotificationEnabled":true,"searchBarTextLv":"What can we help you find today?","searchBarTextPersonalizedLv":"Hi, [first_Name]! What can we help you find today?","searchBarTextPersonalizedSv":"Search Best Buy","searchBarTextSv":"Search Best Buy","searchTopDealsCategoryId":"pcmcat1674241939957","searchTopDealsCategoryMapping":"0","searchTopDealsLayerEnabled":false,"searchTopDealsPath":"noMatching","shoppingHistorySuppressedCategories":["pcmcat1625079176607","pcmcat1625079372032","pcmcat1625079577315"],"shopTabNodes":[{"styleId":"shopAllCategories","displayName":"Departments","childNodes":[{"styleId":"topFour-shopByBrand"},{"styleId":"shopOurBrands"}]},{"styleId":"topFour-servicesMenu"},{"styleId":"topFour-dealsMenu"}],"shopTabPreviewAllowed":true,"showBrowserDeprecatedBanner":false,"signInToastPagePermissions":{"allowOnGhp":true,"allowOnPdp":true,"allowOnPlp":true},"signInToastWaitTime":20000,"stickyLVDenylist":[],"stickySVDenyList":[],"suggest":{"dropDownExperimentKey":"exp0306","enableCategoryDropdown":true,"enableSearchDealsDisableOfAutocomplete":true,"enablePurchaseHistoryBff":true,"enableLocation":false,"enableMulticategory":true,"enableCompatibleProducts":false,"enableModernImageFormat":true,"enablePopulateTermOnKeystroke":true,"enablePopularSearches":true,"enableProductFlipping":true,"enableProductSuggestion":true,"enablePurchaseHistory":true,"enableRatings":true,"enableRecentlyViewed":true,"enableSearchHistoryOnClick":true,"enableSearchHistoryOnTyping":true,"enableSearchHistoryWithCategory":false,"enableSearchWithNoAvailableProductSuggestions":true,"enableWidenedAutocompleteBox":true,"httpRequestUrlPrefix":"https:\u002F\u002Fwww.bestbuy.com","httpsRequestUrlPrefix":"https:\u002F\u002Fwww.bestbuy.com","keystrokeDebounceTime":2,"limit":50,"minPurchaseHistoryCharactersPerToken":3,"minPurchaseHistoryQueryLength":3,"minSuggestCharacters":1,"numberOfSearchHistoriesOnTyping":3,"pdpUrlPrefix":"https:\u002F\u002Fwww.bestbuy.com","productFlippingDelay":100,"productQueryParameters":"","purchaseHistoryExperimentKey":"abt3445","enablePurchaseHistoryFetchV2":true,"searchHistoryDebounceTime":2,"suggestionQueryParameters":"","useSuggestViewClient":true,"useSuggestViewProducts":false,"enableSendTrailingSpaces":true,"lv":{"numberOfMulticategories":3},"sv":{"numberOfMulticategories":0}},"toastWaitTime":4000,"totalTechToastConfig":{"presaleStartDate":"2022-11-15T00:30:00.000-06:00","saleStartDate":"2022-11-17T00:30:00.000-06:00","saleEndDate":"2022-11-18T00:00:00.000-06:00","displayMonth":"NOV","displayDate":"17","toastWaitTime":10000,"saleTitle":"Totaltech early access now live","saleDescription":"Totaltech members get early access to our holiday sale.","saleCTA":{"text":"Shop Now","link":"https:\u002F\u002Fwww.bestbuy.com\u002Fsite\u002Fmy-best-buy\u002Fmy-best-buy-early-access\u002Fpcmcat322500050001.c?id=pcmcat322500050001","dataTrack":"Notification: Totaltech event: Shop now"},"preSaleTitle":"Totaltech early access event","preSaleDescription":"Get exclusive access to our holiday sale this Thursday.","preSaleCTA":{"text":"Learn more","link":"https:\u002F\u002Fwww.bestbuy.com\u002Fsite\u002Fblack-friday\u002Fsale-ad#jl-holiday-shopping-dates","dataTrack":"Notification: Totaltech event: Learn more"}},"universalNavConfig":{"linksConfig":[{"dataTrack":"yardbird.com","openInNewTab":true,"text":"Yardbird","url":"https:\u002F\u002Fyardbird.com\u002F"},{"dataTrack":"BBYOutlets","text":"Best Buy Outlet","url":"https:\u002F\u002Fwww.bestbuy.com\u002Fsite\u002Felectronics\u002Foutlet-refurbished-clearance\u002Fpcmcat142300050026.c?id=pcmcat142300050026"},{"dataTrack":"BestBuyBusiness","text":"Best Buy Business","url":"https:\u002F\u002Fwww.bestbuy.com\u002Fsite\u002Felectronics\u002Fbestbuy-business\u002Fpcmcat230900050001.c?id=pcmcat230900050001"}],"barConfig":{"svEnabled":true,"lvEnabled":true}},"upaPriceChangeNotificationEnabled":false,"useNewRecentlyViewedFlyout":false,"useNewSavedItemsFlyout":false,"useWebpImages":false},"metaLayer":{"env_assets":"\u002F~assets\u002Fbby\u002F_com","env_piscesUrl":"https:\u002F\u002Fpisces.bbystatic.com","env_appServer":"https:\u002F\u002Fwww.bestbuy.com","userIsRecognized":false},"suppressHeader":false,"universalNavConfig":{"barConfig":{"allowSiteWideWithBar":true,"allowSiteWideWithBarOnHomepage":false,"backgroundColor":"#013196","lvEnabled":true,"noShowPageList":[],"svEnabled":true},"linksConfig":[{"dataTrack":"yardbird.com","openInNewTab":true,"text":"Yardbird","url":"https:\u002F\u002Fyardbird.com\u002F"},{"dataTrack":"BBYOutlets","text":"Best Buy Outlet","url":"https:\u002F\u002Fwww.bestbuy.com\u002Fsite\u002Felectronics\u002Foutlet-refurbished-clearance\u002Fpcmcat142300050026.c?id=pcmcat142300050026"},{"dataTrack":"BestBuyBusiness","text":"Best Buy Business","url":"https:\u002F\u002Fwww.bestbuy.com\u002Fsite\u002Felectronics\u002Fbestbuy-business\u002Fpcmcat230900050001.c?id=pcmcat230900050001"}]}}</script><script>getInitializer().then(initializer => initializer.initComponent({"creatorNamespace":"shop","componentId":"header","contractVersion":"v1","componentVersion":"1.1.22"}, "shop-header-92186981", "en-US"));</script></div>
+    <div id="pageSpinner">
+      <div class="page-loading-spinner" style="position: relative; clear: both; text-align: center; padding-top: 68px; padding-bottom: 68px;">
+        <i class="spinner spinner-large"></i>
+      </div>
+    </div>
+    <main id="package-builder-container" style="min-height: 800px;"></main>
+
+      
+                            
+                         <div id="shop-footer-75745957" class="_none" data-version="1.1.4"><link rel="stylesheet" href="/~assets/bby/_com/shop/footer/dist/client/client-a58da2504407c6a9212f56970ba351cc.css" /><div class="shop-footer"><footer class="appContainer p-200 p-md-300 p-lg-400 p-xl-500 v-bg-background-white lv" id="footer" role="contentinfo"><ul class="icon-navigation list-none flex grow w-full m-none px-none pb-400"><li class="w-1/4"><div class="m-100 h-full"><a class="h-full flex flex-column text-center" href="/support"><div class="icon-navigation-link-icon mx-auto my-100"><svg aria-hidden="true" role="img" viewBox="0 0 100 100" fill="#70757D"></svg></div><strong class="mx-auto my-100">Visit our Support Center</strong></a></div></li><li class="w-1/4"><div class="m-100 h-full"><a class="h-full flex flex-column text-center" href="/profile/ss/orderlookup"><div class="icon-navigation-link-icon mx-auto my-100"><svg aria-hidden="true" role="img" viewBox="0 0 100 100" fill="#70757D"></svg></div><strong class="mx-auto my-100">Check your Order Status</strong></a></div></li><li class="w-1/4"><div class="m-100 h-full"><a class="h-full flex flex-column text-center" href="/site/help-topics/shipping-delivery-store-pickup/pcmcat316000050003.c?id=pcmcat316000050003"><div class="icon-navigation-link-icon mx-auto my-100"><svg aria-hidden="true" role="img" viewBox="0 0 100 100" fill="#70757D"></svg></div><strong class="mx-auto my-100">Shipping, Delivery &amp; Store Pickup</strong></a></div></li><li class="w-1/4"><div class="m-100 h-full"><a class="h-full flex flex-column text-center" href="/site/help-topics/return-exchange-policy/pcmcat260800050014.c?id=pcmcat260800050014"><div class="icon-navigation-link-icon mx-auto my-100"><svg aria-hidden="true" role="img" viewBox="0 0 100 100" fill="#70757D"></svg></div><strong class="mx-auto my-100">Returns &amp; Exchanges</strong></a></div></li><li class="w-1/4 hidden-icon-link"><div class="m-100 h-full"><a class="h-full flex flex-column text-center" href="/site/help-topics/price-match-guarantee/pcmcat290300050002.c?id=pcmcat290300050002"><div class="icon-navigation-link-icon mx-auto my-100"><svg aria-hidden="true" role="img" viewBox="0 0 100 100" fill="#70757D"></svg></div><strong class="mx-auto my-100">Price Match Guarantee</strong></a></div></li></ul><div class="main-marketing-wrapper flex justify-content-between mb-800"><div class="main-navigation grid grid-cols-3 auto-flow-col"><div><h3 class="navigation-section-heading body-copy-lg v-text-tech-black">Order &amp; Purchases</h3><ul class="navigation-section-list p-none list-none"><li class="body-copy"><a href="/profile/ss/orderlookup">Check Order Status</a></li><li class="body-copy"><a href="/site/help-topics/shipping-delivery-store-pickup/pcmcat316000050003.c?id=pcmcat316000050003">Shipping, Delivery &amp; Pickup</a></li><li class="body-copy"><a href="/site/help-topics/return-exchange-policy/pcmcat260800050014.c?id=pcmcat260800050014">Returns &amp; Exchanges</a></li><li class="body-copy"><a href="/site/help-topics/price-match-guarantee/pcmcat290300050002.c?id=pcmcat290300050002">Price Match Guarantee</a></li><li class="body-copy"><a href="/site/help-topics/product-recalls/pcmcat114800050015.c?id=pcmcat114800050015">Product Recalls</a></li><li class="body-copy"><a href="https://www.bestbuy.com/trade-in">Trade-In Program</a></li><li class="body-copy"><a href="/site/electronics/gift-cards/cat09000.c?id=cat09000">Gift Cards</a></li></ul></div><div><h3 class="navigation-section-heading body-copy-lg v-text-tech-black">Payment Options</h3><ul class="navigation-section-list p-none list-none"><li class="body-copy"><a href="/site/misc/financing-rewards/pcmcat102500050032.c?id=pcmcat102500050032">My Best Buy® Credit Card</a></li><li class="body-copy"><a href="/identity/sso/signin?contextId=sso-visa&amp;processIndicator=dashboard&amp;source=fT4TCYlhM%2FBHt4GYEIyTpUXh8eOIYXDjvQ8brdIq%2BgjFKp0ZC2Aq%2BH81O%2Futk9NoztIKhuI3FqmuRt1rZid1%2Bw%3D%3D">Pay Your Bill at Citibank</a></li><li class="body-copy"><a href="/site/financing-rewards/progressive-leasing/pcmcat1535574988808.c?id=pcmcat1535574988808">Lease to Own</a></li><li class="body-copy"><a href="/site/financing-rewards/zip/pcmcat1727878406362.c?id=pcmcat1727878406362">Buy Now, Pay Later</a></li></ul></div><div><h3 class="navigation-section-heading body-copy-lg v-text-tech-black">Support &amp; Services</h3><ul class="navigation-section-list p-none list-none"><li class="body-copy"><a href="/support">Visit our Support Center</a></li><li class="body-copy"><a href="/services/triage/shopping">Shop with an Expert</a></li><li class="body-copy"><a href="/services/triage/home">Schedule a Service</a></li><li class="body-copy"><a href="/dossier/service/appointmentfinder">Manage an Appointment</a></li><li class="body-copy"><a href="/site/electronics/services/pcmcat1528819595254.c?id=pcmcat1528819595254">Protection &amp; Support Plans</a></li><li class="body-copy"><a href="/site/services/recycling/pcmcat149900050025.c?id=pcmcat149900050025">Haul Away &amp; Recycling</a></li><li class="body-copy"><a href="/contact-us">Contact Us</a></li></ul></div><div><h3 class="navigation-section-heading body-copy-lg v-text-tech-black">Rewards &amp; Membership</h3><ul class="navigation-section-list p-none list-none"><li class="body-copy"><a href="/site/electronics/best-buy-membership/pcmcat1679668833285.c?id=pcmcat1679668833285">My Best Buy Memberships</a></li><li class="body-copy"><a href="/profile/c/rwz/overview">View Points &amp; Certificates</a></li><li class="body-copy"><a href="/loyalty/catalog">Member Offers</a></li></ul></div><div><h3 class="navigation-section-heading body-copy-lg v-text-tech-black">Partnerships</h3><ul class="navigation-section-list p-none list-none"><li class="body-copy"><a href="/site/electronics/marketplace/pcmcat248200050007.c?id=pcmcat248200050007">Sell on Best Buy Marketplace</a></li><li class="body-copy"><a href="https://www.bestbuyads.com/">Advertise with Us</a></li><li class="body-copy"><a href="/site/misc/best-buy-affiliate-program/pcmcat198500050002.c?id=pcmcat198500050002">Affiliates: Creators &amp; Publishers</a></li><li class="body-copy"><a href="https://healthcare.bestbuy.com/?ref=bestbuy-site&amp;loc=footer">Best Buy Health</a></li><li class="body-copy"><a href="/site/bestbuy-business/bestbuy-education/pcmcat356600050000.c?id=pcmcat356600050000">Best Buy Education</a></li><li class="body-copy"><a href="/site/electronics/bestbuy-business/pcmcat230900050001.c?id=pcmcat230900050001">Best Buy Business</a></li><li class="body-copy"><a href="/site/clp-bbfb/partner-plus/pcmcat1715699845027.c?id=pcmcat1715699845027">Partner+</a></li></ul></div><div><h3 class="navigation-section-heading body-copy-lg v-text-tech-black">About Best Buy</h3><ul class="navigation-section-list p-none list-none"><li class="body-copy"><a href="https://corporate.bestbuy.com/">Corporate Information</a></li><li class="body-copy"><a href="https://jobs.bestbuy.com/bby">Careers</a></li><li class="body-copy"><a href="https://corporate.bestbuy.com/our-goals/">Corporate Responsibility</a></li><li class="body-copy"><a href="https://corporate.bestbuy.com/sustainability/">Sustainability</a></li></ul></div></div><div><div id="evoc-talk-to-us-38176771" class="_none" data-version="0.25.61"><link rel="stylesheet" href="/~assets/bby/_com/evoc/talk-to-us/dist/client/3818-f8a2f130f510dc5af61fc0131006bece.css" /><div class="evoc-talk-to-us"></div><script>Promise.all([getAppear(), getLoadScript()]).then(([appear, loadScript]) => appear(document.querySelector('#evoc-talk-to-us-38176771'), () => loadScript('/~assets/bby/_com/evoc/talk-to-us/dist/client/evoc-talk_to_us-v1-0_25_61_remote_entry.js', { type: 'script', resolveValue: getInitializer() }).then(initializer => initializer.initializeComponent({"creatorNamespace":"evoc","componentId":"talk-to-us","contractVersion":"v1","componentVersion":"0.25.61"}, "evoc-talk-to-us-38176771", "{\"app\":{\"enableCustomerFeedbackTool\":true,\"instanceId\":\"evoc-talk-to-us-38176771\",\"feedbackContent\":{\"views\":{\"launch\":{\"name\":\"assistive-footer-survey\",\"type\":\"button\",\"className\":[\"c-button-link\",\"link\",\"utility\",\"sr-only\",\"sr-only-focusable\"],\"buttonStyle\":\"link\",\"testId\":\"survey-button\",\"onClick\":{\"interaction\":\"open-survey\"},\"children\":[{\"type\":\"string\",\"value\":\"Accessibility Survey\"}],\"autofocus\":true,\"deviceClass\":[\"SV\",\"LV\"]},\"survey\":{\"name\":\"survey-container\",\"type\":\"div\",\"className\":[\"appContainer\"],\"children\":[{\"type\":\"div\",\"className\":[\"header\"],\"deviceClass\":[\"LV\",\"SV\"],\"children\":[{\"type\":\"div\",\"testId\":\"description\",\"className\":[\"description\"],\"ariaLabel\":\"header\",\"children\":[{\"type\":\"div\",\"deviceClass\":[\"LV\"],\"className\":[\"logo-container-l\"],\"children\":[{\"type\":\"BestBuyLogo\"}]},{\"type\":\"div\",\"deviceClass\":[\"SV\"],\"className\":[\"logo-container-s\"],\"children\":[{\"type\":\"BestBuyLogo\"}]},{\"type\":\"div\",\"children\":[{\"type\":\"string\",\"value\":\"Best Buy is dedicated to accessibility, diversity and inclusion. We'd really appreciate your feedback on how we're doing .\"}]}]}]},{\"type\":\"Rating\",\"label\":\"How would you rate your experience using the Best Buy site with assistive technology?\",\"testId\":\"rating\",\"onChange\":{\"interaction\":\"on-rating-change\"},\"property\":{\"name\":\"rating\"}},{\"type\":\"CommentTextArea\",\"testId\":\"comment-text-area\",\"title\":\"What else would you us to know about your experience with bestbuy.com?\",\"text\":\"To protect your privacy, please do not enter any personal or account information. Get help for many common issues from Customer Service.\",\"onChange\":{\"interaction\":\"on-comment-change\"}},{\"type\":\"LinkedText\",\"testId\":\"supportLinkText\",\"prefix\":\"We can’t respond directly to comments submitted here. Need help? Visit \",\"text\":\"Best Buy Support\",\"url\":\"https:\\u002F\\u002Fwww.bestbuy.com\\u002Fsite\\u002Felectronics\\u002Fcustomer-service\\u002Fpcmcat87800050001.c?id=pcmcat87800050001\"},{\"type\":\"div\",\"className\":[\"submitFeedbackContainer\"],\"deviceClass\":[\"LV\"],\"children\":[{\"type\":\"button\",\"deviceClass\":[\"LV\"],\"className\":[\"submitFeedbackButton\",\"submitFeedbackButtonLarge\"],\"buttonStyle\":\"secondary\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Send Feedback\"}],\"onClick\":{\"interaction\":\"on-submit\"}},{\"type\":\"button\",\"deviceClass\":[\"LV\"],\"className\":[\"submitFeedbackButton\",\"closeFeedbackButtonLarge\"],\"buttonStyle\":\"outline\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Cancel\"}],\"onClick\":{\"interaction\":\"on-close\"}}]},{\"type\":\"div\",\"className\":[\"submitFeedbackContainerSmall\"],\"deviceClass\":[\"SV\"],\"children\":[{\"type\":\"button\",\"deviceClass\":[\"SV\"],\"className\":[\"submitFeedbackButton\"],\"buttonStyle\":\"secondary\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Send Feedback\"}],\"onClick\":{\"interaction\":\"on-submit\"}},{\"type\":\"button\",\"deviceClass\":[\"SV\"],\"className\":[\"submitFeedbackButton\"],\"buttonStyle\":\"outline\",\"size\":\"medium\",\"testId\":\"submitFeedbackButton\",\"children\":[{\"type\":\"string\",\"value\":\"Cancel\"}],\"onClick\":{\"interaction\":\"on-close\"}}]}]},\"thankYou\":{}},\"description\":\"We'd like to hear from you.\",\"rateExperienceLabel\":\"How are we doing?\",\"commentTitle\":\"Tell us more.\",\"commentText\":\"To protect your privacy, please do not enter any personal or account information. Get help for many common issues from Customer Service.\",\"thankyouPageContent\":\"Thank you for the feedback\",\"noThankyouPageContent\":\" \",\"bbyLogoUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\\u002Fimage2\\u002Fvector\\u002FBestBuy_US\\u002FGallery\\u002Fbestbuy_logo_inverse-217374.svg\",\"bbyLogoAltText\":\"Bestbuy.com\"},\"evocFeedbackWeb\":{\"hostname\":\"\",\"submitFeedbackPathTemplate\":\"\\u002Fevoc\\u002Ffeedback\\u002Fsubmit\",\"internalHostname\":\"https:\\u002F\\u002Fevoc-feedback-int-evoc.west-int.aws.containers.bestbuy.com\",\"surveyPathTemplate\":\"\\u002Fapi\\u002Fsurvey\",\"publicSurveyPathTemplate\":\"\\u002Fevoc\\u002Ffeedback\\u002Fapi\\u002Fsurvey\"},\"surveyId\":\"assistive_footer_survey\",\"deviceClass\":\"l\",\"description\":\"Give feedback about our website\",\"displayName\":\"How was your experience?\",\"isBot\":false,\"serverVersion\":\"1.0.242\",\"exclusionConfig\":{\"exclusionMap\":{\"all\":[\"^\\u002F$\",\"^\\u002Fsite\\u002Fsearchpage.*\",\"^\\u002Fidentity\\u002F.*\",\"^\\u002Fcart\\u002F?.*\",\"^\\u002Fcheckout\\u002F.*\",\"^\\u002Fwireless\\u002F.*\"],\"lv\":[],\"sv\":[]},\"exclusionHost\":\"www.bestbuy.com\"},\"experimentByKeyEnabled\":{\"lv\":false,\"sv\":false,\"app\":false},\"isModalOpen\":false,\"linkedText\":{\"prefixText\":\"We can’t respond directly to comments submitted here. Need help? Visit \",\"linkText\":\"Best Buy Support\",\"linkTextUrl\":\"https:\\u002F\\u002Fwww.bestbuy.com\\u002Fsite\\u002Felectronics\\u002Fcustomer-service\\u002Fpcmcat87800050001.c?id=pcmcat87800050001\"}},\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"}}", "en-US")), { rootMargin: 500 }));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"evoc-talk-to-us-38176771","parentInstanceId":"shop-footer-75745957"}))</script></div><div class="marketing-navigation  flex flex-column v-bg-pure-white p-200"><a class="body-copy" data-track="ft_sign_in_create_account" href="/identity/global/signin" rel="noreferrer" target="_self">Sign in or Create Account</a><hr aria-hidden="true" role="presentation"/><form class="flex flex-column h6" novalidate=""><h3 class="heading-6 ">Get the latest deals and more.</h3><div class="flex flex-column flex-lg-row"><div class="tb-input-wrapper tb-input-wrapper-full-width tb-input-small  v-m-vertical-ss"><label class="tb-label v-ellipsis sr-only" for="footer-email-signup">Email Address</label><input class="tb-input email-signup-input" autoComplete="off" id="footer-email-signup" name="footer-email-signup" placeholder="Enter email address" required="" value=""/></div><button class="c-button c-button-secondary c-button-sm email-signup-button w-full" type="submit">Sign Up</button></div></form><hr aria-hidden="true" role="presentation"/><div class="flex"><div class="mr-50"><svg aria-hidden="true" role="img" viewBox="0 0 100 100" fill="#0046BE" height="42px" width="42px"></svg></div><div class="flex flex-column"><span class="h5 v-fw-medium">Best Buy app</span><a aria-label="Learn more about Best Buy App" class="v-fw-medium" data-track="ft_best_buy_app" href="/site/misc/mobile-app/pcmcat208500050016.c?id=pcmcat208500050016" rel="noreferrer" target="_self">Learn more<!-- --> <span aria-hidden="true">›</span></a></div></div><hr aria-hidden="true" role="presentation"/><div class="flex justify-content-between"><a aria-label="Share on YouTube" data-track="ft_youtube" href="https://www.youtube.com/user/bestbuy" rel="noreferrer" target="_blank"><img alt="Share on YouTube" height="32" loading="lazy" src="https://pisces.bbystatic.com/image2/vector/BestBuy_US/dam/AppYouTube-c823f6d3-8dcb-4964-9494-92cd7a54b4ec.svg" width="32"/></a><a aria-label="Share on Instagram" data-track="ft_instagram" href="https://instagram.com/bestbuy" rel="noreferrer" target="_blank"><img alt="Share on Instagram" height="32" loading="lazy" src="https://pisces.bbystatic.com/image2/vector/BestBuy_US/dam/AppInstagram-ea334c57-1040-4c6a-849b-cb5c211bfca2.svg" width="32"/></a><a aria-label="Share on TikTok" data-track="ft_tiktok" href="https://www.tiktok.com/@bestbuy?lang=en" rel="noreferrer" target="_blank"><img alt="Share on TikTok" height="32" loading="lazy" src="https://pisces.bbystatic.com/image2/vector/BestBuy_US/dam/AppTikTok-4ad73591-e0c4-4848-a70c-1d251aeae862.svg" width="32"/></a><a aria-label="Share on Facebook" data-track="ft_facebook" href="https://www.facebook.com/bestbuy" rel="noreferrer" target="_blank"><img alt="Share on Facebook" height="32" loading="lazy" src="https://pisces.bbystatic.com/image2/vector/BestBuy_US/dam/AppFacebook-6587dc59-5c2c-41f5-9db3-8775e21c57e9.svg" width="32"/></a><a aria-label="Share on Pinterest" data-track="ft_pinterest" href="https://www.pinterest.com/bestbuy/" rel="noreferrer" target="_blank"><img alt="Share on Pinterest" height="32" loading="lazy" src="https://pisces.bbystatic.com/image2/vector/BestBuy_US/dam/AppPinterest-8bc14c43-a0c9-415f-a122-d247a150cda0.svg" width="32"/></a><a aria-label="Share on X" data-track="ft_twitter_x" href="https://www.x.com/BestBuy" rel="noreferrer" target="_blank"><img alt="Share on X" height="32" loading="lazy" src="https://pisces.bbystatic.com/image2/vector/BestBuy_US/dam/X-bd003ff5-a027-4542-9c98-1d568c5d509e.svg" width="32"/></a></div><hr aria-hidden="true" role="presentation"/></div></div><div class="legal-navigation flex flex-column"><div class="flex justify-content-between "><div><div id="evoc-talk-to-us-76359527" class=" " data-version="0.25.61"><div class="evoc-talk-to-us"></div><script>Promise.all([getAppear(), getLoadScript()]).then(([appear, loadScript]) => appear(document.querySelector('#evoc-talk-to-us-76359527'), () => loadScript('/~assets/bby/_com/evoc/talk-to-us/dist/client/evoc-talk_to_us-v1-0_25_61_remote_entry.js', { type: 'script', resolveValue: getInitializer() }).then(initializer => initializer.initializeComponent({"creatorNamespace":"evoc","componentId":"talk-to-us","contractVersion":"v1","componentVersion":"0.25.61"}, "evoc-talk-to-us-76359527", "{\"app\":{\"enableCustomerFeedbackTool\":true,\"instanceId\":\"evoc-talk-to-us-76359527\",\"feedbackContent\":{\"showFeedbackTab\":true,\"views\":{\"launch\":{\"name\":\"footer-survey\",\"type\":\"div\",\"className\":[\"feedback-link-container\",\"flex\"],\"testId\":[\"feedback-link-container\"],\"deviceClass\":[\"SV\",\"LV\"],\"children\":[{\"type\":\"span\",\"className\":[\"v-m-right-xxs\"],\"children\":[{\"type\":\"string\",\"value\":\"How was your experience?\"}],\"value\":\"Give Feedback\"},{\"type\":\"button\",\"className\":[\"c-button-link\",\"text-underline\"],\"buttonStyle\":\"link\",\"testId\":\"survey-button\",\"onClick\":{\"interaction\":\"open-survey\"},\"children\":[{\"type\":\"string\",\"value\":\"Give feedback about our website\"}]}],\"autofocus\":true},\"survey\":{},\"thankYou\":{}},\"description\":\"We'd like to hear from you.\",\"rateExperienceLabel\":\"How are we doing?\",\"commentTitle\":\"Tell us more.\",\"commentText\":\"To protect your privacy, please do not enter any personal or account information. Get help for many common issues from Customer Service.\",\"thankyouPageContent\":\"Thank you for the feedback\",\"noThankyouPageContent\":\" \",\"bbyLogoUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\\u002Fimage2\\u002Fvector\\u002FBestBuy_US\\u002FGallery\\u002Fbestbuy_logo_inverse-217374.svg\",\"bbyLogoAltText\":\"Bestbuy.com\"},\"evocFeedbackWeb\":{\"hostname\":\"\",\"submitFeedbackPathTemplate\":\"\\u002Fevoc\\u002Ffeedback\\u002Fsubmit\",\"internalHostname\":\"https:\\u002F\\u002Fevoc-feedback-int-evoc.west-int.aws.containers.bestbuy.com\",\"surveyPathTemplate\":\"\\u002Fapi\\u002Fsurvey\",\"publicSurveyPathTemplate\":\"\\u002Fevoc\\u002Ffeedback\\u002Fapi\\u002Fsurvey\"},\"surveyId\":\"footer_survey\",\"deviceClass\":\"l\",\"description\":\"Give feedback about our website\",\"displayName\":\"How was your experience?\",\"isBot\":false,\"serverVersion\":\"1.0.242\",\"exclusionConfig\":{\"exclusionMap\":{\"all\":[\"^\\u002F$\",\"^\\u002Fsite\\u002Fsearchpage.*\",\"^\\u002Fidentity\\u002F.*\",\"^\\u002Fcart\\u002F?.*\",\"^\\u002Fcheckout\\u002F.*\",\"^\\u002Fwireless\\u002F.*\"],\"lv\":[],\"sv\":[]},\"exclusionHost\":\"www.bestbuy.com\"},\"experimentByKeyEnabled\":{\"lv\":false,\"sv\":false,\"app\":false},\"isModalOpen\":false,\"linkedText\":{\"prefixText\":\"We can’t respond directly to comments submitted here. Need help? Visit \",\"linkText\":\"Best Buy Support\",\"linkTextUrl\":\"https:\\u002F\\u002Fwww.bestbuy.com\\u002Fsite\\u002Felectronics\\u002Fcustomer-service\\u002Fpcmcat87800050001.c?id=pcmcat87800050001\"}},\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"}}", "en-US")), { rootMargin: 500 }));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"evoc-talk-to-us-76359527","parentInstanceId":"shop-footer-75745957"}))</script></div><div class="device-canada-container flex grow justify-content-between"><button class="c-button-link " type="button">Mobile Site</button><div class="canada-link-container"><a data-track="ft_best_buy_canada" href="https://www.bestbuy.ca/" rel="noreferrer" target="_self">Best Buy Canada</a></div></div></div><hr aria-hidden="true" role="presentation"/><div class="flex justify-content-start"><a class="body-copy-sm mr-200" data-track="ft_legal" href="/site/help-topics/accessibility/pcmcat1496336482680.c?id=pcmcat1496336482680" rel="noreferrer" target="_self">Accessibility</a><a class="body-copy-sm mr-200" data-track="ft_legal_terms_conditions" href="/site/help-topics/terms-and-conditions/pcmcat204400050067.c?id=pcmcat204400050067" rel="noreferrer" target="_self">Terms &amp; Conditions</a><a class="body-copy-sm mr-200" data-track="ft_legal_privacy" href="/site/help-topics/privacy-policy/pcmcat204400050062.c?id=pcmcat204400050062" rel="noreferrer" target="_self">Privacy</a><a class="body-copy-sm mr-200" data-track="ft_legal_interest_based_ads" href="/site/privacy-policy/interest-based-ads/pcmcat204400050066.c?id=pcmcat204400050066" rel="noreferrer" target="_self">Interest-Based Ads</a><a class="body-copy-sm mr-200" data-track="ft_legal_state_privacy_rights" href="/site/privacy-policy/state-privacy-rights/pcmcat204400050063.c?id=pcmcat204400050063" rel="noreferrer" target="_self">State Privacy Rights</a><a class="body-copy-sm mr-200" data-track="ft_legal_health_data_privacy" href="/site/privacy-policy/health-data-privacy/pcmcat1709131468002.c?id=pcmcat1709131468002" rel="noreferrer" target="_self">Health Data Privacy</a><a class="body-copy-sm mr-200" data-track="ft_legal_do_not_sell_personal_info" href="/sentry/landing?type=ca_donotsell" rel="noreferrer" target="_self">Do Not Sell/Share My Personal Information</a><a class="body-copy-sm mr-200" data-track="ft_legal_limit_use_sensitive_personal_info" href="/sentry/landing?type=optout" rel="noreferrer" target="_self">Limit Use of My Sensitive Personal Information</a><a class="body-copy-sm mr-200" data-track="ft_legal_targeted_advertising_opt_out" href="/sentry/landing?type=donottarget" rel="noreferrer" target="_self">Targeted Advertising Opt Out</a><a class="body-copy-sm mr-200" data-track="ft_legal_california_supply_chain_transparency_act" href="/site/help-topics/ca-transparency-act/pcmcat263000050003.c?id=pcmcat263000050003" rel="noreferrer" target="_self">CA Supply Chain Transparency Act</a></div><span class="v-p-top-m">In-store pricing may vary. Prices and offers are subject to change. © 2026 Best Buy. All rights reserved. BEST BUY, the BEST BUY logo, the tag design, and MY BEST BUY are trademarks of Best Buy and its affiliated companies.</span></div><div id="footer-feedback-link"></div><div><div id="shop-stips-50744127" class="_none" data-version="1.1.1"><div class="shop-stips"><div class="stips-component"></div></div><script defer src="/~assets/bby/_com/shop/stips/dist/client/client-cf72d3143ea14f88aaf2b3c41eef92f0.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"stips","contractVersion":"v1","componentVersion":"1.1.1"}, "shop-stips-50744127", "{\"placement\":\"footer\"}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"shop-stips-50744127","parentInstanceId":"footer"}))</script></div><div><div id="location-persistence-footer" class="_none" data-version="2.15.4"><div class="shop-location-persistence"></div><script type="module" src="/~assets/bby/_com/shop/location-persistence/dist/client/client-ca94b051450d977c38838d5d8c242413.mjs"></script><script nomodule defer src="/~assets/bby/_com/shop/location-persistence/dist/client/client-0723309211dcb673d451068ae4691680.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"location-persistence","contractVersion":"v1","componentVersion":"2.15.4"}, "location-persistence-footer", "{\"liveConfig\":{\"enableInFooter\":true,\"externalStore\":true,\"invalidStoreIds\":[],\"invalidStoreLogging\":false,\"getShippingAddress\":true,\"restrictLocDestZipUpdate\":true,\"updateInvalidStoreId\":true,\"updateOldCookie\":true,\"useExtStoreIdValue\":true,\"writeExtStoreIdToProfile\":true,\"enableGMCLocationMapping\":true,\"gmcLocationMapping\":{\"000001\":\"92614\"},\"enableSetEGPPreferredStore\":false,\"enableGuestUserLogging\":false}}", "en-US"));</script></div><script async>getAnalyticsQ().then(analyticsQ => analyticsQ.dispatch({"type":"CHILD_RELATIONSHIP","childInstanceId":"shop-location-persistence-44638534","parentInstanceId":"footer"}))</script></div></footer></div><script type="application/json" id="shop-footer-75745957-json">{"deviceClass":"l","disableFooterSTIPS":false,"disableLocationPersistence":false,"disableUpaAssistiveFooterSurvey":true,"disableUpaFooterSurvey":true,"footerData":{"disclaimer":"In-store pricing may vary. Prices and offers are subject to change. © 2021 Best Buy. All rights reserved. BEST BUY, the BEST BUY logo, the tag design, and MY BEST BUY are trademarks of Best Buy and its affiliated companies.","iconNavigation":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Visit our Support Center","iconImage":{"altText":"Support Center icon","fillColor":"#70757D","path":"Question_Line_Sm"},"link":{"lid":"ft_icon_visit_our_support_center","url":"\u002Fsupport"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Check your Order Status","iconImage":{"altText":"Order Status icon","fillColor":"#70757D","path":"Shipping_Line_Sm"},"link":{"lid":"ft_icon_order_status","url":"\u002Fprofile\u002Fss\u002Forderlookup"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Shipping, Delivery & Store Pickup","iconImage":{"altText":"Shipping, Delivery & Store Pickup icon","fillColor":"#70757D","path":"Delivery_Line_Sm"},"link":{"lid":"ft_icon_shipping_delivery_store_pickup","nodeId":"pcmcat316000050003","url":"\u002Fsite\u002Fhelp-topics\u002Fshipping-delivery-store-pickup\u002Fpcmcat316000050003.c?id=pcmcat316000050003"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Returns & Exchanges","iconImage":{"altText":"Returns & Exchanges icon","fillColor":"#70757D","path":"ReturnPolicy_Line_Sm"},"link":{"lid":"ft_icon_returns_exchanges","nodeId":"pcmcat260800050014","url":"\u002Fsite\u002Fhelp-topics\u002Freturn-exchange-policy\u002Fpcmcat260800050014.c?id=pcmcat260800050014"}},{"_meta":{"omitFromMedium":true,"omitFromNative":true,"omitFromSmall":true},"childNodes":[],"displayName":"Price Match Guarantee","iconImage":{"altText":"price match guarantee icon","fillColor":"#70757D","path":"PriceMatchGuarantee_Line_Sm"},"link":{"lid":"ft_icon_price_match_guarantee","nodeId":"pcmcat290300050002","url":"\u002Fsite\u002Fhelp-topics\u002Fprice-match-guarantee\u002Fpcmcat290300050002.c?id=pcmcat290300050002"}}],"legalNavigation":[{"_meta":{"omitFromNative":true},"childNodes":[],"description":"Give feedback about our website","displayName":"How was your experience?","styleId":"feedback"},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Best Buy Canada","link":{"lid":"ft_best_buy_canada","url":"https:\u002F\u002Fwww.bestbuy.ca\u002F"},"styleId":"bby-ca"},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Accessibility","link":{"lid":"ft_legal","nodeId":"pcmcat1496336482680","url":"\u002Fsite\u002Fhelp-topics\u002Faccessibility\u002Fpcmcat1496336482680.c?id=pcmcat1496336482680"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Terms & Conditions","link":{"lid":"ft_legal_terms_conditions","nodeId":"pcmcat204400050067","url":"\u002Fsite\u002Fhelp-topics\u002Fterms-and-conditions\u002Fpcmcat204400050067.c?id=pcmcat204400050067"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Privacy","link":{"lid":"ft_legal_privacy","nodeId":"pcmcat204400050062","url":"\u002Fsite\u002Fhelp-topics\u002Fprivacy-policy\u002Fpcmcat204400050062.c?id=pcmcat204400050062"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Interest-Based Ads","link":{"lid":"ft_legal_interest_based_ads","nodeId":"pcmcat204400050066","url":"\u002Fsite\u002Fprivacy-policy\u002Finterest-based-ads\u002Fpcmcat204400050066.c?id=pcmcat204400050066"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"State Privacy Rights","link":{"lid":"ft_legal_state_privacy_rights","nodeId":"pcmcat204400050063","url":"\u002Fsite\u002Fprivacy-policy\u002Fstate-privacy-rights\u002Fpcmcat204400050063.c?id=pcmcat204400050063"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Health Data Privacy","link":{"lid":"ft_legal_health_data_privacy","nodeId":"pcmcat1709131468002","url":"\u002Fsite\u002Fprivacy-policy\u002Fhealth-data-privacy\u002Fpcmcat1709131468002.c?id=pcmcat1709131468002"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Do Not Sell\u002FShare My Personal Information","link":{"lid":"ft_legal_do_not_sell_personal_info","url":"\u002Fsentry\u002Flanding?type=ca_donotsell"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Limit Use of My Sensitive Personal Information","link":{"lid":"ft_legal_limit_use_sensitive_personal_info","url":"\u002Fsentry\u002Flanding?type=optout"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Targeted Advertising Opt Out","link":{"lid":"ft_legal_targeted_advertising_opt_out","url":"\u002Fsentry\u002Flanding?type=donottarget"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"CA Supply Chain Transparency Act","link":{"lid":"ft_legal_california_supply_chain_transparency_act","nodeId":"pcmcat263000050003","url":"\u002Fsite\u002Fhelp-topics\u002Fca-transparency-act\u002Fpcmcat263000050003.c?id=pcmcat263000050003"}}],"displayName":"Legal & Privacy","link":{"lid":"ft_legal"},"styleId":"legal-links"},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"In-store pricing may vary. Prices and offers are subject to change. © 2026 Best Buy. All rights reserved. BEST BUY, the BEST BUY logo, the tag design, and MY BEST BUY are trademarks of Best Buy and its affiliated companies.","styleId":"disclaimer"}],"mainNavigation":[{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Check Order Status","link":{"lid":"ft_op_check_order_status","url":"\u002Fprofile\u002Fss\u002Forderlookup"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Shipping, Delivery & Pickup","link":{"lid":"ft_op_shipping_delivery_store_pickup","nodeId":"pcmcat316000050003","url":"\u002Fsite\u002Fhelp-topics\u002Fshipping-delivery-store-pickup\u002Fpcmcat316000050003.c?id=pcmcat316000050003"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Returns & Exchanges","link":{"lid":"ft_op_returns_exchanges","nodeId":"pcmcat260800050014","url":"\u002Fsite\u002Fhelp-topics\u002Freturn-exchange-policy\u002Fpcmcat260800050014.c?id=pcmcat260800050014"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Price Match Guarantee","link":{"lid":"ft_op_price_match_guarantee","nodeId":"pcmcat290300050002","url":"\u002Fsite\u002Fhelp-topics\u002Fprice-match-guarantee\u002Fpcmcat290300050002.c?id=pcmcat290300050002"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Product Recalls","link":{"lid":"ft_op_product_recalls","nodeId":"pcmcat114800050015","url":"\u002Fsite\u002Fhelp-topics\u002Fproduct-recalls\u002Fpcmcat114800050015.c?id=pcmcat114800050015"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Trade-In Program","link":{"lid":"ft_op_tradein_program","url":"https:\u002F\u002Fwww.bestbuy.com\u002Ftrade-in"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Gift Cards","link":{"lid":"ft_op_gift_cards","nodeId":"cat09000","url":"\u002Fsite\u002Felectronics\u002Fgift-cards\u002Fcat09000.c?id=cat09000"}}],"displayName":"Order & Purchases","link":{"lid":"ft_op"}},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"My Best Buy® Credit Card","link":{"lid":"ft_pay_my_best_buy_credit_card","nodeId":"pcmcat102500050032","url":"\u002Fsite\u002Fmisc\u002Ffinancing-rewards\u002Fpcmcat102500050032.c?id=pcmcat102500050032"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Pay Your Bill at Citibank","link":{"lid":"ft_pay_pay_your_bill_citibank","url":"\u002Fidentity\u002Fsso\u002Fsignin?contextId=sso-visa&processIndicator=dashboard&source=fT4TCYlhM%2FBHt4GYEIyTpUXh8eOIYXDjvQ8brdIq%2BgjFKp0ZC2Aq%2BH81O%2Futk9NoztIKhuI3FqmuRt1rZid1%2Bw%3D%3D"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Lease to Own","link":{"lid":"ft_pay_lease_to_own","nodeId":"pcmcat1535574988808","url":"\u002Fsite\u002Ffinancing-rewards\u002Fprogressive-leasing\u002Fpcmcat1535574988808.c?id=pcmcat1535574988808"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Buy Now, Pay Later","link":{"lid":"ft_pay_buy_now_pay_later","nodeId":"pcmcat1727878406362","url":"\u002Fsite\u002Ffinancing-rewards\u002Fzip\u002Fpcmcat1727878406362.c?id=pcmcat1727878406362"}}],"displayName":"Payment Options","link":{"lid":"ft_pay"}},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Visit our Support Center","link":{"lid":"ft_support_visit_our_support_center","url":"\u002Fsupport"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Shop with an Expert","link":{"lid":"ft_support_shop_with_expert","url":"\u002Fservices\u002Ftriage\u002Fshopping"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Schedule a Service","link":{"lid":"ft_support_schedule_service","url":"\u002Fservices\u002Ftriage\u002Fhome"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Manage an Appointment","link":{"lid":"ft_support_manage_appointment","url":"\u002Fdossier\u002Fservice\u002Fappointmentfinder"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Protection & Support Plans","link":{"lid":"ft_support_protection_support_plans","nodeId":"pcmcat1528819595254","url":"\u002Fsite\u002Felectronics\u002Fservices\u002Fpcmcat1528819595254.c?id=pcmcat1528819595254"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Haul Away & Recycling","link":{"lid":"ft_support_haul_away_recycling","nodeId":"pcmcat149900050025","url":"\u002Fsite\u002Fservices\u002Frecycling\u002Fpcmcat149900050025.c?id=pcmcat149900050025"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Contact Us","link":{"lid":"ft_support_contact_us","url":"\u002Fcontact-us"}}],"displayName":"Support & Services","link":{"lid":"ft_support"}},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"My Best Buy Memberships","link":{"lid":"ft_member_best_buy_membership","nodeId":"pcmcat1679668833285","url":"\u002Fsite\u002Felectronics\u002Fbest-buy-membership\u002Fpcmcat1679668833285.c?id=pcmcat1679668833285"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"View Points & Certificates","link":{"lid":"ft__member_view_points_certificates","url":"\u002Fprofile\u002Fc\u002Frwz\u002Foverview"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Member Offers","link":{"lid":"ft_mby_mem","url":"\u002Floyalty\u002Fcatalog"}}],"displayName":"Rewards & Membership","link":{"lid":"ft_member"}},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Sell on Best Buy Marketplace","link":{"lid":"ft_partner_sell_on_bby_mp","url":"\u002Fsite\u002Felectronics\u002Fmarketplace\u002Fpcmcat248200050007.c?id=pcmcat248200050007"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Advertise with Us","link":{"lid":"ft_partner_advertise_with_us","url":"https:\u002F\u002Fwww.bestbuyads.com\u002F"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Affiliates: Creators & Publishers","link":{"lid":"ft_partner_affiliate_program","nodeId":"pcmcat198500050002","url":"\u002Fsite\u002Fmisc\u002Fbest-buy-affiliate-program\u002Fpcmcat198500050002.c?id=pcmcat198500050002"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Best Buy Health","link":{"lid":"ft_partner_best_buy_health","url":"https:\u002F\u002Fhealthcare.bestbuy.com\u002F?ref=bestbuy-site&loc=footer"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Best Buy Education","link":{"lid":"ft_partner_best_buy_education","nodeId":"pcmcat356600050000","url":"\u002Fsite\u002Fbestbuy-business\u002Fbestbuy-education\u002Fpcmcat356600050000.c?id=pcmcat356600050000"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Best Buy Business","link":{"lid":"ft_partner_best_buy_business","nodeId":"pcmcat230900050001","url":"\u002Fsite\u002Felectronics\u002Fbestbuy-business\u002Fpcmcat230900050001.c?id=pcmcat230900050001"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Partner+","link":{"lid":"ft_partner_partnerplus","nodeId":"pcmcat1715699845027","url":"\u002Fsite\u002Fclp-bbfb\u002Fpartner-plus\u002Fpcmcat1715699845027.c?id=pcmcat1715699845027"}}],"displayName":"Partnerships","link":{"lid":"ft_partner"}},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Corporate Information","link":{"lid":"ft_about_corporate_information","url":"https:\u002F\u002Fcorporate.bestbuy.com\u002F"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Careers","link":{"lid":"ft_about_careers","url":"https:\u002F\u002Fjobs.bestbuy.com\u002Fbby"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Corporate Responsibility","link":{"lid":"ft_about_corporate_responsibility","url":"https:\u002F\u002Fcorporate.bestbuy.com\u002Four-goals\u002F"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Sustainability","link":{"lid":"ft_about_sustain","nodeId":"pcmcat1584663841997","url":"https:\u002F\u002Fcorporate.bestbuy.com\u002Fsustainability\u002F"}}],"displayName":"About Best Buy","link":{"lid":"ft_about"}}],"marketingNavigation":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Sign in or Create Account","link":{"lid":"ft_sign_in_create_account","url":"\u002Fidentity\u002Fglobal\u002Fsignin"},"styleId":"sign-in"},{"_meta":{"omitFromNative":true},"childNodes":[],"description":"Sign Up","displayName":"Get the latest deals and more.","styleId":"email"},{"_meta":{"omitFromNative":true},"bold":true,"childNodes":[],"description":"Learn more","displayName":"Best Buy app","iconImage":{"altText":"mobile app icon","fillColor":"#0046BE","path":"MobileApp_Line_Sm"},"link":{"lid":"ft_best_buy_app","nodeId":"pcmcat208500050016","url":"\u002Fsite\u002Fmisc\u002Fmobile-app\u002Fpcmcat208500050016.c?id=pcmcat208500050016"},"styleId":"bby-app"},{"_meta":{"omitFromNative":true},"childNodes":[{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"YouTube","iconImage":{"altText":"Share on YouTube","fillColor":"#0046BE","path":"https:\u002F\u002Fpisces.bbystatic.com\u002Fimage2\u002Fvector\u002FBestBuy_US\u002Fdam\u002FAppYouTube-c823f6d3-8dcb-4964-9494-92cd7a54b4ec.svg"},"link":{"lid":"ft_youtube","openLinkInNewTab":true,"url":"https:\u002F\u002Fwww.youtube.com\u002Fuser\u002Fbestbuy"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Instagram","iconImage":{"altText":"Share on Instagram","fillColor":"#0046BE","path":"https:\u002F\u002Fpisces.bbystatic.com\u002Fimage2\u002Fvector\u002FBestBuy_US\u002Fdam\u002FAppInstagram-ea334c57-1040-4c6a-849b-cb5c211bfca2.svg"},"link":{"lid":"ft_instagram","openLinkInNewTab":true,"url":"https:\u002F\u002Finstagram.com\u002Fbestbuy"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"TikTok","iconImage":{"altText":"Share on TikTok","fillColor":"#0046BE","path":"https:\u002F\u002Fpisces.bbystatic.com\u002Fimage2\u002Fvector\u002FBestBuy_US\u002Fdam\u002FAppTikTok-4ad73591-e0c4-4848-a70c-1d251aeae862.svg"},"link":{"lid":"ft_tiktok","openLinkInNewTab":true,"url":"https:\u002F\u002Fwww.tiktok.com\u002F@bestbuy?lang=en"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Facebook","iconImage":{"altText":"Share on Facebook","fillColor":"#0046BE","path":"https:\u002F\u002Fpisces.bbystatic.com\u002Fimage2\u002Fvector\u002FBestBuy_US\u002Fdam\u002FAppFacebook-6587dc59-5c2c-41f5-9db3-8775e21c57e9.svg"},"link":{"altUrl":"https:\u002F\u002Fm.facebook.com\u002Fbestbuy","lid":"ft_facebook","openLinkInNewTab":true,"url":"https:\u002F\u002Fwww.facebook.com\u002Fbestbuy"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"Pinterest","iconImage":{"altText":"Share on Pinterest","fillColor":"#0046BE","path":"https:\u002F\u002Fpisces.bbystatic.com\u002Fimage2\u002Fvector\u002FBestBuy_US\u002Fdam\u002FAppPinterest-8bc14c43-a0c9-415f-a122-d247a150cda0.svg"},"link":{"lid":"ft_pinterest","openLinkInNewTab":true,"url":"https:\u002F\u002Fwww.pinterest.com\u002Fbestbuy\u002F"}},{"_meta":{"omitFromNative":true},"childNodes":[],"displayName":"X","iconImage":{"altText":"Share on X","fillColor":"#0046BE","path":"https:\u002F\u002Fpisces.bbystatic.com\u002Fimage2\u002Fvector\u002FBestBuy_US\u002Fdam\u002FX-bd003ff5-a027-4542-9c98-1d568c5d509e.svg"},"link":{"altUrl":"https:\u002F\u002Fmobile.x.com\u002FBestBuy","lid":"ft_twitter_x","openLinkInNewTab":true,"url":"https:\u002F\u002Fwww.x.com\u002FBestBuy"}}],"displayName":"Social Icons","styleId":"social"}]},"instanceId":"shop-footer-75745957","isBot":false,"isUnGvp":false,"metaLayer":{"env_assets":"\u002F~assets\u002Fbby\u002F_com","env_piscesUrl":"https:\u002F\u002Fpisces.bbystatic.com","env_appServer":"https:\u002F\u002Fwww.bestbuy.com"},"suppressHeader":false}</script><script>Promise.all([getAppear(), getLoadScript()]).then(([appear, loadScript]) => appear(document.querySelector('#shop-footer-75745957'), () => loadScript('/~assets/bby/_com/shop/footer/dist/client/client-a1da900d0026b4f1177c50d154b34421.js', { type: 'script', resolveValue: getInitializer() }).then(initializer => initializer.initComponent({"creatorNamespace":"shop","componentId":"footer","contractVersion":"v1","componentVersion":"1.1.4"}, "shop-footer-75745957", "en-US")), { rootMargin: 500 }));</script></div>
+
+
+    <script>
+        window.liveConfig = {"isExp147Active":false,"abt1501evar":"abTest68","allowDealsContext":"[pcmcat1563299784494, pcmcat225600050002, pcmcat309500050010]","AutoCompare_enableRecommendations":true,"CompareAddStructureEnabled":true,"enableModernImageformat":true,"HF_enableDynamicStoreLocator":true,"HF_enableNotificationManager":true,"HF_logoImageHash":"968d1f5f01d288d23e3b2c71de31967a","HF_notificationsHideWaitTimeMS":3000,"HF_shoppingHistoryToastEnabled":false,"HF_shoppingHistoryToastVersion":"V1","PLPFacetRedirectDelay":1,"TestLiveConfig":"Works","attachSuggestPageTypes":"browse,pdp","basketAddProbability":1,"beagleApiPath":"/wireless","blueAssistEnabled":true,"clickToCallClientKey":"n9fzQiKTTx7cBIT1FiRj8x0B3lqX/kMFgbwW8uRRuqc=","clickToCallGetEndpoint":"https://bbytagservices.bestbuy.com/Generic/BBYClickToCallServiceREST/api/click2Call","clickToCallPostEndpoint":"https://bbytagservices.bestbuy.com/Generic/BBYClickToCallServiceREST/api/click2Call","compareDisabled":false,"components":"[shop:[attach-modal:[useAttachSuggest:true], complete-your-purchase:[singleSelectDCS:[[department:4, class:205]]], office-365:[useNew365Render:true], solution-banner:[enableSolutionAssemblerLinks:true], solution-button:[enableSolutionAssemblerLinks:true]]]","custTimeline_accountFingerprint":"0.2.0","custTimeline_compareWhitelist":"[]","custTimeline_enableExperience":"[]","custTimeline_enableInGlobalNav":true,"custTimeline_enableListener":false,"custTimeline_experienceFingerprint":"3.0.16","custTimeline_headerExperienceFingerprint":"2.1.11","custTimeline_headerStatusFingerprint":"2.0.17","custTimeline_listenerFingerprint":"1.10.9","custTimeline_shoppingHistoryWhitelist":"[browse,home]","custTimeline_showRecommendationsInShoppingHistory":true,"custTimeline_useIndividualDataTopics":true,"disableAddToCartStips":true,"disableBuyingOptionsStips":true,"disableCmmStips":true,"disableCompareStips":true,"disableConditionalOptionsStips":true,"disableEnlargeImageStips":true,"disableFridayInStoreOnlyStips":true,"disableHolidayIspuDateStips":true,"disableHolidayLsaStips":true,"disableHolidayVddcStips":true,"disableIspuAvailabilityStips":true,"disablePLPCheckMarkMessagingAndDescription":true,"disablePriceStips":true,"disableRewardsStips":true,"disableSaturdayInStoreOnlyStips":true,"disableShelfRequests":false,"disableShippingPuckStips":true,"disableTextWidgetStips":true,"enableAbCys":false,"enableClickToCall":true,"enableCys":true,"enableDynamicGWP":true,"enableEcoRebates":true,"enableEndOfLifeInventory":true,"enableEnsighten":true,"enableFulfillmentCompare":true,"enableFulfillmentPLP":true,"enableGeoVars":true,"enableGuidedBuyingPlpIntegration":true,"enableGvpCyp":true,"enableImageFixStips":true,"enableInStoreOnlyButton":false,"enableInkSubscription":true,"enableIspuPLP":true,"enableLegacyAvailability":false,"enableMoveAddToCartButton":true,"enableNewAddToCartButtonPDP":true,"enableNewAddToCartButtonPLP":true,"enableNewButtonStateForHydrateSku":true,"enableNotifyInStockV2":true,"enableNotifyMe":true,"enablePhoenixInTheCloudPLP":true,"enablePhoenixPDP":true,"enablePmgStips":false,"enableSaveForLater":true,"saveForLaterCategoryPages":"[pcmcat248000050016, pcmcat1563299784494]","enableSearchSurveyPLP":true,"enableShelfDisplayV2":true,"enableShoppingAssistant":true,"enableSmallViewChat":true,"enableSolutionAssemblerLinks":true,"enableStoreFacetStips":true,"enableStorePickupFacet":true,"enableStorePickupFacetCount":true,"enableSubscribeSave":true,"enable_store_finder_redesign":"on","enhancedShippingEnabled":true,"felEnabled":false,"flex_unifiedPriceBlockEnabled":true,"flexEOLSavedItems":true,"fulfillment_cutoff_messaging":true,"fulfillment_enhanced_unavailability":true,"fulfillment_messaging_and_dates":true,"fulfillment_none_messaging":true,"fulfillment_plp_click_to_load":false,"fulfillment_remove_los_names":true,"fulfillment_send_preferred_store_id":true,"gamersClubUnlockedEnabled":true,"geolocationTimeout":30000,"gvpVsLegacyPlp":true,"headerEnableGeoLocation":true,"headerLoadBasketCountFromServiceProbability":1,"hpFree15PageInkPlanDriverSkuIds":"5836100,5234375,5519200,5577769,4363407,4363404,4363402","installModalPageTypes":"browse,pdp;browse,list,search,results;browse,list,category;browse,list,search,promo","moveLibraries":true,"pageConfigurationPrefix":"/browse-api/1.0/pageConfiguration/bbypres","phoenixTrafficVolumePLP":1,"productFulfillmentRouting":"{\"cart\":\"c\",\"checkout\":\"d\",\"browse\":\"c\"}","promoPriceViewDux":true,"recommendationsPage_disableAccessoryFinder":true,"samWidgetPromoNodes":"MicrosoftBundle:windows_ink_promo,PlayStationHardware:ps4_attach_promo","shelfDisplayEnabled":true,"shoppingAssistantDesktopCategories":"abcat0501005,pcmcat190000050013,pcmcat190000050014,pcmcat212600050008,pcmcat212600050009,pcmcat212600050008,pcmcat287600050002,pcmcat1477934516775,pcmcat268200050003","shoppingAssistantDisableAccessoryFinder":false,"shoppingAssistantDishwasherCategories":"abcat0905001","shoppingAssistantDronesCategories":"pcmcat748300869789,pcmcat369900050002,pcmcat1488298364906","shoppingAssistantDslrCamerasCategories":"pcmcat180400050000,pcmcat180000050013","shoppingAssistantHeadphonesCategories":"pcmcat144700050004","shoppingAssistantHomeSecurityCategories":"pcmcat308100050020,pcmcat254000050005,pcmcat340500050007,pcmcat1515445352153,pcmcat308100050021,pcmcat748301598672,pcmcat308400050001,pcmcat1515445788580,pcmcat308400050003,pcmcat308400050002,pcmcat254000050004,pcmcat271300050011,pcmcat1515446001714,pcmcat1477674617379,pcmcat308100050017","shoppingAssistantiPadCategories":"pcmcat748302027967,pcmcat1496701187787,pcmcat748300580149,pcmcat748300580260,pcmcat361600050006,pcmcat361600050003,pcmcat1521826737319,pcmcat1490110513760","shoppingAssistantLaptopCategories":"pcmcat247400050000,pcmcat244900050010,pcmcat309300050015,pcmcat287600050003,pcmcat376300050005,pcmcat219300050014,pcmcat1492808872042,pcmcat138500050001","shoppingAssistantMacBookCategories":"pcmcat247400050001,pcmcat378600050008,pcmcat378600050009,pcmcat748300603823","shoppingAssistantMacCategories":"pcmcat268200050003","shoppingAssistantMirrorlessCamerasCategories":"pcmcat234200050001,pcmcat214000050005","shoppingAssistantNetworkingCategories":"pcmcat211400050001,abcat0503002,pcmcat748302046257,pcmcat161100050044,abcat0503012,abcat0503013,pcmcat748302046324,pcmcat748302046322","shoppingAssistantNintendoSwitchGamesCategories":"pcmcat1484080052161,pcmcat1484080162431","shoppingAssistantPointShootCamerasCategories":"abcat0401001,pcmcat748302046983, pcmcat748300678080","shoppingAssistantPortableSpeakersCategories":"pcmcat748301665095","shoppingAssistantPS4GamesCategories":"pcmcat296300050018,pcmcat303600050006","shoppingAssistantRangeCategories":"abcat0904003,pcmcat196400050015,pcmcat196400050016,pcmcat196400050017","shoppingAssistantRefrigeratorCategories":"pcmcat367400050001","shoppingAssistantSmartLightingCategories":"pcmcat345400050002,pcmcat345400050028,pcmcat345400050005,pcmcat1503974078634,pcmcat1515446328901,pcmcat308100050014,pcmcat345400050006","shoppingAssistantSmartwatchesCategories":"pcmcat321000050004","shoppingAssistantTVCategories":"abcat0101001","shoppingAssistantTabletCategories":"pcmcat209000050008,pcmcat313100050038","shoppingAssistantXboxOneConsolesAccessoriesCategories":"pcmcat303600050004,pcmcat303700050011","shoppingAssistantXboxOneGamesCategories":"pcmcat303600050005,pcmcat303600050008","shoppingHistoryPage_enableRecommendations":true,"spanPixelEnabled":false,"span_enablePushNotifications":true,"span_enablePushWhitelist":"[profile*]","staloneEnableBasicPremiumGrid":true,"suppressStreetDate":"5775100,5775004,5775103,5789010,5789014,5789019,5770949,5770938,5770912,5775000,5774910,5775001,5789008,5789004,5789007,5770905,5770900,5770909","useAttachSuggest":true,"useGspUnitPrice":true,"useNew365Render":true,"useSuggestView":true,"waterFilterFinderLiveSearch":true,"enableOrderStatusEOL":true,"enableShoppingHistoryEOL":true,"enablePrimaryMessageRecipeB":false,"enablePrimaryMessageRecipeC":false,"analyticsQVersion":"3.0.0","services":"[httpAgentManager:[enabledKeepAlive:false]]","beagleTransactionUrl":"/transaction-types","flex_widgetsEolFlag":true,"enableHpInkRedesign":true,"saveForLaterComparePage":true,"pdpStickyAddToCart":true,"enableTopNav":true,"enableAttachModalTopNav":true,"shoppingAssistantWallOvensCategories":"pcmcat180700050008,pcmcat180700050009,pcmcat180700050010","shoppingAssistantWashersCategories":"abcat0910002,abcat0910003,pcmcat7483017382","shoppingAssistantSoundBarCategories":"abcat0205007","shoppingAssistantRemoteStarterCategories":"pcmcat292200050016","shoppingAssistantRobotVacuumCategories":"pcmcat1475524169185","shoppingAssistantMicrowavesCategories":"pcmcat748301803023","shoppingAssistantMediaPlayersCategories":"pcmcat1500733287110","shoppingAssistantDryersCategories":"pcmcat232900050030,pcmcat232900050031","shoppingAssistantBlendersCategories":"pcmcat194000050018,pcmcat258900050003,pcmcat258900050001,pcmcat258900050000","shoppingAssistantBluRayPlayersCategories":"abcat0102000,abcat0102003,pcmcat748301694302,abcat0102005","shoppingAssistantCarStereoReceiversCategories":"abcat0301002,abcat0303001,pcmcat1493670231844,pcmcat292600050009,pcmcat1495052094624,pcmcat1493672433779,abcat0302012","shoppingAssistantCoffeeMakersCategories":"pcmcat258900050006,pcmcat258900050007,pcmcat258900050008,pcmcat260000050000","shoppingAssistantCooktopsCategories":"abcat0904001","enableInstallOptimization":true,"forceDisableTimeline":true,"forceCarouselsOffPDP":true,"EtkDeviceSet":true,"shoppingAssistantCamcordersCategories":"pcmcat273800050002,pcmcat748300678486,abcat0403004,pcmcat329700050008,pcmcat1489418755607,pcmcat1531491867824","enableCompareRecommendations":true,"deltaMeasureSampleSize":"1","enableFluid":true,"compareEventRender":false,"enableHeaderStoreLocatorActionLogListener":true,"disableGVPAddToCart":false,"disableFulfilmentGvpOnFeatureWidget":false,"disableGvpOnWidget":false,"catPagesForPMSaleABTest":"[pcmcat1502820735062]","standardizedAnalytics":true,"enablePushdownAdGVP":true,"enablePACStandaloneStores":false,"disableGVPAddToCartOnList":false,"allowListedCategoryIdsForFulfillmentGvp":"[\"pcmcat248000050016\"]","enabledDuplicateGlobalAssets":false,"enableOptimizelyOnHeadTag":true,"optimizelyPath":"/~assets/bby/_js/ext/optmzly/8143030612.js","enableCarouselV2":true,"PFV2AppearAlwaysFire":false,"PFV2AppearAlwaysUseOffset":false,"PFV2AppearAlwaysUseProvidedOffset":false,"PFV2AppearOffset":-2000,"PFV2AppearReverse":true,"PFV2AppearScrollEndTimeout":200,"PFV2AppearType":"explicit","suppressGHPRecsCarousels":true,"enableRegistryToSavedItemRedirect":true,"enableWidgetTypeTrack":true,"useGvpDisplayAd":true,"moveSVPencil":true,"disableLVLeaderboard":true,"enableLVPencil":true,"tagStatuses":"{\"contentSquareDisabled\":false}","enableGVPPreferredStoreURL":true,"clientLiveConfigAllowlist":"[disableFulfilmentGvpOnFeatureWidget, enablePushdownAdGVP, PFV2AppearAlwaysFire, PFV2AppearAlwaysUseOffset, PFV2AppearAlwaysUseProvidedOffset, PFV2AppearOffset, PFV2AppearReverse, PFV2AppearScrollEndTimeout, PFV2AppearType, allowListedCategoryIdsForFulfillmentGvp, whiteListedCategoryIdsForFulfillmentGvp, recommendationsUrl, fetchTimeout, maxOffersPerFalcorRequest, useGvpDisplayAd, frontendSplunkLoggingEndpoint, custTimeline_accountFingerprint, custTimeline_compareWhitelist, custTimeline_enableExperience, custTimeline_enableInGlobalNav, custTimeline_enableListener, custTimeline_experienceFingerprint, custTimeline_headerExperienceFingerprint, custTimeline_headerStatusFingerprint, custTimeline_initialForcedCollapsed, custTimeline_listenerFingerprint, custTimeline_loaderFingerprint, custTimeline_shoppingHistoryWhitelist, custTimeline_showRecommendationsInShoppingHistory, enableGVPPreferredStoreURL, earthDayPromoAllowList, earthDayPromoSkus, enableSaveForLater, enableSaveForLaterHeart, v2RecommendationsApiKey, streamsDomain, tvPostPurchaseEmail, abt3240Active, activeVideoSource, bbyCloudinaryCloudName, dealsUPASaleEventStatus, dealsUPASaleEventEndpoint, unboxingVideoType, personalizedHomePageExpKey, personalizedHomePageSvABTestStatus, personalizedHomePageEndPoint, phpSvCsiExperimentKey, personalizedHomePageLvExpKey, personalizedHomePageLvABTestStatus, phpLvCsiExperimentKey]","enableConditionalHydration":true,"earthDayPromoAllowList":"[]","earthDayPromoSkus":"[]","v2RecommendationsApiKey":"bOc1cuA5nqI-1PUONZjYkT8-0-prod","numberOfPLPWidgets":6,"transitionDSCGHP":true,"isBypassInspectEsiLogic":true,"addPlanPaidMemberCsi":true,"ensightenUrl":"https://nexus.ensighten.com","assetsUrl":"https://assets.bbystatic.com","enableNinjaTransition":true,"streamsDomain":"https://streams.bestbuy.com","useDeferredHydration":true,"tvPostPurchaseEmail":true,"useUpdatedNinjaCarousel":true,"useRemoteAssets":true,"useLazyPriceBlocks":true,"abt3240Active":false,"useNbaV2":true,"dealsUPASaleEventStatus":"AB","dealsUPASaleEventEndpoint":"/black-friday","gvpViewPatterns":"[overarchingOffers]","overarchingOffersCacheTTL":"12h","enableSaveForLaterHeart":true,"activeVideoSource":"MAGELLAN","bbyCloudinaryCloudName":"bby-product","unboxingVideoType":"UNBOXING","enableSaleEventOAO":false,"enableSaleEventOAOAbTest":false,"enableABTestingForAds":true,"isPhpExperimentActive":true,"personalizedHomePageExpKey":"exp0431","personalizedHomePageSvABTestStatus":"ON","personalizedHomePageEndPoint":"/home","phpSvCsiExperimentKey":"EXP_EXP0431","personalizedHomePageLvABTestStatus":"ON","phpLvCsiExperimentKey":"EXP_EXP0442","expKeyForAds":"exp0318","expKeyVariationForAds":"EXP_EXP0318","personalizedHomePageLvExpKey":"exp0442","isPhpExperimentLvActive":true,"allowedVariationsForLvPhpRouting":"[B, C, D]","allowedVariationsForSvPhpRouting":"[]","enableRecaptha":false,"recaptchaUrl":"https://www.google.com/recaptcha/enterprise.js?render=6LeP0dgrAAAAAFn_1X2rBkI8vJKKsU0-LOJOsczw","gvp":{"services":{"embeddedComponentRenderer":{"dedupeScriptTags":true,"dedupeLinkTags":false},"stips":{"forceCarouselsOffPLP":true,"disableHeaderTrays":{"enabled":false}},"optimizely":{"placebos":[{"experimentKey":"ABT1229_PDP","pageTypeRegex":"browse,pdp","evar":"abTest66"}]},"falcor":{"client":{"enableBatching":true,"maxQuerySize":8800}},"identityRecaptcha":{"enabled":false},"platformContainer":{"remoteFederatedModules":{"container2022":{"scope":"DO_NOT_USE_TEMPORARY_PLATFORM_SCOPE"},"@bestbuy/bby-debug":{"scriptLocation":"/~assets/bby/_com/shop/@bestbuy/bby-debug/dist/client/bby-debug-federation-remote-entry-1.0.1.js","steward":"a1616516-obo-PDP","varName":"__BBY_DEBUG_CONTAINER_1.0.1__"},"@bestbuy/viewed-saved-flyout":{"scriptLocation":"/~assets/bby/_com/shop/viewed-saved-flyout/dist/client/viewed-saved-flyout-federation-remote-entry-24.12.18.js","varName":"__PATHFINDER_COMPASS_CONTAINER_24.12.18__","steward":"pathfinder-compass"},"@bestbuy/visitor-optimization":{"scriptLocation":"/~assets/bby/_com/shop/visitor-optimization/dist/client/visitor-optimization-federation-remote-entry-24.48.13.js","varName":"__PATHFINDER_COMPASS_CONTAINER_24.48.13__","steward":"pathfinder-compass"},"@shop/widget-fragments":{"scriptLocation":"/~assets/bby/_com/widget-view/widget-fragments-remote-entry-25.22.19.js","varName":"__DISCOVER_WIDGET_FRAGMENTS_25.22.19__","steward":"Shop-Discover"},"@shop/widget-forge":{"scriptLocation":"/~assets/bby/_com/widget-view/widget-forge-remote-entry-25.22.19.js","varName":"__DISCOVER_WIDGET_FORGE_25.22.19__","steward":"Shop-Discover"},"autocomplete-listener-l":{"scriptLocation":"/~assets/bby/_com/suggest/suggest-view-react/dist/client/suggest-view-react-remote-entry-l-24.46.3.js","varName":"__SUGGEST_VIEW_REACT_CONTAINER_L_24.46.3__","steward":"DTT-Search-Suggest"},"autocomplete-listener-s":{"scriptLocation":"/~assets/bby/_com/suggest/suggest-view-react/dist/client/suggest-view-react-remote-entry-s-24.46.3.js","varName":"__SUGGEST_VIEW_REACT_CONTAINER_S_24.46.3__","steward":"DTT-Search-Suggest"},"@bestbuy/trade-in":{"scriptLocation":"/~assets/bby/_com/trade-in-experience/trade-in/module/trade-in-federation-remote-entry-25.6.2.js","varName":"__TRADE_IN_CONTAINER_25.6.2__","steward":"TradeInExperience"},"@bestbuy/activated-promos":{"scriptLocation":"/~assets/bby/_com/promos/activated-promos-federated-1.1.1.js","varName":"__ACTIVATED_CONTAINER_1.1.1__","steward":"Activations_Leads"},"@cdi/create-account":{"scriptLocation":"/~assets/bby/_com/sc-react-sign-on/dist/federated-create-account/cdi-create-account-remote-entry-2.0.421.js","varName":"__CREATE_ACCOUNT_2.0.421__","steward":"Customer-Domain-Identity"},"@cdi/incentivize-customer":{"scriptLocation":"/~assets/bby/_com/sc-react-sign-on/dist/federated-incentivize-customer/cdi-incentivize-customer-remote-entry-2.0.421.js","varName":"__INCENTIVIZE_CUSTOMER_2.0.421__","steward":"Customer-Domain-Identity"},"@cuam/customer-search-legacy-support":{"scriptLocation":"/~assets/bby/_com/customer-domain/customer-search-legacy-support/dist/client/cuam-customer-search-legacy-support-federation-remote-entry-25.15.0.js","varName":"__CUAM_CUSTOMER_SEARCH_LEGACY_SUPPORT_CONTAINER_25.15.0__","steward":"Customer-Domain_Customer-Account-Management"}}}},"components":{"shop":{"viewed-saved-flyout":{"disableRecentlyViewedBadges":false,"enableAddToCart":true,"enableAddToCartButtonRules":true,"enableCombos":true,"enableSaveForLater":true,"enablePriceBlock":true,"enableSeeMoreLikeThis":true,"enableUgcStats":true,"priceChangeNotificationEnabled":true,"recommendationsBaseURL":"https://context.test.bestbuy.com","shoppingHistorySuppressedCategories":["pcmcat1625079176607","pcmcat1625079372032","pcmcat1625079577315"],"useNewRecentlyViewedFlyout":false,"useNewSavedItemsFlyout":false,"useHeartIcon":true,"enableHeartIcon":true},"visitor-optimization":{"enableInterruptionsManager":false,"excludedPages":["/checkout","/thank-you","/checkout/r/thank-you"]}},"sc-location":{"clientConfig":{"enableEGPPreferredStore":false,"enableSetEGPPreferredStore":false,"enableScLocationLogging":true}}}}};
+    </script>
+
+    <script src="https://www.bestbuy.com/~assets/bby/_js/ext/bbydyn/dyn_digital_wrlss.js"></script>
+
+    <div id="shop-lib-dai-43967646" class="_none" data-version="2.0.2"><div class="shop-lib-dai"><script async="" src="https://www.bestbuy.com/~assets/bby/_com/@ds/unified-chat/dist/javascript/unified-chat-init-b36ff84b.js"></script></div><script type="module" src="/~assets/bby/_com/shop/lib-dai/dist/client/client-089bbe3cbb4e88488eec65d169960af6.mjs"></script><script nomodule defer src="/~assets/bby/_com/shop/lib-dai/dist/client/client-c50d173795554f8a3c251d8d34de7bd7.js"></script><script>getInitializer().then(initializer => initializer.initializeComponent({"creatorNamespace":"shop","componentId":"lib-dai","contractVersion":"v1","componentVersion":"2.0.2"}, "shop-lib-dai-43967646", "{\"app\":{\"instanceId\":\"shop-lib-dai-43967646\",\"analyticsHash\":\"13b646173c87efb00c113ea14396af2c\",\"analyticsConditions\":[],\"unifiedChatHash\":\"b36ff84b\",\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"},\"tagConfig\":{\"microsoftUET\":true,\"dynamicCreativeATC\":false,\"gtagPDP\":true,\"gtagConversion\":true,\"gtagPurchase\":true,\"gtagThankYou\":true,\"gtagIHC\":true,\"gtagATC\":true,\"gtagBBFB\":false,\"gtagAdwords\":true,\"gtagAppleScreenRepairTy\":true,\"contentsquareTransaction\":true,\"csq\":true,\"customerJournal\":true,\"adobe\":true,\"checkmarx\":true,\"interaction\":true,\"adobeDcoPdp\":true,\"flashtalkingPurchase\":true,\"adobeDcoCart\":true,\"flashtalkingPDP\":true,\"flashtalkingCart\":true,\"flashtalkingCategoryPage\":false,\"impactLanding\":false,\"confirmIt\":true,\"adobeDcoPdpCategory\":true,\"impactConversionCS\":false,\"googleSearchConsole\":true,\"doubleclickViewThroughAttribution\":true,\"allowAllEvents\":true}},\"metaLayer\":{\"env_assets\":\"\\u002F~assets\\u002Fbby\\u002F_com\",\"env_piscesUrl\":\"https:\\u002F\\u002Fpisces.bbystatic.com\",\"env_appServer\":\"https:\\u002F\\u002Fwww.bestbuy.com\"}}", "en-US"));</script></div>
+    <script src="https://img-ssl.bbystatic.com/BestBuy_US/js/tracking/brightTag-min.js"></script>
+      
+                            
+                         
+  <script defer src="https://www.bestbuy.com/~assets/bby/_com/connectedDevices/dist/package-builder.bundle__213801b14f3af84d53b3__.js"></script><script type="text/javascript"  src="/fFEAgD/6qe/XGh/h1lVrg/EX5YGQm3V1z9DS/ITULbHd7Rgg/Dz/B2KnJfbiMB"></script></body>
+</html>
+~ $ npm fund
+home
+├── https://github.com/sponsors/ljharb
+│   └── minimist@1.2.8, string.prototype.replaceall@1.0.11, call-bind@1.0.8, function-bind@1.1.2, define-data-property@1.1.4, gopd@1.2.0, has-property-descriptors@1.0.2, define-properties@1.2.1, es-abstract@1.24.1, array-buffer-byte-length@1.0.2, arraybuffer.prototype.slice@1.0.4, available-typed-arrays@1.0.7, call-bound@1.0.4, data-view-buffer@1.0.2, data-view-byte-offset@1.0.1, es-to-primitive@1.3.0, is-date-object@1.1.0, is-symbol@1.1.1, function.prototype.name@1.1.8, functions-have-names@1.2.3, get-symbol-description@1.1.0, globalthis@1.0.4, has-proto@1.2.0, is-array-buffer@3.0.5, is-callable@1.2.7, is-data-view@1.0.2, is-negative-zero@2.0.3, is-set@2.0.3, is-shared-array-buffer@1.0.4, is-string@1.1.1, is-typed-array@1.1.15, is-weakref@1.1.1, object-inspect@1.13.4, object.assign@4.1.7, own-keys@1.0.1, regexp.prototype.flags@1.5.4, safe-array-concat@1.1.3, safe-push-apply@1.0.0, safe-regex-test@1.1.0, string.prototype.trim@1.2.10, string.prototype.trimend@1.0.9, string.prototype.trimstart@1.0.8, typed-array-byte-length@1.0.3, for-each@0.3.5, typed-array-byte-offset@1.0.4, reflect.getprototypeof@1.0.10, which-builtin-type@1.2.1, is-async-function@2.1.1, is-finalizationregistry@1.1.1, is-generator-function@1.1.2, which-boxed-primitive@1.1.1, is-bigint@1.1.0, has-bigints@1.1.0, is-boolean-object@1.2.2, is-number-object@1.1.1, which-collection@1.0.2, is-map@2.0.3, is-weakmap@2.0.2, is-weakset@2.0.4, typed-array-length@1.0.7, unbox-primitive@1.1.0, which-typed-array@1.1.20, has-tostringtag@1.0.2, side-channel@1.1.0, side-channel-list@1.0.0, side-channel-map@1.0.1, side-channel-weakmap@1.0.2, get-intrinsic@1.3.0, has-symbols@1.1.0, is-regex@1.2.1
+└── https://github.com/sponsors/feross
+    └── buffer@6.0.3, base64-js@1.5.1, ieee754@1.2.1, safe-buffer@5.2.1
+
+~ $# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided this notice is
+# preserved.  This file is offered as-is, without any warranty.
+
+# EditorConfig
+# http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.y{a,}ml]
+indent_size = 2
+indent_style = space
 package com.termux.terminal;
 
 import java.util.HashMap;
