@@ -1,4 +1,280 @@
-[Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
+[Openid-specs-digital-credentials-protocols] DCP Call Notes: 2024-08-27
+Steve Venema steve.venema at microsoft.com
+Tue Sep 3 02:58:36 UTC 2024
+Next message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+Attendees:
+	Bjorn Hjelm
+	Brian Campbell
+	Christian Bormann
+	Daniel Fett
+	Elizabeth’s iPhone
+	Gail Hodges
+	Hicham Lozi [Apple]
+	Jan Vereecken
+	John Bradley
+	Joseph Heenan (OIDF & Authlete)
+	ketan mehta
+	Kristina Yasuda (OIDF)
+	Martijn Haring
+	Michael Jones
+	nemanja.patrnogic
+	Oliver Terbu
+	Rajvardhan Deshmukh
+	Steve Venema
+	Sudesha Shetty
+	Tim Cappalli (Okta)
+	Tobias Looker (MATTR)
+	Tom Jones
+	Torsten Lodderstedt
+----------------
+
+Summary:
+	• Reminder to register for OIDF DCP mtg at Cisco on the morning of 28Oct
+		○ https://www.eventbrite.com/e/oidf-dcp-working-group-hybrid-meeting-at-cisco-monday-october-28-2024-tickets-991309442227
+		○ NOTE: This is separate from the afternoon general OIDF mtg, which requires its own registration
+	• Discussed client_id_scheme security (VP: Issue #213, VCI: Issue #366)
+		○ Discussion focused on potential downgrade attacks -- particularly for unsigned requests
+		○ More discussion will occur as comments in the PR
+	• Discussed adding extensibility language (VC: Issue #227, VCI: Issue #375
+		○ Consensus is for Mike to go ahead and create the PRs (one for each spec) and then we can further discuss from there.
+	• Discussed VP Issue #141: Verifier/Relying Parties need to be able to verify authenticity and validity of (European Digital Identity) Wallets
+		○ Consensus was to move forward with option #2 as presented by Torsten at the top of the issue (29Mar)
+	• Discussed VCI Issue #331: Is c_nonce required in proof or not
+		○ Consensus towards adding a new nonce endpoint
+--------------
+Details:
+---
+VP PR #237 Address client_id_scheme problems (fixes #124)
+Oliver:
+	• Please review PR 237
+	• Tried to crystallize common features across the different client ID schemes
+	• ID schemes really just provide additional means to authenticate the request Object against a given client or client identifier, and also validating their redirect and response on top of existing client metadata retrieval mechanisms such as DCR or OpenID Federation
+	• Proposal is that the client wallet can choose to implement any of these methods; doesn't need to implement all of them.
+Torsten:
+	• I skimmed through the PR. Seems like you've only redone the verify metadata management part of the spec.
+	• What about the processing rules in the VP spec? 
+Daniel: 
+	• I too have only skimmed the PR
+	• There's a sentence where you say, "the following is a list of methods". Is that meant to also imply the processing order?
+Oliver:
+	• No.
+Daniel:
+	• No, because the chart has a processing order
+Oliver:
+	• Yes, that’s why I'm not really happy with the diagram
+	• The text actually sugg3ests that all of these methods are MAY
+	• Basically, it’s a valid policy decision which methods to choose to authenticate a request object in ordee3r to accept unsigned authorization requests
+Daniel:
+	• Isn't that the hardest part of this PR? To choose when? Because that’s kind of the cause of the problem, isn't it?
+Oliver:
+	• Explain why this is the hardest part? IMO, I don't think so.
+Daniel:
+	• The point is that if I get a request, it should be clear how I process it, and that there's no way that that a signed request can be modified by a 3rd party, such that the signature can be faked, or the validation can be skipped.
+Oliver:
+	• Please comment on the PR. I think I can address your concern
+Daniel:
+	• What is in the flow chart should be put into the text, and then we can check whether it is a sequre way to process that even if some methods are not supported
+Oliver:
+	• I think I don't agree with that. But let's discuss on that PR.
+--
+Torsten:
+	• I checked the spec and, for example, in §5 there is a description of how the client_id_scheme parameter must be processed
+	• You haven't modified that section yet so I will add a comment to the PR asking you to remove all occurrences of client_id_scheme and replace it, if needed, with processing directives.
+	• Because my feeling is there's a link missing between (1) the general description of what the wallet needs to do when processing an authorization request, and (2) the text in the verifier management because the verifier or the client_id_scheme section originally was just about different options,  and it was tied into the processing logic by the text that described how the client_id_scheme needs to be processed and that link IMO is missing in the pull request.
+Oliver:
+	• Yes the PR is incomplete. Please create a comment on the PR and I can change that.
+--
+Tobias:
+	• Execution order: the visualization is good, but I don't think we want to define how a wallet execution order in how you detect a signed and unsigned request, and how it may be signed and secured, etc.
+	• For non-pre-registered clients, we need additional techniques detailed to mitigate downgrade attacks
+Daniel:
+	• I disagree. It's very important to define the order of methods to check the signature. It's not rocket science to define these rules
+Tobias:
+	• I'm just saying that (1) it limits extensibility if we define and order, and (2) it breaks from how OAuth and OIDC work today because they don't define an execution order for client authentication methods.
+Joseph:
+	• They do because OAuth and OIDC today generally have the assumption that the server knows what method the client is going to authenticate with. So it only has to check if that method is present or not.
+Tobias: 
+	• A client can actually register with multiple, can it not?
+Joseph:
+	• No, it’s a single string in the DCR spec in the metadata spec
+Mike:
+	• You are correct.
+Brian:
+	• You can't apply this logic since you don't know until you receive the request. The logic you describe also doesn't apply. I actually think the comparison to client authentication is not that useful.
+Martijn:
+	• I'm generally in favor of this change
+	• There are some parts of the PR where the language isn't in alignment with what we do in the browser API where the client_id is not present.
+	• There's some mandatory references to redirect, etc. that I don't think I'll add comments.
+	• Consequence of removing the client_id scheme is for x.509 certificates: it mandates that the next x.509 certificate has to foll0ow the same DNS requirements while you might have x.509 certs that are not bound to DNS, right?
+	• Ex: you might give an x.509 cert to an RP not knowing its DNS. That's fine from a security perspective, but with this updated language I think that's no longer allowed.
+Tobias:
+	• I keep bringing it back to the question, 'is the method being used in the request authoritative for that client', and how that's being established.
+	• If you can disambiguate that, then an attacker can try to use a client authentication method or can disable request signing.
+	• And if that's unexpected for the given client because either the metadata is pre-registered, or you have an authoritative set of metadata that you have obtained through discovery, then you can't disable request signing.
+Daniel:
+	• In client authentication, if you have a client_id in your database and, besides that, you have noted down that this client has to use this method, then everything is fine.
+	• If you use any kind of algorithm that looks at the request as defined here, then you don't know which method will be used, especially if many are offered
+Tobias:
+	• But if the client_id is a URI and you resolve the client metadata, that's authoritative, right? You can't downgrade that.
+Daniel:
+	• If you're always using that resolution, then I'd be fine with that.
+Tobias:
+	• So we have multiple paths here:
+		○ Pre-registered client
+		○ Client URI
+		○ Client metadata in the request -- which isn't authoritative since its attacker-supplied, as you [Daniel] have been pointing out.
+	• If we remove the 3rd option, then everything becomes simpler because you're always dealing with authoritative client metadata for the client_id.
+Daniel:
+	• We have 2 approaches to fixing this:
+		○ Ensuring for a given client_id you always use the same method -- for example, by discovering metadata or whatever
+		○ Add a prefix to the client_id which indicates which method was used to ensure that its not the same client_id if a different method was used.
+Joseph:
+	• We need to move on. Can we take the discussion up on the PR please.
+	• Probably on the agenda for Thu, but important to get closure on this.
+---
+VP Issue #227 & VCI Issue #375: Enable non-breaking extensibility
+Mike:
+	• We did a 1min preview of this issue on the previous call
+	• It's about employing an architectural principle that's enabled OAuth and other OpenID specs to succeed
+	• Whenever there's a list of things we tend to say…
+		○ Other values may be defined and used
+		○ If you encounter a value that you don't understand then you must ignore it
+	• This has enabled things like OIDC, FAPI and OpenID4VP on top of OAuth
+	• I've reviewed the 2 specs [OpenID4VP, OpenID4VCI] and it is mostly absent
+	• Proposal is to put it in place. This affects two specs. I'd be glad to PR at this point if there is support for this.
+	• I would be glad to do a PR if people would like that at this point.
+	• The goal is to be able to put a new extension into production and have it not break existing deployments
+		○ In some of the certification suites, we do test that.
+Martijn:
+	• Asking for a clarification; open issue or PR for limiting the amount of client_id parameters?
+Mike:
+	• To extent that we keep the client_id_scheme, then that would be a place where we apply this language
+	• This is an architectural principle that I think it's important
+Kristina:
+	• You're giving the specs a read to correct/modify the specs
+	• I think you (Mike) should do the PR and then we can discuss any concerns from there
+---
+
+VP Issue# 141: Verifier/Relying Parties need to be able to verify authenticity and validity of (European Digital Identity) Wallets
+
+Torsten:
+	• There is a requirement that the RP must be able to check the validity and attestation of a wallet (requirement in eIDAS2)
+	• We were at a rough consensus with option 2
+	• Paul suggested a new approach of a wallet attestation parameter, which would have PoP
+Christian:
+	• We should split the discussion into two pieces
+		○ Signal to the wallet and the user that the wallet attestation is desired/required
+		○ How do we convey that attestation
+Brian:
+	• On the browser API limitations, for the current state of things, it's certainly possible to return 2 creds
+	• The reason for the limit currently is the presentation of the UI for concent
+Torsten:
+	• Reacting to Christian's suggestion
+	• Can the user refuse an attestation?
+Christian:
+	• Yes, I think the user should be able to deny the request -- the spec should support this being displayed to the user
+Torsten:
+	• We're fighting to keep the wallet attestation is not a correlating identifier, but were not there yet. We're getting into legal territory.
+	• I think that we need to treat the wallet attestation as different than the [credential] attestation; the first is the wallet instance software
+Christian:
+	• I think it helps to separate between the request and the UX part, and then the response part because even if you go JARM or like a different response parameter, you still have the problem with you you do the request and how it is displayed to the user. That problem doesn't go away.
+Joseph:
+	• Becomes a problem for the wallet, how it displays this to the user
+Brian:
+	• I think there is general ambiguity as to the drivers on this. 
+	• Potentially we could push this out if we're looking for a path of least resistance relative to the EUWallet requirements.
+Martijn:
+	• I also agree with that. There are multiple reasons for going this direction:
+		○ Might also be a thing for in-person and in-app presentation.
+		○ It's sort of a credential with PoP; we'd need to solve this a different way
+	• Potentially a lot of work
+	• If we treat it as a normal credential, potentially it becomes a wallet UX issue? Or maybe something to discuss with the browsers once we know the exact details and privacy implications.
+John B:
+	• I agree that the requests and responses need to be handled separately
+	• A verifier knowing what wallet you have potentially discloses what nationality you have for example.
+		○ In the FIDO, even the person knowing you have a security key from a particular vendor is a disclosure, browsers therefore warn the user
+Sudesha:
+	• I agree with Brian, Martijn and John
+	• We chose a trust registry approach, but I like the approach of treating it as a separate credential, with separate user consent.
+Daniel:
+	• I'm a big fan of that option of treating it as a credential
+Kristina:
+	• IT seemed from last week that we had to treat the wallet attestation as a special kind of credential.
+	• I personally agree that it should be just another credential
+	• I think we should split into 2 PRs, one saying "hey, it’s a separate credential and then do an implementation consideration. The other might then be the UX considerations, but we can't mandate UX
+	• Split into (1) specs, and (2) UX [which we can't specify]
+Christian:
+	• We should raise an issue that this needs to be addressed for any query language as well as
+	• I support option 2
+Torsten:
+	• Option 2 is in the end trying to treat the wallet attestation as an ordinary credential
+	• What Martijn said resonates with me: we've solved attestations and binding and all that stuff, and if we go for another option, we would  need to solve that same problem again.
+	• I also think there will be other credentials that need special treatment for various reasons
+	• So I'm supportive of option 2.
+Christian:
+	• We need something in the query that says, "this is a wallet attestation"
+Torsten:
+	• No you don't
+Brian:
+	• Why can't that just be the type?
+Christian
+	• Ok.
+Torsten:
+	• Exactly that.
+	• This can be ecosystem specific, right?
+	• So this is our format, this is our schema, and that's the flexibility. That's what I like with it.
+	• If you were to define a special mechanism, we would need to define what format, what schema, and so on that would need to be used. 
+	• I'm all for option 2 now.
+	
+Joseph:
+	• Consensus is that we go with option 2
+	• We'll mark this issue ready for PR
+	• Assigned to Christian
+
+---
+
+8min left to go….
+
+Joseph: PR's needing review
+	• VP:
+		○ 235 make clear that the names/values of UTF-8 
+		○ 234 Better define response URI
+		○ 233: Clarify what can go in a client-metsata authz request parameter
+	• VCI:
+		○ 331: Is c_nonce required in proof or not?
+	
+---
+Discussion on VCI Issue 331:
+	• Specific endpoint for the c_nonce
+	• The c_nonce either needs to be mandatory or get rid of it
+	• Wallet implementers say that there is confusion over whether you do, or don't get a c_nonce from the token endpoint. Without this [being , they were unable to function.
+Nemanja: (via chat)
+	• People who were against removing the c_nonce were mostly against extra round trips if I remember correctly, and against the weird c_nonce in error message logic
+Brian:
+	• this problem is that the multiple roundtrip problem is 
+Torsten:
+	• The AS needs some data that only issuer knows
+Brian:
+	• I'm arguing against unnecessary, unnatural coupling of the two entities. Introduction of new parameters is wholly unnecessary
+Torsten:
+	• I would be ok with the introduction of a new nonce endpoint
+	• But we do need to retain the error logic that once the nonce is no longer good
+	• I would not like to see us just removing the c_nonce from the token response since that would mean that the wallet would send a credential issue request, get an error,  and then do the real thing.
+Brian:
+	• Exactly, which is what some wallets were incapable of doing, even though it’s a requirement of the spec to work.
+Joseph:
+	• Torsten: just to clarify, you want to see a new endpoint created before we merge this PR?
+Torsten:
+	• Yes.
+Kristina:
+	• Do we have an issue for this?
+	• (or make a comment on the existing issue)
+
+
+Next message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+More information about the Openid-specs-digital-credentials-protocols mailing list[Openid-specs-digital-credentials-protocols] [agenda] DCP WG + SIOP call (PST 8am) - focus on transaction data in payments and QES use-cases
 Kristina Yasuda yasudakristina at gmail.com
 Wed Aug 7 17:48:17 UTC 2024
 Previous message (by thread): [Openid-specs-digital-credentials-protocols] [agenda] APAC-friendly DCP WG + SIOP call (PST midday)
