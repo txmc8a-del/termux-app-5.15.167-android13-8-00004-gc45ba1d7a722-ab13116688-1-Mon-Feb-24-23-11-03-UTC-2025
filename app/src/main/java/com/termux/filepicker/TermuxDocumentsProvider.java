@@ -1,4 +1,126 @@
-#include <dirent.h>
+[Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
+Kristina Yasuda yasudakristina at gmail.com
+Tue Dec 23 14:59:40 UTC 2025
+Previous message (by thread): [Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
+Next message (by thread): [Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+Hi Kenichi,
+
+> Current problem of OID4VP is that HAIP (1.0) is not desirable for
+ecosystems who do not use SD-JWT VC. OID4VP is a building block and may
+have profiles, the same as WG10 considers OpenID4VCI would have profiles
+and HAIP is one of them. I do not have an objection that DCP WG develops a
+profile for EU, but WG10 should specify a profile applicable for any mdocs.
+
+HAIP does not mandate SD-JWT VC and allows implementers to use it only with
+mdocs. could you elaborate why you believe HAIP does not work with "any
+mdocs"?
+
+Thank you,
+Kristina
+
+
+On Tue, Dec 23, 2025 at 2:40 PM Joseph Heenan via
+Openid-specs-digital-credentials-protocols <
+openid-specs-digital-credentials-protocols at lists.openid.net> wrote:
+
+> (Resending, as it didn’t make it at least to the mailing list archive for
+> some reason)
+>
+> Hi all
+>
+> Please see a proposal below as submitted by Kenichi.
+>
+> Thanks
+>
+> Joseph
+>
+> -------------------------
+>
+> For proximity use case, ISO/IEC 18013-5 device engagement already has
+> capability info.
+>
+> DeviceEngagement =
+> {
+> 0: Version,
+> 1: Security,
+> ? 2: DeviceRetrievalMethods,
+> ? 5: OriginInfos,
+> ? 6: Capabilities,
+> * uint => RFU,
+> * nint => Ext
+> }
+>
+> If wallet will indicate support of SD-JWT, protocol to retrieve SD-JWT VC
+> can be used after session establishment. WG10 does not specify SD-JWT VC,
+> so I don’t have strong opinion how to map request and response on the top
+> of ISO/IEC 18013-5 session and DCP WG should do it because they are also
+> considering support of SD-JWT VC. If DCP WG does not have expertise on it,
+> WG10 can help it.
+>
+> For online use case, there is no way for wallet to inform its capability
+> to relying party. But http get method already support  query which can be
+> used to inform whether requester wishes to receive mdoc request or sd-jwt
+> vc request.
+>
+> Current problem of OID4VP is that HAIP (1.0) is not desirable for
+> ecosystems who do not use SD-JWT VC. OID4VP is a building block and may
+> have profiles, the same as WG10 considers OpenID4VCI would have profiles
+> and HAIP is one of them. I do not have an objection that DCP WG develops a
+> profile for EU, but WG10 should specify a profile applicable for any mdocs.
+>
+> So I am not sure “harmonized protocol” is required or not and both parties
+> should consider co-existence of two protocols.
+>
+> ————————————
+>
+>
+> On 18 Dec 2025, at 18:42, Joseph Heenan <joseph at authlete.com> wrote:
+>
+> Hi all
+>
+> As was agreed in the first joint meeting, at the next meeting (on the 23rd
+> December 13:00 – 14:00 UTC, the invite was sent to this mailing list
+> earlier today) the group wanted to get into discussion about the form of
+> the technical solution at the high level.
+>
+> After discussion between the ISO convenor & the DCP co-chairs we believe
+> the best way to proceed would be if people could submit outlines of how
+> they envisage the harmonised protocol looking. These outlines should be
+> short, either concise text or a diagram, *definitely under 1 page.*
+>
+> The expectation would be that these high level proposals select various
+> parts of the existing ISO 18013 / OID4VC protocols and combine them in a
+> way that produces a "best of breed" solution.
+>
+> We’d encourage people that believe they might submit similar proposals to
+> work together wherever possible to keep the number of proposals received to
+> a minimum and hence use the meeting time in the most effective way.
+>
+> Please submit proposals ASAP (and prior to the 23rd Dec meeting) as a
+> response to this message (with Loffie CCed so they can be distributed to
+> ISO members too). We suggest we then quickly review the proposals at the
+> meeting, and the group selects the least disliked proposal as a starting
+> point that we then have detailed discussions about.
+>
+> Many thanks
+>
+> Joseph
+>
+>
+> --
+> Openid-specs-digital-credentials-protocols mailing list
+> Openid-specs-digital-credentials-protocols at lists.openid.net
+>
+> https://lists.openid.net/mailman/listinfo/openid-specs-digital-credentials-protocols
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <http://lists.openid.net/pipermail/openid-specs-digital-credentials-protocols/attachments/20251223/509d51fe/attachment-0001.htm>
+Previous message (by thread): [Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
+Next message (by thread): [Openid-dcp] Request for technical proposals ahead of joint meeting between ISO WG 10/DCP members
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ]
+More information about the Openid-specs-digital-credentials-protocols mailing list#include <dirent.h>
 #include <fcntl.h>
 #include <jni.h>
 #include <signal.h>
