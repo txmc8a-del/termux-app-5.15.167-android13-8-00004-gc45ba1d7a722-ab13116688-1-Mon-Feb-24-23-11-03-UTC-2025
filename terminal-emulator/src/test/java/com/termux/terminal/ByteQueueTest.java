@@ -1,4 +1,632 @@
-<html lang="en" translate="no" data-theme="t3">
+<center>
+				<table border="0" cellpadding="2" bgcolor="#ffffff" style="BORDER-COLLAPSE: collapse" bordercolor="#111111" height="464" width="894" cellspacing="2">
+					<!-- MSTableType="nolayout" -->
+					<tbody><tr>
+						<td colspan="2" width="894" height="104">
+
+
+
+<map name="FPMap1"> 
+    <area shape="RECT" target="_self" coords="271, 16, 781, 59" href="information.html" alt="PDFill PDF Editor Professional/Enterprise">
+    <area shape="RECT" target="_self" coords="661, 78, 852, 103" href="freewriter.html" alt="PDFill Free PDF and Image Writer">
+    <area shape="RECT" target="_self" coords="474, 78, 653, 103" href="pdf_tools_free.html" alt="PDFill Free PDF Tools">
+    <area shape="RECT" target="_self" coords="270, 78, 463, 103" href="free_pdf_editor.html" alt="PDFill Free PDF Editor Basic">
+</map>
+
+
+<img border="0" src="images/pdfill_top.png" usemap="#FPMap1" align="left" hspace="0">
+
+
+
+						</td>
+					</tr>
+					<tr>
+						<!--htdig_noindex-->
+						<td width="169" class="menu" valign="top" height="307" rowspan="3">
+							
+							
+						
+							<table width="8" border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+									<td width="199">
+										<script language="JavaScript" src="pdfillmenu.js" type="text/javascript"></script>
+										<table width="166" border="0" cellspacing="0" cellpadding="0" height="175">
+											<tbody><tr onmouseover="LeftNav('m2i1','over')" onmouseout="LeftNav('m2i1','out')" onclick="document.location.href='index.html'">
+												<td class="menuItem" id="m2i1" width="73%" height="26"><a href="index.html" id="m2i1Link" class="menuLink">
+														<font size="2">PDFill PDF Editor</font></a></td>
+											</tr>
+											<tr onmouseover="LeftNav('m2i2','over')" onmouseout="LeftNav('m2i2','out')" onclick="document.location.href='safeorder.html'">
+												<td class="menuItem" id="m2i2" width="73%" height="26"><a href="safeorder.html" id="m2i2Link" class="menuLink">
+														<font size="2">Buy PDF Editor</font></a></td>
+											</tr>
+											
+											
+											<tr onmouseover="LeftNav('m2i3','over')" onmouseout="LeftNav('m2i3','out')" onclick="document.location.href='free_pdf_editor.html'">
+												<td class="menuItem" id="m2i3" width="73%" height="26"><a href="free_pdf_editor.html" id="m2i3Link" class="menuLink">
+														<font size="2">Free PDF Editor</font></a></td>
+											</tr>
+																						
+											<tr onmouseover="LeftNav('m2i4','over')" onmouseout="LeftNav('m2i4','out')" onclick="document.location.href='pdf_tools_free.html'">
+												<td class="menuItem" id="m2i4" width="73%" height="26"><a href="pdf_tools_free.html" id="m2i4Link" class="menuLink">
+														<font size="2">Free PDF Tools</font></a></td>
+											</tr>
+											
+											<tr onmouseover="LeftNav('m2i5','over')" onmouseout="LeftNav('m2i5','out')" onclick="document.location.href='freewriter.html'">
+												<td class="menuItem" id="m2i5" width="73%" height="26"><a href="freewriter.html" id="m2i5Link" class="menuLink">
+														<font size="2">Free PDF Writer</font></a></td>
+											</tr>
+											
+											<tr onmouseover="LeftNav('m2i6','over')" onmouseout="LeftNav('m2i6','out')" onclick="document.location.href='freewriter.html#2'">
+												<td class="menuItem" id="m2i6" width="73%" height="26"><a href="freewriter.html#2" id="m2i6Link" class="menuLink">
+														<font size="2">Free Image Writer</font></a></td>
+											</tr>
+											<tr onmouseover="LeftNav('m2i7','over')" onmouseout="LeftNav('m2i7','out')" onclick="document.location.href='download.html'">
+												<td class="menuItem" id="m2i7" width="73%" height="26"><a href="download.html" id="m2i7Link" class="menuLink">
+														<font size="2">Download</font></a></td>
+											</tr>
+											
+											
+											<tr onmouseover="LeftNav('m3i1','over')" onmouseout="LeftNav('m3i1','out')" onclick="document.location.href='information.html'">
+												<td class="menuItem" id="m3i1" width="73%" height="26"><a href="information.html" id="m3i1Link" class="menuLink">
+														<font size="2">Information</font></a></td>
+											</tr>
+											<tr onmouseover="LeftNav('m3i2','over')" onmouseout="LeftNav('m3i2','out')" onclick="document.location.href='example.html'">
+												<td class="menuItem" id="m3i2" width="73%" height="26"><a href="example.html" id="m3i2Link" class="menuLink">
+														<font size="2">Example</font></a></td>
+											</tr>
+											
+							
+											<tr onmouseover="LeftNav('m4i1','over')" onmouseout="LeftNav('m4i1','out')" onclick="document.location.href='quickstart.html'">
+												<td class="menuItem" id="m4i1" width="73%" height="26"><a href="quickstart.html" id="m4i1Link" class="menuLink">
+														<font size="2">Quick Start</font></a></td>
+											</tr>
+											<tr onmouseover="LeftNav('m4i2','over')" onmouseout="LeftNav('m4i2','out')" onclick="document.location.href='whatisnew.html'">
+												<td class="menuItem" id="m4i2" width="73%" height="26"><a href="whatisnew.html" id="m4i2Link" class="menuLink">
+														<font size="2">What is New</font></a></td>
+											</tr>
+											
+				
+											
+							<tr onmouseover="LeftNav('m6i1','over')" onmouseout="LeftNav('m6i1','out')" onclick="document.location.href='support.html'">
+                                     <td class="menuItem" id="m6i1" width="73%" height="19"><a href="support.html" id="m6i1Link" class="menuLink">
+                                      <font size="2">
+                                      Support</font></a></td>
+                            </tr>
+                                                                          								
+			                <tr onmouseover="LeftNav('m6i2','over')" onmouseout="LeftNav('m6i2','out')" onclick="document.location.href='faq.html'">
+                                     <td class="menuItem" id="m6i2" width="73%" height="19"><a href="faq.html" id="m6i2Link" class="menuLink">
+                                      <font size="2">FAQs</font></a></td>
+                            </tr>
+                                      
+                            <tr onmouseover="LeftNav('m6i3','over')" onmouseout="LeftNav('m6i3','out')" onclick="document.location.href='aboutus.html'">
+                                      <td class="menuItem" id="m6i3" width="73%" height="19"><a href="aboutus.html" id="m6i3Link" class="menuLink">
+                                      <font size="2">About us</font></a></td>
+                            </tr>
+                                                                         
+                            <tr onmouseover="LeftNav('m6i4','over')" onmouseout="LeftNav('m6i4','out')" onclick="document.location.href='pdfill_customer_review.htm'">
+                                      <td class="menuItem" id="m6i4" width="73%" height="26"><a href="pdfill_customer_review.htm" id="m6i4Link" class="menuLink">
+                                      <font size="2">Awards &amp; Reviews</font></a></td>
+                            </tr>
+                                    
+                            <tr onmouseover="LeftNav('m6i5','over')" onmouseout="LeftNav('m6i5','out')" onclick="document.location.href='pdf_consulting.html'">
+                                      <td class="menuItem" id="m6i5" width="73%" height="26"><a href="pdf_consulting.html" id="m6i5Link" class="menuLink">
+                                      <font size="2" face="Verdana">PDF Consulting</font></a></td>
+                            </tr>                     
+											
+										</tbody></table>
+									</td>
+								</tr>
+							</tbody></table>
+		
+
+							
+							
+							
+						</td>
+						<!--/htdig_noindex-->
+					</tr>
+					<tr>
+						<td valign="top" height="1915">
+	
+		<table border="0" width="800">
+			<tbody><tr>
+				<td width="75">
+				<img border="0" src="images/new_beta.png" align="right"><p align="center">
+				&nbsp;</p></td>
+				<td width="711" align="center">
+				<p align="left">
+					<font size="2"><b><a href="http://www.FreePDF.net">FreePDF.net: Free PDF 
+				Editor
+				Online Tools</a></b></font></p></td>
+			</tr>
+			</tbody></table>
+					<p align="justify">
+					<span style="font-size:10.0pt;
+font-family:Verdana">Looking for an inexpensive alternative to Adobe Acrobat? 
+					Please try PDFill!&nbsp;You can use the
+					<a href="https://www.pdfill.com/freewriter.html">Free PDF 
+					Writer</a> to create free PDF or Image from any printable 
+					application. You can use the
+					<a href="https://www.pdfill.com/pdf_tools_free.html">Free PDF 
+					Tools</a> to merge, split, reorder, delete, encrypt, 
+					decrypt, rotate, crop and reformat PDF pages, add 
+					information/header/footer/watermark, convert image to PDF or 
+					PDF to image,&nbsp; scan a Paper to PDF, and more.&nbsp;You 
+					can use the <a href="free_pdf_editor.html">FREE PDF Editor</a> 
+					to fill the form, type text, comment, create form, and more.&nbsp; Besides, with a fraction of the cost of Adobe Acrobat,&nbsp; 
+					PDFill PDF Editor can do more than the Free Adobe Reader.&nbsp; </span></p>
+					<p align="justify">
+								<font face="Verdana">
+								<strong style="font-weight: 400">
+					<font size="2" face="Verdana">For the latest updates and 
+					feature list, please see
+					<a href="https://www.pdfill.com/whatisnew.html" style="color: blue; text-decoration: underline">What is New</a>.
+					<br>
+					</font></strong><font size="2" face="Verdana">
+					<strong style="font-weight: 400">For the instructions on 
+					using PDFill PDF Editor, please see
+					<a href="quickstart.html" style="color: blue; text-decoration: underline">Quick Start PDFill</a>.</strong></font></font></p>
+					<p align="justify"><font size="2">
+					<span style="font-family: Verdana">There are 3 versions of 
+					PDFill. Please see the </span></font><font face="Verdana" size="2">
+					<a href="pdfill_versions.html" style="color: blue; text-decoration: underline">Version Comparison</a>.</font></p>
+					<p align="justify"><b><font face="Verdana" size="2">1. 
+					<a href="free_pdf_editor.html">Free 
+					Basic Version</a>:</font></b></p>
+			<blockquote>
+				<p align="left">
+								<strong>
+								<font face="Verdana" size="2">
+								<font size="2">
+								<map name="FPMap23">
+								<font face="Verdana">
+								<area shape="RECT" target="_self" coords="297, 314, 559, 347" href="pdf_form_filler.html" alt="PDF Form Filler">
+								<area shape="RECT" target="_self" coords="5, 409, 337, 457" href="pdf_comment.html" alt="PDF Commenting">
+								
+								<area shape="RECT" target="_self" coords="406, 410, 656, 453" href="pdf_drawing.html" alt="PDF Drawing">
+								
+								<area shape="RECT" target="_self" coords="27, 137, 60, 317" href="pdf_form_maker.html" alt="PDF Form Maker">
+								<area shape="RECT" target="_self" coords="11, 249, 325, 276" href="pdf_form_maker.html" alt="PDF Form Maker">
+								
+								<area shape="RECT" target="_self" coords="68, 138, 407, 170" href="pdf_filler.html" alt="PDF Filler">
+								
+								<area shape="RECT" target="_self" coords="411, 139, 517, 170" href="pdf_barcode.html" alt="PDF Barcodes">
+								
+	
+								<area href="free_pdf_editor.html" shape="default">
+								<area href="free_pdf_editor.html" coords="0, 0, 10000, 10000" shape="rect">
+								
+	
+								</font></map><font face="Verdana">
+								</font></font>
+								<img border="0" src="images/free_pdf_editor.png" usemap="#FPMap23"></font></strong></p>
+			</blockquote>
+					<p align="justify"><font size="2">
+					<span style="font-family: Verdana; font-weight:700">2. </span>
+					<span style="font-family: Verdana; font-weight:700">&nbsp;<a href="https://www.pdfill.com/information.html">Professional Version</a> 
+					($19.99 with Lifetime </span>
+					<span style="font-family: Verdana; font-weight:700">Upgrade</span><span style="font-family: Verdana; font-weight:700">)</span></font></p>
+					<blockquote>
+					<p align="justify">
+								<strong><font size="2">
+								<map name="FPMap24">
+								<font face="Verdana">
+								<area shape="RECT" target="_self" coords="313, 310, 509, 346" href="pdf_form_filler.html" alt="PDF Form Filler">
+								<area shape="RECT" target="_self" coords="32, 409, 320, 457" href="pdf_comment.html" alt="PDF Commenting">
+								
+								<area shape="RECT" target="_self" coords="584, 310, 735, 349" href="align_smart_positioning.html" alt="Align and Position">
+								<area shape="RECT" target="_self" coords="761, 147, 797, 423" href="align_smart_positioning.html" alt="Align and Position">
+								
+								<area shape="RECT" target="_self" coords="551, 412, 746, 455" href="pdf_drawing.html" alt="PDF Drawing">
+								<area shape="RECT" target="_self" coords="345, 408, 524, 457" href="save_manage_use_objects.htm" alt="Saved Objects">	
+								
+								<area shape="RECT" target="_self" coords="31, 172, 56, 411" href="pdf_form_maker.html" alt="PDF Form Maker">
+								<area shape="RECT" target="_self" coords="88, 235, 295, 264" href="pdf_form_maker.html" alt="PDF Form Maker">
+								
+								<area shape="RECT" target="_self" coords="413, 51, 732, 78" href="document.html" alt="PDF Document">
+								<area shape="RECT" target="_self" coords="406, 145, 588, 170" href="document.html" alt="PDF Document">
+								
+								<area shape="RECT" target="_self" coords="603, 76, 799, 103" href="pdf_ink.html" alt="PDF Ink">
+								<area shape="RECT" target="_self" coords="617, 147, 722, 171" href="pdf_ink.html" alt="PDF Ink">
+																							
+								<area shape="RECT" target="_self" coords="55, 106, 175, 156" href="pdf_filler.html" alt="PDF Filler">
+								
+								<area shape="RECT" target="_self" coords="228, 156, 334, 183" href="pdf_barcode.html" alt="PDF Barcodes">
+								
+						       	<area shape="RECT" target="_self" coords="95, 157, 225, 184" href="pdf_redaction_eraser.htm" alt="PDF Redaction &amp; PDF Eraser">
+
+	
+								</font></map><font face="Verdana">
+								<img border="0" src="images/pdfill.png" usemap="#FPMap24"></font></font></strong></p>
+         
+        				
+					
+					
+					</blockquote>
+					<p align="justify"><strong><font face="Verdana" size="2">3. 
+					<a href="enterprise.html" style="color: blue; text-decoration: underline">Enterprise Version</a>: </font></strong><font size="2">
+					<span style="font-family: Verdana; font-weight:700">&nbsp;($39.99 
+					with Lifetime Upgrade)</span></font></p>
+					<blockquote>
+					<p align="justify">
+					
+													<map name="FPMap22">
+								<area shape="RECT" target="_self" coords="589, 135, 770, 409" href="enterprise_shapes.html" alt="Office Shapes">
+								<area shape="RECT" target="_self" coords="320, 373, 529, 407" href="enterprise_custom_shapes.html" alt="Custom Shapes">
+								
+	
+								
+								<area href="enterprise.html" shape="default">
+								<area href="enterprise.html" coords="0, 0, 10000, 10000" shape="rect">
+								
+	
+								
+								</map>
+								
+					
+													<font face="Verdana">
+					<span style="font-family: Verdana"><font size="2">Unique features:
+					<a href="enterprise_shapes.html">Office 
+			Shapes</a>, <a href="enterprise_custom_shapes.html">Custom 
+			Shapes</a>, </font></span><font face="Verdana" size="2">
+					<a href="enterprise_fillmode.html">Fill Mode</a></font></font></p>
+					<p align="justify">
+													<font face="Verdana">
+					
+					
+					<img border="0" src="images/pdfill_ent.png" usemap="#FPMap22" width="800" height="480"></font></p><font face="Verdana">
+         
+        				
+					
+					
+					</font></blockquote><font face="Verdana">
+						</font></td>
+					</tr>
+					<tr>
+						<td valign="top">
+	
+								<ul style="margin-bottom: 0in">
+                                  <li>
+                                        <font size="2" face="Verdana"><b>
+                                        <a href="pdf_save_options_tab.html" style="color: blue; text-decoration: underline">Save 
+                                        All Editing back to the Original PDF</a></b><br>
+                                        Save the filled PDF locally with 
+												options to add 
+										<a href="pdf_save_options_tab.html#1" style="color: blue; text-decoration: underline">
+										Output Options</a>, 
+										<a href="pdf_save_options_tab.html#2" style="color: blue; text-decoration: underline">Description</a>, 
+										<a href="pdf_save_options_tab.html#3" style="color: blue; text-decoration: underline">Encrypt/Decrypt</a>, 
+										<a href="pdf_save_options_tab.html#4" style="color: blue; text-decoration: underline">
+										Initial View</a>,
+										<a href="pdf_save_options_tab.html#5" style="color: blue; text-decoration: underline">Presentation Effect</a> 
+										and
+										<a href="pdf_save_options_tab.html#6" style="color: blue; text-decoration: underline">Advanced</a>. Save editing now with project file and 
+										Resume editing later.<br>
+&nbsp;</font></li>
+									<li>
+                                        <b><font size="2" face="Verdana">
+										<a style="color: blue; text-decoration: underline" href="pdf_redaction_eraser.htm">PDF Redaction &amp; PDF Eraser</a></font></b><font face="Verdana" size="2"><br>
+										Redact or remove the original sensitive 
+										content (Text, Image, Shapes, 
+										Comment and Form Fields).<br>&nbsp;</font></li>
+									<li>
+                                        <font face="Verdana" size="2"><b>
+										<a href="edit_original_text.htm">Edit the 
+										Original Text</a></b>:
+										Delete/Replace the original text with 
+										the New SingleLine Text.<br>
+										<b><a href="edit_original_image.htm">
+										Edit the Original Image</a></b>: Delete/Replace the original Image.<br>
+										<b><a href="edit_original_form.htm">Edit 
+										the original Form Field</a></b>: 
+										Delete/Edit the current form field or 
+										the entire form fields.<br>
+										<b><a href="edit_original_comment.htm">Edit 
+										the original Comment</a></b>: 
+										Delete/Edit the current comment or 
+										the entire comment.<br>
+&nbsp;</font></li>
+									<li>
+						<b><font face="Verdana" size="2" color="#FF0000">
+										<a href="pdfill_group_ungroup.htm" style="color: blue; text-decoration: underline">Group 
+						and Ungroup &amp; Lock and Unlock Objects</a></font><font face="Verdana" size="2"><br>
+										</font></b>
+										<font face="Verdana" size="2">Group 
+										texts, shapes or pictures into a 
+										complicated object. Lock the object from 
+						editing.<br>
+&nbsp;</font></li>
+									<li>
+                                        <b><font face="Verdana" size="2">
+										<a href="save_manage_use_objects.htm" style="color: blue; text-decoration: underline">
+										Save, Manage and Use the PDFill Objects</a><br>
+										</font></b>
+										<font face="Verdana" size="2">Save the PDFill Object and 
+										use it later easily<br>
+&nbsp;</font></li>
+									<li><b><font size="2" face="Verdana">
+									<a href="document.html" style="color: blue; text-decoration: underline">PDF Document 
+										Management</a></font></b><font size="2" face="Verdana"><br>Insert 
+										<a href="document_blankpage.html" style="color: blue; text-decoration: underline">New Blank PDF</a>, 
+										<a href="document_pages_delete_renumber.html" style="color: blue; text-decoration: underline">Delete/Renumber</a> Pages, 
+										<a href="document_pages_insert.html" style="color: blue; text-decoration: underline">Insert</a> PDF Pages 
+										with Interleave Options, 
+										<a href="document_pages_extract.html" style="color: blue; text-decoration: underline">Extract</a> PDF Pages, 
+										<a href="document_pages_replace.html" style="color: blue; text-decoration: underline">Replace</a> PDF Pages, 
+										Add Page 
+										<a href="document_rotate_crop_action.html" style="color: blue; text-decoration: underline">Rotation/Crop/Action</a>, Add 
+										<a href="document_bookmark.html" style="color: blue; text-decoration: underline">Bookmark</a>, Add 
+										<a href="document_header_footer.html" style="color: blue; text-decoration: underline">Header and 
+										Footer</a>, Add Watermark by 
+										<a href="document_watermark_text.html" style="color: blue; text-decoration: underline">Text</a>/<a href="document_watermark_image.html" style="color: blue; text-decoration: underline">Image</a>/<a href="document_watermark_pdf.html" style="color: blue; text-decoration: underline">PDF 
+									Page</a>, 
+										Attach A 
+										<a href="document_attachafile.html" style="color: blue; text-decoration: underline">File</a>, Add 
+										<a href="document_javascript.html" style="color: blue; text-decoration: underline">JavaScript</a> for 
+										Document, Add a 
+										<a href="document_sign.html" style="color: blue; text-decoration: underline">Digital&nbsp;Signature</a>, Add 
+									<a href="document_bates.html" style="color: blue; text-decoration: underline">Bates Numbering</a>,
+									<span style="color:blue; text-decoration:underline">
+									<a href="document_optimizer.html" style="color: blue; text-decoration: underline">PDF Optimizer</a></span>,
+										<span style="color:blue; text-decoration:underline">
+									<a href="document_extract_text.html" style="color: blue; text-decoration: underline">Extract Text</a></span> 
+									and<span style="color:blue; ">
+									<a href="document_extract_image.html" style="color: blue; text-decoration: underline">Image</a>, </span>
+									and 
+									<a href="document_ocr.html" style="color: blue; text-decoration: underline">OCR</a>.&nbsp;
+										<a href="document_deskew.html" style="color: blue; text-decoration: underline">Deskew 
+										Document</a> to rotate, move and scale 
+										page like image. <br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="pdf_form_maker.html" style="color: blue; text-decoration: underline">PDF Form 
+														Maker</a></b><br>Create 
+                                        <span style="background-color: #FFFF00">
+									<a href="pdf_form_maker.html#4" style="color: blue; text-decoration: underline">SAVABLE</a></span> PDF 
+									Form Fields (<a href="pdf_form_maker_text.html" style="color: blue; text-decoration: underline">Text Field</a>, 
+										<a href="pdf_form_maker_check_radio.html" style="color: blue; text-decoration: underline">Check Box</a>, 
+										<a href="pdf_form_maker_check_radio.html" style="color: blue; text-decoration: underline">Radio Button</a>, 
+                              		<a href="pdf_form_maker_combo_list.html" style="color: blue; text-decoration: underline">Combo Box</a>, 
+										<a href="pdf_form_maker_combo_list.html" style="color: blue; text-decoration: underline">List Box</a>,
+									<a href="pdf_form_maker_button.html" style="color: blue; text-decoration: underline">Push Button</a> 
+									or 
+									<a href="pdf_form_maker_signature.html" style="color: blue; text-decoration: underline">Digital Signature</a>) 
+										with 
+										<a href="pdf_form_maker_text.html#3.4" style="color: blue; text-decoration: underline">Action</a> 
+										(Reset &amp; Submit), 
+										<a href="pdf_form_maker_text.html#3.5" style="color: blue; text-decoration: underline">Keystroke</a>, 
+										<a href="pdf_form_maker_text.html#3.5" style="color: blue; text-decoration: underline">Format</a>, 
+										<a href="pdf_form_maker_text.html#3.6" style="color: blue; text-decoration: underline">Validate</a> 
+										and 
+										<a href="pdf_form_maker_text.html#3.7" style="color: blue; text-decoration: underline">Calculate</a>. Tools for
+									<a href="pdf_form_maker_recogn.html" style="color: blue; text-decoration: underline">Form Field Recognition</a>,
+									<a href="pdf_form_maker_tools.html#1" style="color: blue; text-decoration: underline">Multiple 
+										Copying</a>, 
+										<a href="pdf_form_maker_tools.html#3" style="color: blue; text-decoration: underline">Tab Order</a>, 
+										<a href="pdf_form_maker_tools.html#4" style="color: blue; text-decoration: underline">Calculation Order</a> 
+										and 
+										<a href="pdf_form_maker_tools.html#5" style="color: blue; text-decoration: underline">Alignment</a>. 
+										The PDF form by PDFill can be saved or 
+									submitted by 
+									<a href="http://get.adobe.com/reader/" style="color: blue; text-decoration: underline">Adobe Reader XI</a>.<br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a style="color: blue; text-decoration: underline" href="pdf_ink.html">PDF 
+									Ink Annotator</a><br></b>Write, draw, mark or 
+									highlight PDF documents on PC with mouse or 
+									on Tablet PC using the pen input.<br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="pdf_form_filler.html" style="color: blue; text-decoration: underline">PDF Form Filler</a></b><br>Fill-in and save interactive PDF forms 
+										to your computer for easy archiving, 
+										E-mailing or later printing.&nbsp; 
+										Allows you to 
+										<a href="pdf_form_filler.html#2" style="color: blue; text-decoration: underline">Fill</a>,
+										<a href="pdf_form_filler.html#3" style="color: blue; text-decoration: underline">Edit</a> 
+										or 
+									<a href="pdf_form_filler.html#4" style="color: blue; text-decoration: underline">Delete</a> PDF fields.&nbsp; You can also
+										<a href="pdf_form_filler.html#5" style="color: blue; text-decoration: underline">
+									<span style="color: #0000FF; text-decoration: underline">I</span>mport 
+										or Export</a> 
+                                        form data into Text and 
+                                        Excel file.
+                                        <a href="pdf_form_filler.html#6" style="color: blue; text-decoration: underline">AutoFill</a>,
+                                        <a href="pdf_form_filler.html#7" style="color: blue; text-decoration: underline">Batch</a> 
+                                        Command and
+                                        <a href="spell_checker.html" style="color: blue; text-decoration: underline">Spell Checker</a> 
+                                        Tools are
+											for the filling convenience.&nbsp;<br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="pdf_filler.html" style="color: blue; text-decoration: underline">PDF Filler &amp; PDF 
+										Typewriter</a><br></b>Insert new formatted 
+										<a href="pdf_filler_single.html" style="color: blue; text-decoration: underline">Single 
+										Line</a> or 
+										<a href="pdf_filler_multi.html" style="color: blue; text-decoration: underline">Multiple 
+										Line</a> Text,
+												<a href="pdf_filler_check.html" style="color: blue; text-decoration: underline">Check</a>, 
+										<a style="color: blue; text-decoration: underline" href="pdf_filler_image.html">Image</a>, 
+										<a href="pdf_filler_url_whiteout_highlight.html" style="color: blue; text-decoration: underline">Hyperlink</a>,&nbsp; 
+										<a href="pdf_filler_url_whiteout_highlight.html" style="color: blue; text-decoration: underline">Whiteout</a>,
+									or
+									<a href="pdf_filler_url_whiteout_highlight.html" style="color: blue; text-decoration: underline">Highlight</a>.<br>
+									<a href="pdf_filler_pdf.html">Overlay PDF Page</a> 
+									like an image.<br>&nbsp;</font></li>
+									<li>
+									<a href="pdf_comment.html" style="color: blue; text-decoration: underline">
+									<font size="2" face="Verdana"><b>PDF Stamp, PDF Comment or&nbsp;
+									<span style="color:blue">PDF Markup</span></b></font></a><font size="2" face="Verdana"><br>
+									<a href="pdf_comment_original_text.html" style="color: blue; text-decoration: underline">
+									Select Original Text</a> to Highlight, 
+									Strikethrough, Underline, Squiggly and Note.
+									<br>
+									Insert 
+									<a href="pdf_comment_stamp.html" style="color: blue; text-decoration: underline">Stamp</a>,
+									<a href="pdf_comment_textbox.html" style="color: blue; text-decoration: underline">Text Box</a>, 
+									<a href="pdf_comment_highlight.html" style="color: blue; text-decoration: underline">Highlight</a>, 
+									<a href="pdf_comment_stickynote.html" style="color: blue; text-decoration: underline">Sticky Note</a>, 
+                                        <a href="pdf_comment_popup.html" style="color: blue; text-decoration: underline">Popup</a>, 
+									<a href="pdf_comment_fileattachment.html" style="color: blue; text-decoration: underline">File Attachment</a>, 
+									<a href="pdf_comment_playvideo.html" style="color: blue; text-decoration: underline">Play Video</a>, 
+                                        <a href="pdf_comment_link.html" style="color: blue; text-decoration: underline">Link</a>,&nbsp;
+									<a href="pdf_comment_linearrow.html" style="color: blue; text-decoration: underline">Line</a>, 
+									<a href="pdf_comment_linearrow.html" style="color: blue; text-decoration: underline">Arrow</a>, 
+									<a href="pdf_comment_rectcircle.html" style="color: blue; text-decoration: underline">Rectangle</a>, 
+									<a href="pdf_comment_rectcircle.html" style="color: blue; text-decoration: underline">Circle</a>, 
+									<a href="pdf_comment_poly.html" style="color: blue; text-decoration: underline">Polyline</a>, 
+									<a href="pdf_comment_poly.html" style="color: blue; text-decoration: underline">Polygon,</a>&nbsp; 
+									<a href="pdf_comment_cloud.html" style="color: blue; text-decoration: underline">Cloud</a>,
+									<a href="pdf_comment_penciltool.html" style="color: blue; text-decoration: underline">Pencil</a>, 
+									or 
+									<a href="pdf_3d.html" style="color: blue; text-decoration: underline">PDF 3D</a> 
+									directly onto the PDF document. <br>
+&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="pdf_drawing.html" style="color: blue; text-decoration: underline">PDF Drawing</a><br>
+									</b>Add 
+									<a href="pdf_drawing_linearrow.html" style="color: blue; text-decoration: underline">Line</a>, 
+									<a href="pdf_drawing_linearrow.html" style="color: blue; text-decoration: underline">Arrow</a>, 
+									<a href="pdf_drawing_rectcircle.html" style="color: blue; text-decoration: underline">Rectangle</a>, 
+									<a href="pdf_drawing_rectcircle.html" style="color: blue; text-decoration: underline">Circle</a>, 
+                                        Ellipse, Arc, Pie, 
+									<a href="pdf_drawing_rectcircle.html" style="color: blue; text-decoration: underline">Basic Shapes</a> and 
+                                        <a href="pdf_drawing_curve.html" style="color: blue; text-decoration: underline">Curves</a> with border/filling 
+                                        styles directly into the PDF document. 
+                                        You can draw your signature into PDF.<br>&nbsp;</font></li>
+									<li>
+									<b><font face="Verdana" size="2">
+									<a href="pdf_barcode.html" style="color: blue; text-decoration: underline">PDF Barcode</a></font></b><font face="Verdana" size="2"><br>Add 
+									<a href="pdf_barcode_qrcode.html" style="color: blue; text-decoration: underline">QR Code</a>,
+									<a href="pdf_barcode_data_matrix.html" style="color: blue; text-decoration: underline">Data Matrix</a> and
+									<a href="pdf_barcode_pdf417.html" style="color: blue; text-decoration: underline">PDF 417</a>,
+									<a href="pdf_barcode_postnet_planet.html" style="color: blue; text-decoration: underline">
+									POSTNET/PLANET</a>,
+									<a href="pdf_barcode_codabar.html" style="color: blue; text-decoration: underline">CODABAR</a>,
+									<a href="pdf_barcode_code39.html" style="color: blue; text-decoration: underline">Code 39</a>,
+									<a href="pdf_barcode_inter25.html" style="color: blue; text-decoration: underline">
+									Interleaved 2 of 5</a>,&nbsp;
+									<a href="pdf_barcode_ean_upc.html" style="color: blue; text-decoration: underline">EAN/UPC</a>,&nbsp;
+									<a href="pdf_barcode_code128.html" style="color: blue; text-decoration: underline">Code 128</a><br>
+&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="pdf_scanner.html" style="color: blue; text-decoration: underline">PDF Scanner</a><br>
+									</b>Scan your Paper 
+                              Form or Photo directly into a new or existing PDF 
+                              document, then you can fill it using computer! <br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="pdf_action.html" style="color: blue; text-decoration: underline">PDF 
+									Link &amp; PDF Action</a><br></b>Add PDF 
+                                        Actions: 
+									<a href="pdf_action.html#2" style="color: blue; text-decoration: underline">Web Link</a>,&nbsp; PDF Form 
+									<a href="pdf_action.html#3" style="color: blue; text-decoration: underline">Reset</a> 
+                                        &amp; 
+									<a href="pdf_action.html#4" style="color: blue; text-decoration: underline">Submit</a>,&nbsp; 
+									<a href="pdf_action.html#5" style="color: blue; text-decoration: underline">JavaScript</a>, Page 
+                                        <a href="pdf_action.html#6" style="color: blue; text-decoration: underline">Navigation</a>, 
+									Goto 
+									<a href="pdf_action.html#7" style="color: blue; text-decoration: underline">Local Page</a>, Goto
+									<a href="pdf_action.html#8" style="color: blue; text-decoration: underline">another PDF</a> document, 
+										and launching
+									<a href="pdf_action.html#9" style="color: blue; text-decoration: underline">external application</a> with 
+										triggers: Mouse Up/Down/Enter/Exit, On 
+		Focus/Blur.<br>&nbsp;</font></li>
+									<li><font face="Verdana" size="2">
+									<span style="font-weight:700">
+									<a href="pdf_layer.html" style="color: blue; text-decoration: underline">PDF Layer</a></span><br>
+									Add PDF Layer to allow the added 
+									PDFill objects visible or invisible in the PDF 
+									Document.<br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a href="international_languages.html" style="color: blue; text-decoration: underline">Support for International languages</a><br>
+									</b>Type your 
+                                        language into PDF just like if you were 
+                                        using a typewriter. See 
+                                        <a href="pdf_filler.html" style="color: blue; text-decoration: underline">PDF Filler</a>.<br>Create a PDF Form Field to fill 
+                                        International languages. See 
+                                        <a href="pdf_form_maker.html" style="color: blue; text-decoration: underline">PDF Form 
+                                        Maker</a>.<br>Add your comment in your language as 
+                                        Free Text, Sticky Notes or Popup. See 
+                                        <a href="pdf_comment.html" style="color: blue; text-decoration: underline">PDF 
+                                        Comment</a>.<br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<a style="color: blue; text-decoration: underline" href="align_smart_positioning.html">Align Tools, 
+									Copy Tools 
+													and Smart Positioning</a></b> to 
+                              		</font>
+									<font color="#333333" face="Verdana" size="2">rearrange, resize, or move the filling PDF 
+									Objects to give the PDF page a cleaner, more professional look.</font><font size="2" face="Verdana"><br>&nbsp;</font></li>
+									<li>
+									<font color="#333333" size="2" face="Verdana">
+									<b>
+									<a href="pdf_batch_command.html" style="color: blue; text-decoration: underline">Batch Commands</a></b> 
+									to Export or Import of PDF Form 
+									Data/Bookmark/Metadata,&nbsp; Merge, Split, 
+									Extract, Encrypt,&nbsp; Decrypt, Rotate, 
+									Crop, Reformat, Header or Footer, Watermark 
+									by Text, Watermark by Image, Convert Images 
+									to PDF, Convert PDF into Images, Barcode, 
+									Optimizer, Extract Text/Image and OCR<br>
+&nbsp;</font></li>
+									<li>
+									<font color="#333333" face="Verdana" size="2">
+									<b>
+									<a href="pdf_thumbnail.html" style="color: blue; text-decoration: underline">Thumbnail View</a></b> 
+									to select or unselect PDF pages; Rearrange pages by drag and drop; 
+									Move, delete, extract and 
+		replace the selected pages; Insert a blank page or new PDF pages.</font><font size="2"><span style="font-weight: 700; font-family:Verdana"><br>&nbsp;</span></font></li>
+									<li><font size="2" face="Verdana">
+									<span style="color: #0000FF; text-decoration: underline">
+									<b>
+									<a href="pdfill_options_tab.html" style="color: blue; text-decoration: underline">PDFill 
+									Options</a></b></span>, 
+									<b>
+									<a href="help_menu_file.htm" style="color: blue; text-decoration: underline">Menu Bars</a>,
+									<a href="help_menu_right_click.htm" style="color: blue; text-decoration: underline">Right-Click Menus</a></b> and
+									<b>
+									<a href="help_toolbars.htm" style="color: blue; text-decoration: underline">Toolbars</a></b> to 
+                              		provide flexibility in PDF editing. <br>
+&nbsp;</font></li>
+									<li><font size="2" face="Verdana">
+									<a href="free_pdf_editor.html" style="color: blue; text-decoration: underline"><b>
+									<span style="background-color: #FFFF00">
+									FREE PDF 
+                                        </span>
+									<span style="color: #0000FF; text-decoration: underline; background-color: #FFFF00">
+									Editor Basic</span></b></a> allows you to </font>
+					<span style="font-size:10.0pt;
+font-family:Verdana">fill the form, insert text/image/comment/barcode, create 
+									basic form, make simple drawing, and more. </span>
+									<font size="2" face="Verdana">
+                                        <br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<span style="background-color: #FFFF00">
+									<a style="color: blue; text-decoration: underline" href="https://www.pdfill.com/freewriter.html">FREE PDF 
+                                        &amp; Image Writer</a></span></b> 
+                                        allows you to create
+                                        <span style="font-weight: 700; ">PDF</span> 
+                                        or
+                                        <span style="font-weight: 700; ">Image</span> from ANY printable windows application 
+												including Microsoft? Word, PowerPoint, Excel, Cad, and More.
+                                        <br>&nbsp;</font></li>
+									<li><font size="2" face="Verdana"><b>
+									<span style="background-color: #FFFF00">
+									<a style="color: blue; text-decoration: underline" href="https://www.pdfill.com/pdf_tools_free.html">Free PDF Tools</a></span></b>
+												allows you to Merge, Split and Reorder, Encrypt and Decrypt, Rotate and Crop, 
+												Reformat, Header and Footer, Watermark by text, Watermark by image, Convert 
+												images to PDF, Convert PDF to image, Flatten/Delete/List PDF Form Fields, 
+                                        Convert Postscript  to PDF, Add PDF 
+                                        Information, Scan to PDF, and Create 
+                                        Transparent Image.<br>&nbsp;</font></li>
+                                </ul></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="left" height="18">
+							<p>&nbsp;</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="left" width="894" height="35">
+							<pre><font face="Verdana, Arial, Helvetica" size="2"><a style="TEXT-DECORATION: underline" href="https://www.pdfill.com">PDFill</a> Copyright 2002-2022 by <a style="TEXT-DECORATION: underline" href="https://www.plotsoft.com/">PlotSoft L.L.C</a>..&nbsp; All rights reserved. </font></pre>
+						</td>
+					</tr>
+				</tbody></table>
+			</center><html lang="en" translate="no" data-theme="t3">
  <head>
   <script>
             window.__NPM_PACKAGE_CONFIG__ = {"localeSwitch":{"crossDrGray":{"salt":"crossDr","bucketCount":100,"defaultModel":"A","modelKeyArr":["A","B"],"models":{"A":{"whiteList":[],"blackList":[],"buckets":100},"B":{"whiteList":[],"blackList":[],"buckets":100}}}},"login":{"policy":[{"key":"policy_one","regions":[211],"isDefault":true},{"key":"policy_two","regions":[151,210,98,141,76,13,69,20,163,191,192,79,167,53,90,96,68,54,180,181,64,108,122,52,50,113,32,114,186,162,91,5,203,26,134,116,147]},{"key":"policy_three","regions":[45]},{"key":"policy_four","regions":[102]}],"oauth":{"enable":[69]}},"localInfo":{"reportDeviceInfo":true},"i18n":{"sumerReportRate":0.05,"sumerKeyReportClientSampleRate":0.05},"auth":{"logoutGray":{"salt":"logout","bucketCount":100,"defaultModel":"A","modelKeyArr":["A","B"],"models":{"A":{"whiteList":[],"blackList":[],"buckets":100},"B":{"whiteList":[],"blackList":[],"buckets":100}}}},"image":{"avifGray":{"salt":"avif","bucketCount":100,"defaultModel":"B","modelKeyArr":["A","B"],"models":{"A":{"whiteList":[],"blackList":[],"buckets":100},"B":{"whiteList":[],"blackList":[],"buckets":100}}}},"request":{"checkResponseRate":0.001}};
