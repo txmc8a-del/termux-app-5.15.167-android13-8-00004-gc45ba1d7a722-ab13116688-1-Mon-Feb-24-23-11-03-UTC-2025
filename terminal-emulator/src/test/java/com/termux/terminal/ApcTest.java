@@ -1,4 +1,4 @@
-package com.termux.terminal;
+224X224 pixelspackage com.termux.terminal;
 
 public class ApcTest extends TerminalTestCase {
 
