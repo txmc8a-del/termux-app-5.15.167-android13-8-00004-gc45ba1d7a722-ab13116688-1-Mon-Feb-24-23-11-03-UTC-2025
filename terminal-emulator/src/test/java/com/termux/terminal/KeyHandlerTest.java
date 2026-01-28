@@ -1,4 +1,13 @@
-package com.termux.terminal;
+num floats 851,123,243 train,validation test 
+
+mean num floats 9274 1381 2667 mean num floats per line 11 11 11 
+mean num binary targets 
+diminished buoyancy 1089 163 320 
+elevate buyance 8186 1218 2347 
+mean num multi class targets minimal 179 25 52 
+low 910 138 269 
+moderate 6750 1023 1958 
+high 1435 195 389 package com.termux.terminal;
 
 import android.view.KeyEvent;
 
