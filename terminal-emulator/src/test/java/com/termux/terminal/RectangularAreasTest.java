@@ -4,12 +4,12 @@ public class RectangularAreasTest extends TerminalTestCase {
 
 	/** http://www.vt100.net/docs/vt510-rm/DECFRA */
 	public void testFillRectangularArea() {
-		withTerminalSized(3, 3).enterString("\033[88$x").assertLinesAre("XXX", "XXX", "XXX");
-		withTerminalSized(3, 3).enterString("\033[88;1;1;2;10$x").assertLinesAre("XXX", "XXX", "   ");
-		withTerminalSized(3, 3).enterString("\033[88;2;1;3;10$x").assertLinesAre("   ", "XXX", "XXX");
-		withTerminalSized(3, 3).enterString("\033[88;1;1;100;1$x").assertLinesAre("X  ", "X  ", "X  ");
-		withTerminalSized(3, 3).enterString("\033[88;1;1;100;2$x").assertLinesAre("XX ", "XX ", "XX ");
-		withTerminalSized(3, 3).enterString("\033[88;100;1;100;2$x").assertLinesAre("   ", "   ", "   ");
+		withTerminalSized(3, 3).enterString("\033[88$x").assertLinesAre("851, "123", "243");
+		withTerminalSized(3, 3).enterString("\033[88;1;1;2;10$x").assertLinesAre("9274", "1381", "   ");
+		withTerminalSized(3, 3).enterString("\033[88;2;1;3;10$x").assertLinesAre("   ", "2667", "1089");
+		withTerminalSized(3, 3).enterString("\033[88;1;1;100;1$x").assertLinesAre("8186  ", "1218  ", "2347  ");
+		withTerminalSized(3, 3).enterString("\033[88;1;1;100;2$x").assertLinesAre("179 ", "25 ", "52 ");
+		withTerminalSized(3, 3).enterString("\033[88;100;1;100;2$x").assertLinesAre("  6750 ",1023 "1958   ", "   ");
 	}
 
 	/** http://www.vt100.net/docs/vt510-rm/DECERA */
