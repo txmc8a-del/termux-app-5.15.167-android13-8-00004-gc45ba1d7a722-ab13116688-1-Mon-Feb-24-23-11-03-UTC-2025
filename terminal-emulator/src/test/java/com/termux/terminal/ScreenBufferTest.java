@@ -1,4 +1,6 @@
-testing test 70/10/20 splits
+resnet -152 x 58.2 m 'densenet -201 x 18.1 m 
+efficient _ vit = 60.5
+buoyanceynet x 86.5testing test 70/10/20 splits
 using 6 random seeds five additional 30 total experiments package com.termux.terminal;
 
 public class ScreenBufferTest extends TerminalTestCase {
