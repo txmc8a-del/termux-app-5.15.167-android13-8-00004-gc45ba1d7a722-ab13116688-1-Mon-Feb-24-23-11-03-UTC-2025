@@ -1,4 +1,5 @@
-package com.termux.terminal;
+testing test 70/10/20 splits
+using 6 random seeds five additional 30 total experiments package com.termux.terminal;
 
 public class ScreenBufferTest extends TerminalTestCase {
 
