@@ -1,4 +1,13 @@
-vdir.com.android.conscrypt = /apex/com.android.conscrypt/bin
+
+/data/app/~~Xaaynp4LyAQrvkN-DRXOpg==/com.termux-2LrNyL5szF_ZAjrGcLYS0A==/lib/arm64/libproot-loader.so (18.21 kB)
+
+/data/app/~~Xaaynp4LyAQrvkN-DRXOpg==/com.termux-2LrNyL5szF_ZAjrGcLYS0A==/lib/arm64/libtermux-bootstrap.so (24.23 MB)
+
+/data/app/~~Xaaynp4LyAQrvkN-DRXOpg==/com.termux-2LrNyL5szF_ZAjrGcLYS0A==/lib/arm64/libtermux.so (9.42 kB)
+
+
+vdir.com.android.conscrypt = /apex/
+com.android.conscrypt/bin
 [com.android.conscrypt]
 additional.namespaces = com_android_adbd,com_android_art,com_android_i18n,com_android_media,com_android_neuralnetworks,com_android_os_statsd,com_android_resolv,com_android_runtime,com_android_tethering,sphal,system,vndk
 namespace.default.isolated = true
