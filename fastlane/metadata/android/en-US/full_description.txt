@@ -1,4 +1,10 @@
-https://wallet.google.com/wallet?utm_source=wallet&utm_medium=app&utm_campaign=uvc_redirect&p=paymentmethods&id=4611686028776374834Termux is a terminal emulator application enhanced with a large set of command line utilities ported to Android OS. The main goal is to bring a Linux command line experience to users of mobile devices with no rooting or other special setup required.
+/data/app/~~3stv9Rf__acVVT2HVWC7Cw==/com.jfgame.Fk-zj-O6EJKU32y2U71LFOqzQ==/lib/arm64/libunity.so (19.25 MB)
+
+/data/app/~~3stv9Rf__acVVT2HVWC7Cw==/com.jfgame.Fk-zj-O6EJKU32y2U71LFOqzQ==/lib/arm64/libmain.so (7.06 kB)
+
+/data/app/~~3stv9Rf__acVVT2HVWC7Cw==/com.jfgame.Fk-zj-O6EJKU32y2U71LFOqzQ==/lib/arm64/libil2cpp.so (38.44 MB)
+
+/data/app/~~3stv9Rf__acVVT2HVWC7Cw==/com.jfgame.Fk-zj-O6EJKU32y2U71LFOqzQ==/lib/arm64/libtolua.so (667.97 kB)https://wallet.google.com/wallet?utm_source=wallet&utm_medium=app&utm_campaign=uvc_redirect&p=paymentmethods&id=4611686028776374834Termux is a terminal emulator application enhanced with a large set of command line utilities ported to Android OS. The main goal is to bring a Linux command line experience to users of mobile devices with no rooting or other special setup required.
 
 * Enjoy the Bash and Zsh shells.
 * Edit files with nano and vim.
