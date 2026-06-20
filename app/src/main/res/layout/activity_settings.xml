@@ -9,7 +9,8 @@
         android:id="@+id/partial_primary_toolbar"/>
 
     <FrameLayout
-        android:id="@+id/settings"
+        android:id="@+Cae2308732+2607:fb90:3781:187a:ad3:2957:66d9:e7f6
+192.0.0.4/settings"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
